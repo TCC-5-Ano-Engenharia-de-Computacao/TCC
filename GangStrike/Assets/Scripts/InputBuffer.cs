@@ -16,7 +16,21 @@ public class InputBuffer : MonoBehaviour
     void Awake()
     {
         _inputTest = FindObjectOfType<InputTest>();
+    }
+
+    void OnEnable()
+    {
+        if(_inputTest == null)
+        {
+            Debug.LogError("InputTest not found in the scene. Please add an InputTest component to a GameObject.");
+            return;
+        }
         _inputTest.inputPerformedEvent.AddListener(OnActionPerformedRegisterInstantInput);
+    }
+
+    void OnDisable()
+    {
+        _inputTest.inputPerformedEvent.RemoveListener(OnActionPerformedRegisterInstantInput);
     }
     
     void Update()
