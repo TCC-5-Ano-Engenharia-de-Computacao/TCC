@@ -5,35 +5,38 @@ using System.Threading.Tasks;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InputBuffer : MonoBehaviour
 {
-    private InputTest _inputTest;
-    private Dictionary <string, bool> _instantaneousInput = new Dictionary<string, bool>();
-    private Dictionary <string, float> _inputQueue = new Dictionary<string, float>();
-    [SerializeField] private float _inputLingerDuration = 0.5f;
+    private InputPerformedEventController _inputPerformedEventController;
+    
+    private readonly Dictionary <string, bool> _instantaneousInput = new Dictionary<string, bool>();
+    private readonly Dictionary <string, float> _inputQueue = new Dictionary<string, float>();
+    
+    [SerializeField] private float inputLingerDuration = 0.5f;
 
-    void Awake()
+    private void Awake()
     {
-        _inputTest = FindObjectOfType<InputTest>();
+        _inputPerformedEventController = FindFirstObjectByType<InputPerformedEventController>();
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
-        if(_inputTest == null)
+        if(_inputPerformedEventController == null)
         {
-            Debug.LogError("InputTest not found in the scene. Please add an InputTest component to a GameObject.");
+            Debug.LogError("InputTest not found in the scene. Please add an InputTest component to a GameObject.",this);
             return;
         }
-        _inputTest.inputPerformedEvent.AddListener(OnActionPerformedRegisterInstantInput);
+        _inputPerformedEventController.inputPerformedEvent.AddListener(OnInputPerformedRegisterInstantInput);
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
-        _inputTest.inputPerformedEvent.RemoveListener(OnActionPerformedRegisterInstantInput);
+        _inputPerformedEventController.inputPerformedEvent.RemoveListener(OnInputPerformedRegisterInstantInput);
     }
-    
-    void Update()
+
+    private void Update()
     {
         foreach (var key in _inputQueue.Keys)
         {
@@ -46,7 +49,7 @@ public class InputBuffer : MonoBehaviour
         }
     }
 
-    private void OnActionPerformedRegisterInstantInput(string inputName)
+    private void OnInputPerformedRegisterInstantInput(string inputName)
     {
         if (_inputQueue.ContainsKey(inputName))
         {
@@ -63,7 +66,7 @@ public class InputBuffer : MonoBehaviour
         Debug.Log("Waiting for End of Frame");
         yield return new WaitForEndOfFrame();
         Debug.Log("End of Frame reached, transfering input to queue: " + inputName);
-        TransferInputToQueue(inputName, _inputLingerDuration);
+        TransferInputToQueue(inputName, inputLingerDuration);
     }
     
     private void TransferInputToQueue(string inputName, float duration)

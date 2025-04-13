@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-public class InputTest : MonoBehaviour
+public class InputPerformedEventController : MonoBehaviour
 {
     private PlayerInput _playerInput;
     private PlayerInputActions _playerInputActions;
