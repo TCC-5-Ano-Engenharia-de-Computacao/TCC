@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Unity.Collections;
 using Unity.Mathematics;
@@ -36,15 +37,25 @@ public class InputBuffer : MonoBehaviour
         _inputPerformedEventController.inputPerformedEvent.RemoveListener(OnInputPerformedRegisterInstantInput);
     }
 
+    private void LateUpdate()
+    {
+        float a = 0;
+        for (int i = 0; i < 1000000; i++)
+        {
+            a += math.sqrt(i);
+        }
+    }
+
     private void Update()
     {
-        foreach (var key in _inputQueue.Keys)
+        foreach (var key in _inputQueue.Keys.ToList())
         {
             _inputQueue[key] -= Time.deltaTime;
             if (_inputQueue[key] <= 0)
             {
-                _inputQueue.Remove(key);
                 Debug.Log("Input expired: " + key);
+                print(DateTime.Now.Millisecond);
+                _inputQueue.Remove(key);
             }
         }
     }
@@ -54,31 +65,33 @@ public class InputBuffer : MonoBehaviour
         if (_inputQueue.ContainsKey(inputName))
         {
             _inputQueue.Remove(inputName);
-            Debug.Log("Input removed from queue: " + inputName + "Because of instantaneous input override");
+            Debug.Log("Input removed from queue: " + inputName + " Because of instantaneous input override");
+            print(DateTime.Now.Millisecond);
+
         }
         _instantaneousInput[inputName] = true;
         Debug.Log("Starting instantaneous input transition for: " + inputName);
-        StartCoroutine(InstantInputTransition(inputName));
+        print(DateTime.Now.Millisecond);
+
+        StartCoroutine(InputTransitionCoroutine(inputName));
     }
     
-    private IEnumerator InstantInputTransition(string inputName)
+    private IEnumerator InputTransitionCoroutine(string inputName)
     {
-        Debug.Log("Waiting for End of Frame");
+        Debug.Log($"start Waiting for End of Frame ...: {DateTime.Now.Millisecond}");
         yield return new WaitForEndOfFrame();
-        Debug.Log("End of Frame reached, transfering input to queue: " + inputName);
-        TransferInputToQueue(inputName, inputLingerDuration);
-    }
-    
-    private void TransferInputToQueue(string inputName, float duration)
-    {
-        Debug.Log("Check if input has been consumed before transfering to queue");
+        print($"finish waiting for the end of frame: {DateTime.Now.Millisecond}");
+        
         if(_instantaneousInput[inputName] == true)
         {
             _instantaneousInput[inputName] = false;
-            _inputQueue.Add(inputName, duration);
+            _inputQueue.Add(inputName, inputLingerDuration);
             Debug.Log("Input transfered to queue: " + inputName);
+            print(DateTime.Now.Millisecond);
+
         }
     }
+   
 
     public bool IsInputInstantaneous(string inputName)
     {
@@ -103,6 +116,7 @@ public class InputBuffer : MonoBehaviour
         {
             Debug.Log("Input is in queue, removing: " + inputName);
             _inputQueue.Remove(inputName);
+            print(DateTime.Now.Millisecond);
         }
     }
     
