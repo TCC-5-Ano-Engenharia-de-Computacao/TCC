@@ -6,8 +6,10 @@ public class AnalogHistory : MonoBehaviour
 {
     /*SerializedDebug*/public string analogHistoryStr = "";
     
-    [SerializeField] private readonly int analogHistorySize = 30;
+    [SerializeField] private int analogHistorySize = 50;
     [SerializeField] private InputTest inputTest;
+
+    private int _currentFrameDir;
 
     
     private enum AnalogDir
@@ -35,29 +37,12 @@ public class AnalogHistory : MonoBehaviour
         {Vector2.up, AnalogDir.North},
         {new Vector2(1, 1).normalized, AnalogDir.NorthEast},
     };
-    
-    private void OnEnable()
-    {
-        inputTest.playerInputActions.Default.AnalogStick.performed += HandleAnalogPerformed;
-        inputTest.playerInputActions.Default.AnalogStick.canceled += HandleAnalogCanceled;
-    }
 
-    private void OnDisable()
+    // TODO{discutir} Usar FixedUpdate (input parece ficar lento)
+    private void Update()
     {
-        inputTest.playerInputActions.Default.AnalogStick.performed -= HandleAnalogPerformed;
-        inputTest.playerInputActions.Default.AnalogStick.canceled -= HandleAnalogCanceled;
-    }
-
-    private void HandleAnalogPerformed(InputAction.CallbackContext ctx)
-    {
-        AnalogDir dir = _eightDirMap[ctx.ReadValue<Vector2>().normalized]; 
-        //Debug.Log(dir);
-    }
-    
-    private void HandleAnalogCanceled(InputAction.CallbackContext ctx)
-    {
-        AnalogDir dir = _eightDirMap[ctx.ReadValue<Vector2>().normalized]; 
-        //Debug.Log(dir);
+        _currentFrameDir = (int) _eightDirMap[inputTest.playerInputActions.Default.AnalogStick.ReadValue<Vector2>().normalized];
+        AddToDirRegex(_currentFrameDir);
     }
 
     private void AddToDirRegex(int dir)
@@ -69,8 +54,7 @@ public class AnalogHistory : MonoBehaviour
         }
         else
         {
-            analogHistoryStr = analogHistoryStr.Remove(0) + dir;
+            analogHistoryStr = analogHistoryStr.Remove(0, 1) + dir;
         }
-        Debug.Log(analogHistoryStr);
     }
 }

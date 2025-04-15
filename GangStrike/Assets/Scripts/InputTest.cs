@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class InputTest : MonoBehaviour
 {
-    [HideInInspector] public PlayerInputActions playerInputActions;
+    public PlayerInputActions playerInputActions;
     
     private PlayerInput _playerInput;
 
