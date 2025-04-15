@@ -1,70 +1,34 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputTest : MonoBehaviour
 {
+    [HideInInspector] public PlayerInputActions playerInputActions;
+    
     private PlayerInput _playerInput;
-    private PlayerInputActions _playerInputActions;
 
 
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
-        _playerInputActions = new PlayerInputActions();
-        _playerInput.actions = _playerInputActions.asset;
+        playerInputActions = new PlayerInputActions();
+        _playerInput.actions = playerInputActions.asset;
     }
 
     private void OnEnable()
     {
-        _playerInputActions.Default.Move.performed += HandleMovePerformed;
-        _playerInputActions.Default.Move.canceled += HandleMoveCanceled;
-        _playerInputActions.Default.Jump.performed += HandleJumpPerformed;
-        _playerInputActions.Default.Jump.canceled += HandleJumpCanceled;
-        _playerInputActions.Default.Punch.performed += HandlePunchPerformed;
-        _playerInputActions.Default.Punch.canceled += HandlePunchCanceled;
-        _playerInputActions.Default.Kick.performed += HandleKickPerformed;
-        _playerInputActions.Default.Kick.canceled += HandleKickCanceled;
+        playerInputActions.Default.Punch.performed += HandlePunchPerformed;
+        playerInputActions.Default.Punch.canceled += HandlePunchCanceled;
+        playerInputActions.Default.Kick.performed += HandleKickPerformed;
+        playerInputActions.Default.Kick.canceled += HandleKickCanceled;
     }
 
     private void OnDisable()
     {
-        _playerInputActions.Default.Move.performed -= HandleMovePerformed;
-        _playerInputActions.Default.Move.canceled -= HandleMoveCanceled;
-        _playerInputActions.Default.Jump.performed -= HandleJumpPerformed;
-        _playerInputActions.Default.Jump.canceled -= HandleJumpCanceled;
-        _playerInputActions.Default.Punch.performed -= HandlePunchPerformed;
-        _playerInputActions.Default.Punch.canceled -= HandlePunchCanceled;
-        _playerInputActions.Default.Kick.performed -= HandleKickPerformed;
-        _playerInputActions.Default.Kick.canceled -= HandleKickCanceled;
-    }
-
-    private void HandleMovePerformed(InputAction.CallbackContext ctx)
-    {
-        float direction = ctx.ReadValue<float>();
-        if (direction > 0)
-        {
-            Debug.Log($"[D] - Move right ({direction})");
-        }
-        else
-        {
-            Debug.Log($"[A] - Move left ({direction})");
-        }
-    }
-    
-    private void HandleMoveCanceled(InputAction.CallbackContext ctx)
-    {
-        Debug.Log("Move canceled");
-    }
-
-    private void HandleJumpPerformed(InputAction.CallbackContext ctx)
-    {
-        Debug.Log("[W] - Jump");
-    }
-    
-    private void HandleJumpCanceled(InputAction.CallbackContext ctx)
-    {
-        Debug.Log("Jump canceled");
+        playerInputActions.Default.Punch.performed -= HandlePunchPerformed;
+        playerInputActions.Default.Punch.canceled -= HandlePunchCanceled;
+        playerInputActions.Default.Kick.performed -= HandleKickPerformed;
+        playerInputActions.Default.Kick.canceled -= HandleKickCanceled;
     }
     
     private void HandlePunchPerformed(InputAction.CallbackContext ctx)
