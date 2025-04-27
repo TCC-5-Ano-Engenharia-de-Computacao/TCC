@@ -1,13 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
-public class InputTest : MonoBehaviour
+public class InputPerformedEventController : MonoBehaviour
 {
     public PlayerInputActions playerInputActions;
     
     private PlayerInput _playerInput;
-
-
+    public UnityEvent<string> inputPerformedEvent;
+    
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
@@ -34,6 +36,7 @@ public class InputTest : MonoBehaviour
     private void HandlePunchPerformed(InputAction.CallbackContext ctx)
     {
         Debug.Log("[C] - Punch");
+        inputPerformedEvent.Invoke("Punch");
     }
     
     private void HandlePunchCanceled(InputAction.CallbackContext ctx)
@@ -44,6 +47,7 @@ public class InputTest : MonoBehaviour
     private void HandleKickPerformed(InputAction.CallbackContext ctx)
     {
         Debug.Log("[V] - Kick");
+        inputPerformedEvent.Invoke("Kick");
     }
     
     private void HandleKickCanceled(InputAction.CallbackContext ctx)
