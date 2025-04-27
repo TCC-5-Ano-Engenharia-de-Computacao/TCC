@@ -7,7 +7,7 @@ public class AnalogHistory : MonoBehaviour
     /*SerializedDebug*/public string analogHistoryStr = "";
     
     [SerializeField] private int analogHistorySize = 50;
-    [SerializeField] private InputTest inputTest;
+    [SerializeField] private InputPerformedEventController inputTest;
 
     private int _currentFrameDir;
 
@@ -38,7 +38,6 @@ public class AnalogHistory : MonoBehaviour
         {new Vector2(1, 1).normalized, AnalogDir.NorthEast},
     };
 
-    // TODO{discutir} Usar FixedUpdate (input parece ficar lento)
     private void Update()
     {
         _currentFrameDir = (int) _eightDirMap[inputTest.playerInputActions.Default.AnalogStick.ReadValue<Vector2>().normalized];
@@ -47,7 +46,6 @@ public class AnalogHistory : MonoBehaviour
 
     private void AddToDirRegex(int dir)
     {
-        // TODO{discutir} apenas comecar a string preenchida com varios 5 (Center / neutro)
         if (analogHistoryStr.Length < analogHistorySize)
         {
             analogHistoryStr += dir;
