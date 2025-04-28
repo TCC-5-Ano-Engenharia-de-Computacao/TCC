@@ -23,7 +23,7 @@ namespace Examples
 
         void PrintStateMachine()
         {
-            const string file = "Assets/Scripts/Examples/state_machine.xml"; // coloque seu caminho aqui
+            const string file = "Assets/Scripts/Examples/state_machine.xml";
             var serializer = StateMachineSerializerFactory.Get();
             using var fs = File.OpenRead(file);
             var _stateMachineModel = (StateMachine.Model.StateMachineModel)serializer.Deserialize(fs);

@@ -37,11 +37,16 @@
         <!-- JUMP -->
         <State id="jump">
 
+            <BeforeEnter>
+                <LogAction msg="BeforeEntering jump"/>
+            </BeforeEnter>
+            
             <!-- ao entrar: toca animação de pulo, aplica impulso e som -->
             <OnEnter>
 <!--                <SetAnimationAction path="Sprites/PlayerJump" frames="4"/>-->
 <!--                <JumpPlayerAction force="8"/>-->
 <!--                <MakeSoundAction path="Sounds/jump" volume="0.8"/>-->
+                <LogAction msg="Entering jump"/>
             </OnEnter>
 
             <!-- opcional: logs enquanto estiver no ar -->

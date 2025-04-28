@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using StateMachine.Actions;
 using StateMachine.Conditions;
 using StateMachine.Model;
@@ -13,29 +14,60 @@ namespace StateMachine
     {
         private StateMachineModel _stateMachineModel;
         private StateModel _currentStateModel;
-        public string filePath = "Assets/Scripts/Examples/state_machine.xml";
+        private Dictionary<String, StateModel> _idToStateMap = new();
+        
+        [SerializeField] private string filePath = "Assets/Scripts/Examples/state_machine.xml";
 
         private void Start()
         {
             var serializer = StateMachineSerializerFactory.Get();
             using var fs = File.OpenRead(filePath);
             _stateMachineModel = (StateMachineModel)serializer.Deserialize(fs);
-            
-            // TODO: Invocar metodos Initialize das Actions e Conditions
-            // TODO: Inicializar estado inicial
 
-            PrintStateMachine();
+            _stateMachineModel.States.ForEach(state => _idToStateMap.Add(state.Id, state));
+
+            HashSet<ActionBase> actionsSet = new();
+            foreach (var st in _stateMachineModel.States)
+            {
+                st.BeforeEnter.ForEach(action => actionsSet.Add(action));
+                st.OnEnter.ForEach(action => actionsSet.Add(action));
+                st.OnStay.ForEach(action => actionsSet.Add(action));
+                st.OnLeave.ForEach(action => actionsSet.Add(action));
+                foreach (var action in actionsSet)
+                {
+                    action.Initialize(gameObject);
+                }
+
+                if (st.Transitions != null)
+                {
+                    HashSet<ConditionBase> conditionsSet = new();
+                    foreach (var tr in st.Transitions)
+                    {
+                        tr.Conditions.ForEach(condition => conditionsSet.Add(condition));
+                        tr.Conditions.ForEach(condition => conditionsSet.Add(condition));
+                        tr.Conditions.ForEach(condition => conditionsSet.Add(condition));
+                        tr.Conditions.ForEach(condition => conditionsSet.Add(condition));
+                        foreach (var condition in conditionsSet)
+                        {
+                            condition.Initialize(gameObject);
+                        }
+                    }
+                }
+            }
+            _currentStateModel = _idToStateMap[_stateMachineModel.InitialState];
+                
+            //PrintStateMachine();
         }
 
         private void Update()
         {
             if (_currentStateModel != null)
             {
-                // TODO: Pensar se o TryTransitions() deve ser chamado aqui ou apos o OnStay - Felipe acha melhor depois
                 foreach (var action in _currentStateModel.OnStay)
                 {
                     action.Execute(gameObject);
                 }
+                TryTransitions();
             }
         }
 
@@ -56,7 +88,7 @@ namespace StateMachine
                     }
                     if (flag)
                     {
-                        //SetState(transitionModel.To); TODO: obter o StateModel a partir da string "To"
+                        SetState(_idToStateMap[transitionModel.To]);
                         return true;
                     }
                 }
@@ -79,7 +111,7 @@ namespace StateMachine
                     action.Execute(gameObject);
                 }
 
-                bool hasChangedState = false; //TODO: = return do metodo "tentar transicao"
+                bool hasChangedState = TryTransitions(); //TODO: (Verificar) = return do metodo "tentar transicao"
                 if (!hasChangedState)
                 {
                     foreach (var action in _currentStateModel.OnEnter)
