@@ -11,15 +11,15 @@ namespace StateMachine.Actions
         [XmlAttribute("volume")] public float Volume { get; set; } = 1f;
         [XmlAttribute("loop")]   public bool Loop   { get; set; }
         private AudioClip _clip;
-        public override void Initialize(GameObject owner)
+        public override void Initialize(RootCharacter owner)
         {
             _clip = Resources.Load<AudioClip>(AudioPath);
             if (!_clip) Debug.LogError($"AudioClip not found: Resources/{AudioPath}");
         }
-        public override void Execute(GameObject owner)
+        public override void Execute(RootCharacter owner)
         {
             if (!_clip) return;
-            var src = owner.GetComponent<AudioSource>() ?? owner.AddComponent<AudioSource>();
+            var src = owner.GetComponent<AudioSource>() ?? owner.gameObject.AddComponent<AudioSource>();
             src.clip = _clip;
             src.volume = Volume;
             src.loop = Loop;

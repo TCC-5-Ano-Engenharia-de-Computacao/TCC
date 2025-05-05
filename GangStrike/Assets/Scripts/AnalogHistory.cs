@@ -12,6 +12,7 @@ public class AnalogHistory : MonoBehaviour
     private int _currentFrameDir;
 
     
+    
     private enum AnalogDir
     {
         SouthWest = 1,

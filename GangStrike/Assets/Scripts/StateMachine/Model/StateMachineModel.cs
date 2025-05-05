@@ -14,6 +14,10 @@ STATE‑MACHINE (Unity‑friendly)
 // ------------------------------------------------------------------------------------------------
 //  MODELO (State, Transition, StateMachine)
 // ------------------------------------------------------------------------------------------------
+
+using System.Linq;
+using UnityEngine;
+
 namespace StateMachine.Model
 {
     using System.Collections.Generic;
@@ -24,6 +28,39 @@ namespace StateMachine.Model
     {
         [XmlAttribute("initialState")] public string InitialState { get; set; }
 
-        [XmlArray("States"), XmlArrayItem("State")] public List<StateModel> States { get; set; }
+        [XmlArray("States"), XmlArrayItem("State")]
+        public List<StateModel> States { get; set; }
+
+        private Dictionary<string, StateModel> _stateLookup;
+
+        public StateModel GetStateFromId(string id)
+        {
+            return _stateLookup.GetValueOrDefault(id);
+        }
+
+        public void Initialize(RootCharacter rootCharacter)
+        {
+            _stateLookup = States.ToDictionary(state => state.Id, state => state);
+
+            foreach (var stateModel in States)
+            {
+                stateModel.Initialize(rootCharacter);
+            }
+        }
+
+        public string ToDebugString(int indentationLevel = 0)
+        {
+            var indentation = new string(' ', indentationLevel * 2);
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine(indentation + "StateMachineModel");
+            sb.AppendLine(indentation + "initialState: " + InitialState);
+            sb.AppendLine(indentation + "States:");
+            foreach (var stateModel in States)
+            {
+                sb.AppendLine(stateModel.ToDebugString(indentationLevel + 1));
+            }
+            return sb.ToString();
+        }
+
     }
 }

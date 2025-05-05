@@ -11,8 +11,8 @@ namespace StateMachine.Conditions
         [XmlTag("AlwaysFalseCondition")]
         public sealed class AlwaysFalseCondition : ConditionBase
         {
-            public override void Initialize(GameObject owner) { }
-            public override bool Evaluate(GameObject owner) => false;
+            public override void Initialize(RootCharacter owner) { }
+            public override bool Evaluate(RootCharacter owner) => false;
         }
     }
 }

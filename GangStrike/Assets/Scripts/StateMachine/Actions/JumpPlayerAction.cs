@@ -8,7 +8,7 @@ namespace StateMachine.Actions
     public sealed class JumpPlayerAction : ActionBase
     {
         [XmlAttribute("force")] public float JumpForce { get; set; } = 5f;
-        public override void Execute(GameObject owner)
+        public override void Execute(RootCharacter owner)
         {
             var rb = owner.GetComponent<Rigidbody2D>();
             if (!rb) return;

@@ -8,7 +8,7 @@ namespace StateMachine.Actions
     public sealed class SetPlayerGravityAction : ActionBase
     {
         [XmlAttribute("scale")] public float GravityScale { get; set; } = 1f;
-        public override void Execute(GameObject owner)
+        public override void Execute(RootCharacter owner)
         {
             var rb = owner.GetComponent<Rigidbody2D>();
             if (rb) rb.gravityScale = GravityScale;

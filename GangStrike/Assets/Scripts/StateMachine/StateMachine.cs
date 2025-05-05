@@ -14,7 +14,7 @@ namespace StateMachine
     {
         private StateMachineModel _stateMachineModel;
         private StateModel _currentStateModel;
-        private Dictionary<String, StateModel> _idToStateMap = new();
+        [SerializeField] private RootCharacter rootCharacter;
         
         [SerializeField] private string filePath = "Assets/Scripts/Examples/state_machine.xml";
 
@@ -23,39 +23,13 @@ namespace StateMachine
             var serializer = StateMachineSerializerFactory.Get();
             using var fs = File.OpenRead(filePath);
             _stateMachineModel = (StateMachineModel)serializer.Deserialize(fs);
-
-            _stateMachineModel.States.ForEach(state => _idToStateMap.Add(state.Id, state));
-
-            HashSet<ActionBase> actionsSet = new();
-            foreach (var st in _stateMachineModel.States)
-            {
-                st.BeforeEnter.ForEach(action => actionsSet.Add(action));
-                st.OnEnter.ForEach(action => actionsSet.Add(action));
-                st.OnStay.ForEach(action => actionsSet.Add(action));
-                st.OnLeave.ForEach(action => actionsSet.Add(action));
-                foreach (var action in actionsSet)
-                {
-                    action.Initialize(gameObject);
-                }
-
-                if (st.Transitions != null)
-                {
-                    HashSet<ConditionBase> conditionsSet = new();
-                    foreach (var tr in st.Transitions)
-                    {
-                        tr.Conditions.ForEach(condition => conditionsSet.Add(condition));
-                        tr.Conditions.ForEach(condition => conditionsSet.Add(condition));
-                        tr.Conditions.ForEach(condition => conditionsSet.Add(condition));
-                        tr.Conditions.ForEach(condition => conditionsSet.Add(condition));
-                        foreach (var condition in conditionsSet)
-                        {
-                            condition.Initialize(gameObject);
-                        }
-                    }
-                }
-            }
-            _currentStateModel = _idToStateMap[_stateMachineModel.InitialState];
-                
+            _stateMachineModel.Initialize(rootCharacter);
+            
+            SetStateById(_stateMachineModel.InitialState);
+            
+            Debug.Log($"StateMachineModel :\n{_stateMachineModel.ToDebugString(1)}");
+            
+            DebugPrint();
             //PrintStateMachine();
         }
 
@@ -63,153 +37,77 @@ namespace StateMachine
         {
             if (_currentStateModel != null)
             {
-                foreach (var action in _currentStateModel.OnStay)
+                _currentStateModel.DoStay(rootCharacter);
+                
+                var validTransitionModel = _currentStateModel.EvaluateTransitions(rootCharacter);
+                
+                if (validTransitionModel != null)
                 {
-                    action.Execute(gameObject);
-                }
-                TryTransitions();
-            }
-        }
-
-        // TODO: enviar pra dentro da classe StateModel
-        private bool TryTransitions()
-        {
-            if (_currentStateModel != null)
-            {
-                foreach (var transitionModel in _currentStateModel.Transitions)
-                {
-                    bool flag = true;
-                    foreach (var condition in transitionModel.Conditions)
-                    {
-                        if (!condition.Evaluate(gameObject))
-                        {
-                            flag = false;
-                        }
-                    }
-                    if (flag)
-                    {
-                        SetState(_idToStateMap[transitionModel.To]);
-                        return true;
-                    }
-                }
-                return false;
-            }
-            return false;
-        }
-
-        private void SetState(StateModel state)
-        {
-            if (_currentStateModel != null)
-            {
-                foreach (var action in _currentStateModel.OnLeave)
-                {
-                    action.Execute(gameObject);
-                }
-                _currentStateModel = state;
-                foreach (var action in _currentStateModel.BeforeEnter)
-                {
-                    action.Execute(gameObject);
-                }
-
-                bool hasChangedState = TryTransitions(); //TODO: (Verificar) = return do metodo "tentar transicao"
-                if (!hasChangedState)
-                {
-                    foreach (var action in _currentStateModel.OnEnter)
-                    {
-                        action.Execute(gameObject);
-                    }
+                    SetStateById(validTransitionModel.To);
                 }
             }
         }
 
-        private void PrintStateMachine()
-        {
-            print($"Initial: {_stateMachineModel.InitialState}\n");
-            foreach (var st in _stateMachineModel.States)
-            {
-                print($"STATE: {st.Id}");
+        
 
-                if ((IList<ActionBase>)st.OnEnter is null || ((IList<ActionBase>)st.OnEnter).Count == 0)
+        private void SetStateById(string id,List<StateModel> history = null)
+        {
+            if (_stateMachineModel != null)
+            {
+                var state = _stateMachineModel.GetStateFromId(id);
+                if (state != null)
                 {
+                    SetStateByModel(state,history);
                 }
                 else
                 {
-                    print("  OnEnter");
-                    foreach (var a in (IList<ActionBase>)st.OnEnter)
-                        switch (a)
-                        {
-                            case LogAction log:
-                                print($"    Log: {log.Message}");
-                                break;
-                            /*
-                    case PlayAnimationAction anim:
-                        print($"    PlayAnimation: {anim.Clip} loop={anim.Loop}");
-                        break;
-                    case WaitAction wait:
-                        print($"    Wait: {wait.Seconds}s");
-                        break;
-                    */
-                            default:
-                                print($"    {a.GetType().Name}");
-                                break;
-                        }
+                    Debug.LogError($"State with id '{id}' not found in the state machine.");
                 }
+            }
+            else
+            {
+                Debug.LogError("State machine model is not initialized.");
+            }
+        }
+        private void SetStateByModel(StateModel state,List<StateModel> history = null)
+        {
+            history ??= new List<StateModel>();
+            if (history.Contains(state))
+            {
+                Debug.LogError($"State '{state.Id}' is already in the history. Avoiding infinite loop. ({history})");
+                return;
+            }
+            history.Add(state);
+            
+            
+            _currentStateModel?.DoLeave(rootCharacter);
 
-                if ((IList<ActionBase>)st.OnStay is null || ((IList<ActionBase>)st.OnStay).Count == 0)
+            _currentStateModel = state;
+
+            if (_currentStateModel!=null)
+            {
+                _currentStateModel.DoBeforeEnter(rootCharacter);
+
+                var validTransitionModel = _currentStateModel.EvaluateTransitions(rootCharacter); 
+                
+                if (validTransitionModel != null)
                 {
+                    SetStateById(validTransitionModel.To,history);
                 }
                 else
                 {
-                    print("  OnStay");
-                    foreach (var a1 in (IList<ActionBase>)st.OnStay)
-                        switch (a1)
-                        {
-                            case LogAction log1:
-                                print($"    Log: {log1.Message}");
-                                break;
-                            /*
-                    case PlayAnimationAction anim:
-                        print($"    PlayAnimation: {anim.Clip} loop={anim.Loop}");
-                        break;
-                    case WaitAction wait:
-                        print($"    Wait: {wait.Seconds}s");
-                        break;
-                    */
-                            default:
-                                print($"    {a1.GetType().Name}");
-                                break;
-                        }
+                    _currentStateModel.DoEnter(rootCharacter);
                 }
-
-                if (st.Transitions != null)
-                    foreach (var tr in st.Transitions)
-                    {
-                        print($"  → {tr.To}");
-                        if ((IList<ConditionBase>)tr.Conditions is null || ((IList<ConditionBase>)tr.Conditions).Count == 0)
-                        {
-                        }
-                        else
-                        {
-                            print("    if");
-                            foreach (var c in (IList<ConditionBase>)tr.Conditions)
-                                switch (c)
-                                {
-                                    /*
-                    case MovingLeftCondition ml:
-                        print($"      MovingLeft expr={ml.Expression}");
-                        break;
-                    case CrouchCondition cr:
-                        print($"      Crouch pressed={cr.IsPressed}");
-                        break;
-                    */
-                                    default:
-                                        print($"      {c.GetType().Name}");
-                                        break;
-                                }
-                        }
-                    }
-                print("------------");
             }
+                
+            
+        }
+
+        private void DebugPrint()
+        {
+            Debug.Log("StateMachine{ /n" +
+                      (_currentStateModel != null ? $"Current State: {_currentStateModel.Id}" : "No current state") +
+                      "/n}");
         }
     }
 }

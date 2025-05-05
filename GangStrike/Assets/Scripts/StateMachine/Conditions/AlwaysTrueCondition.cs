@@ -9,7 +9,7 @@ namespace StateMachine.Conditions
     [XmlTag("AlwaysTrueCondition")]
     public sealed class AlwaysTrueCondition : ConditionBase
     {
-        public override void Initialize(GameObject owner) { }
-        public override bool Evaluate(GameObject owner) => true;
+        public override void Initialize(RootCharacter owner) { }
+        public override bool Evaluate(RootCharacter owner) => true;
     }
 }

@@ -7,7 +7,13 @@ namespace StateMachine.Actions
     /// </summary>
     public abstract class ActionBase
     {
-        public virtual void Initialize(GameObject owner) { }
-        public abstract void Execute(GameObject owner);
+        public virtual void Initialize(RootCharacter owner) { }
+        public abstract void Execute(RootCharacter owner);
+
+        public virtual string ToDebugString(int indentationLevel = 0)
+        {
+            var indentation = new string(' ', indentationLevel * 2);
+            return indentation + GetType().Name;
+        }
     }
 }

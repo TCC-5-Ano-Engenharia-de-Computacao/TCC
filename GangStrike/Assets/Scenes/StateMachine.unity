@@ -315,6 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067838620}
   - component: {fileID: 1067838621}
+  - component: {fileID: 1067838622}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -349,7 +350,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bca6f200e94647876f520cdd7d9888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootCharacter: {fileID: 1067838622}
   filePath: Assets/Scripts/Examples/state_machine.xml
+--- !u!114 &1067838622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067838618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8039ee9fa1c74db1ac47bad42d7012b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

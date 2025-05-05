@@ -8,6 +8,6 @@ namespace StateMachine.Actions
     public sealed class LogAction : ActionBase
     {
         [XmlAttribute("msg")] public string Message { get; set; }
-        public override void Execute(GameObject owner) => Debug.Log(Message);
+        public override void Execute(RootCharacter owner) => Debug.Log(Message);
     }
 }
