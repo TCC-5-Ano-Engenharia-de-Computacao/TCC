@@ -1,42 +1,29 @@
 using System.Text.RegularExpressions;
+using System.Xml.Serialization;
 using Input;
+using StateMachine.Attributes;
+using UnityEngine;
 
 namespace StateMachine.Conditions
 {
-    //todo: adicionar no xml
+    [XmlTag("AnalogHistoryRegexCondition")]
     public sealed class AnalogHistoryRegexCondition : ConditionBase
     {
-        //todo: fazer funcionar de um jeito melhor e ajeitar o analog history
-        public string regexstring { get; set; } = "111";
-        public bool clearHistoryOnSuccess { get; set; } = false;
-        
+        [XmlAttribute("regexString")] public string RegexString { get; set; }
         private AnalogHistory _analogHistory;
-        public void TransitionResult(bool sucess)
-        {
-            if (clearHistoryOnSuccess)
-            {
-                if (sucess)
-                {
-                    _analogHistory.analogHistoryStr.Remove(0,_analogHistory.analogHistoryStr.Length);
-                }
-            }
-            //todo : faz essa função ser chamada pela maquina de estado
-        }
+        
         public override void Initialize(PlayerRoot owner)
         {
-            _analogHistory = owner.GetComponent<AnalogHistory>();
+            if (RegexString == null)
+            {
+                Debug.LogError("Condicao regex com string nula: ");
+            }
+            _analogHistory = owner.inputRoot.analogHistory;
         }
         public override bool Evaluate(PlayerRoot owner)
         {
-            
-            var history = _analogHistory.analogHistoryStr;
-
-            var match = Regex.Match(history, regexstring);
-            if (match.Success)
-            {
-                return true;
-            }
-            return false;
+            var historyString = _analogHistory.analogHistoryStr;
+            return Regex.Match(historyString, RegexString).Success;
         }
     }
 }
