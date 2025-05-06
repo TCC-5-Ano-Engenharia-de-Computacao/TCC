@@ -10,8 +10,8 @@ namespace StateMachine.Conditions
     {
         [XmlAttribute("hitType")] public string HitType { get; set; } = "any";
         private PlayerHitbox _hitbox;
-        public override void Initialize(RootCharacter owner) => _hitbox = owner.GetComponent<PlayerHitbox>();
-        public override bool Evaluate(RootCharacter owner)
+        public override void Initialize(PlayerRoot owner) => _hitbox = owner.GetComponent<PlayerHitbox>();
+        public override bool Evaluate(PlayerRoot owner)
         {
             if (!_hitbox) return false;
             return _hitbox.TryConsumeHit(out string type) && (HitType == "any" || HitType == type);

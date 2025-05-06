@@ -11,7 +11,7 @@ namespace StateMachine.Actions
         [XmlAttribute("frames")] public int FrameCount { get; set; }
 
         private Sprite[] _frames;
-        public override void Initialize(RootCharacter owner)
+        public override void Initialize(PlayerRoot owner)
         {
             var texture = Resources.Load<Texture2D>(SpriteSheetPath);
             if (!texture)
@@ -28,7 +28,7 @@ namespace StateMachine.Actions
                 _frames[i] = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f), 100f);
             }
         }
-        public override void Execute(RootCharacter owner)
+        public override void Execute(PlayerRoot owner)
         {
             if (_frames == null || _frames.Length == 0) return;
             var sr = owner.GetComponent<SpriteRenderer>();

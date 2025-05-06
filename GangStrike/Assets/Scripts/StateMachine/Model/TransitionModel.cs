@@ -11,11 +11,11 @@ namespace StateMachine.Model
 
         [XmlArray("Conditions"), XmlArrayItem] public List<ConditionBase> Conditions { get; set; }
 
-        public void Initialize(RootCharacter rootCharacter)
+        public void Initialize(PlayerRoot playerRoot)
         {
             foreach (var condition in Conditions)
             {
-                condition.Initialize(rootCharacter);
+                condition.Initialize(playerRoot);
             }
         }
 

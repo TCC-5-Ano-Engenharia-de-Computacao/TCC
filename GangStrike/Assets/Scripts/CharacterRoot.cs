@@ -2,8 +2,7 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class RootCharacter : MonoBehaviour
+    public class CharacterRoot : MonoBehaviour
     {
-        
     }
 }

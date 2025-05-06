@@ -23,11 +23,11 @@ namespace StateMachine.Conditions
             }
             //todo : faz essa função ser chamada pela maquina de estado
         }
-        public override void Initialize(RootCharacter owner)
+        public override void Initialize(PlayerRoot owner)
         {
             _inputBuffer = owner.GetComponent<InputBuffer>();
         }
-        public override bool Evaluate(RootCharacter owner)
+        public override bool Evaluate(PlayerRoot owner)
         {
             if (isIstantanius)
             {

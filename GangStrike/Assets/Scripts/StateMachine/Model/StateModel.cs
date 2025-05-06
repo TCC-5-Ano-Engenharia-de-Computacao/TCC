@@ -16,35 +16,35 @@ namespace StateMachine.Model
 
         [XmlArray("Transitions"), XmlArrayItem("Transition")] public List<TransitionModel> Transitions { get; set; }
 
-        public void Initialize(RootCharacter rootCharacter)
+        public void Initialize(PlayerRoot playerRoot)
         {
             foreach (var action in BeforeEnter)
             {
-                action.Initialize(rootCharacter);
+                action.Initialize(playerRoot);
             }
 
             foreach (var action in OnEnter)
             {
-                action.Initialize(rootCharacter);
+                action.Initialize(playerRoot);
             }
 
             foreach (var action in OnStay)
             {
-                action.Initialize(rootCharacter);
+                action.Initialize(playerRoot);
             }
 
             foreach (var action in OnLeave)
             {
-                action.Initialize(rootCharacter);
+                action.Initialize(playerRoot);
             }
 
             foreach (var transition in Transitions)
             {
-                transition.Initialize(rootCharacter);
+                transition.Initialize(playerRoot);
             }
         }
 
-        public TransitionModel EvaluateTransitions(RootCharacter rootCharacter)
+        public TransitionModel EvaluateTransitions(PlayerRoot playerRoot)
         {
            
             foreach (var transitionModel in Transitions)
@@ -52,7 +52,7 @@ namespace StateMachine.Model
                 var flag = true;
                 foreach (var condition in transitionModel.Conditions)
                 {
-                    if (!condition.Evaluate(rootCharacter))
+                    if (!condition.Evaluate(playerRoot))
                     {
                         flag = false;
                     }
@@ -65,35 +65,35 @@ namespace StateMachine.Model
             return null;
         }   
      
-        public void DoBeforeEnter(RootCharacter rootCharacter)
+        public void DoBeforeEnter(PlayerRoot playerRoot)
         {
             foreach (var action in BeforeEnter)
             {
-                action.Execute(rootCharacter);
+                action.Execute(playerRoot);
             }
         }
 
-        public void DoEnter(RootCharacter rootCharacter)
+        public void DoEnter(PlayerRoot playerRoot)
         {
             foreach (var action in OnEnter)
             {
-                action.Execute(rootCharacter);
+                action.Execute(playerRoot);
             }
         }
         
-        public void DoLeave(RootCharacter rootCharacter)
+        public void DoLeave(PlayerRoot playerRoot)
         {
             foreach (var action in OnLeave)
             {
-                action.Execute(rootCharacter);
+                action.Execute(playerRoot);
             }
         }
 
-        public void DoStay(RootCharacter rootCharacter)
+        public void DoStay(PlayerRoot playerRoot)
         {
             foreach (var action in OnStay)
             {
-                action.Execute(rootCharacter);
+                action.Execute(playerRoot);
             }
         }
 

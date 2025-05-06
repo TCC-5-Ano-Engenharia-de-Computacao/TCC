@@ -9,8 +9,8 @@ namespace StateMachine.Conditions
     {
         private Animator _anim;
         [XmlAttribute("stateHash")] public int StateHash { get; set; }
-        public override void Initialize(RootCharacter owner) => _anim = owner.GetComponent<Animator>();
-        public override bool Evaluate(RootCharacter owner)
+        public override void Initialize(PlayerRoot owner) => _anim = owner.GetComponent<Animator>();
+        public override bool Evaluate(PlayerRoot owner)
         {
             if (!_anim) return false;
             var info = _anim.GetCurrentAnimatorStateInfo(0);

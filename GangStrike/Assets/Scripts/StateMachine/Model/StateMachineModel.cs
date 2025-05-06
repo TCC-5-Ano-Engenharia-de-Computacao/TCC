@@ -38,13 +38,13 @@ namespace StateMachine.Model
             return _stateLookup.GetValueOrDefault(id);
         }
 
-        public void Initialize(RootCharacter rootCharacter)
+        public void Initialize(PlayerRoot playerRoot)
         {
             _stateLookup = States.ToDictionary(state => state.Id, state => state);
 
             foreach (var stateModel in States)
             {
-                stateModel.Initialize(rootCharacter);
+                stateModel.Initialize(playerRoot);
             }
         }
 

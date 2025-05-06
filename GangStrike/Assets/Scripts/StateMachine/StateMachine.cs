@@ -7,6 +7,7 @@ using StateMachine.Conditions;
 using StateMachine.Model;
 using StateMachine.Serialization;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace StateMachine
 {
@@ -14,7 +15,7 @@ namespace StateMachine
     {
         private StateMachineModel _stateMachineModel;
         private StateModel _currentStateModel;
-        [SerializeField] private RootCharacter rootCharacter;
+        [SerializeField] private PlayerRoot playerRoot;
         
         [SerializeField] private string filePath = "Assets/Scripts/Examples/state_machine.xml";
 
@@ -23,7 +24,7 @@ namespace StateMachine
             var serializer = StateMachineSerializerFactory.Get();
             using var fs = File.OpenRead(filePath);
             _stateMachineModel = (StateMachineModel)serializer.Deserialize(fs);
-            _stateMachineModel.Initialize(rootCharacter);
+            _stateMachineModel.Initialize(playerRoot);
             
             SetStateById(_stateMachineModel.InitialState);
             
@@ -37,9 +38,9 @@ namespace StateMachine
         {
             if (_currentStateModel != null)
             {
-                _currentStateModel.DoStay(rootCharacter);
+                _currentStateModel.DoStay(playerRoot);
                 
-                var validTransitionModel = _currentStateModel.EvaluateTransitions(rootCharacter);
+                var validTransitionModel = _currentStateModel.EvaluateTransitions(playerRoot);
                 
                 if (validTransitionModel != null)
                 {
@@ -80,15 +81,15 @@ namespace StateMachine
             history.Add(state);
             
             
-            _currentStateModel?.DoLeave(rootCharacter);
+            _currentStateModel?.DoLeave(playerRoot);
 
             _currentStateModel = state;
 
             if (_currentStateModel!=null)
             {
-                _currentStateModel.DoBeforeEnter(rootCharacter);
+                _currentStateModel.DoBeforeEnter(playerRoot);
 
-                var validTransitionModel = _currentStateModel.EvaluateTransitions(rootCharacter); 
+                var validTransitionModel = _currentStateModel.EvaluateTransitions(playerRoot); 
                 
                 if (validTransitionModel != null)
                 {
@@ -96,7 +97,7 @@ namespace StateMachine
                 }
                 else
                 {
-                    _currentStateModel.DoEnter(rootCharacter);
+                    _currentStateModel.DoEnter(playerRoot);
                 }
             }
                 
@@ -105,9 +106,9 @@ namespace StateMachine
 
         private void DebugPrint()
         {
-            Debug.Log("StateMachine{ /n" +
+            Debug.Log("StateMachine{ \n" +
                       (_currentStateModel != null ? $"Current State: {_currentStateModel.Id}" : "No current state") +
-                      "/n}");
+                      "\n}");
         }
     }
 }

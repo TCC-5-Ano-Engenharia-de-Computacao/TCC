@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Input;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
@@ -10,7 +11,7 @@ using UnityEngine.Serialization;
 
 public class InputBuffer : MonoBehaviour
 {
-    private InputPerformedEventController _inputPerformedEventController;
+    private InputController _inputController;
     
     private readonly Dictionary <string, bool> _instantaneousInput = new Dictionary<string, bool>();
     private readonly Dictionary <string, float> _inputQueue = new Dictionary<string, float>();
@@ -19,22 +20,22 @@ public class InputBuffer : MonoBehaviour
 
     private void Awake()
     {
-        _inputPerformedEventController = FindFirstObjectByType<InputPerformedEventController>();
+        _inputController = FindFirstObjectByType<InputController>();
     }
 
     private void OnEnable()
     {
-        if(_inputPerformedEventController == null)
+        if(_inputController == null)
         {
             Debug.LogError("InputTest not found in the scene. Please add an InputTest component to a GameObject.",this);
             return;
         }
-        _inputPerformedEventController.inputPerformedEvent.AddListener(OnInputPerformedRegisterInstantInput);
+        _inputController.inputPerformedEvent.AddListener(OnInputPerformedRegisterInstantInput);
     }
 
     private void OnDisable()
     {
-        _inputPerformedEventController.inputPerformedEvent.RemoveListener(OnInputPerformedRegisterInstantInput);
+        _inputController.inputPerformedEvent.RemoveListener(OnInputPerformedRegisterInstantInput);
     }
 
     /*private void LateUpdate()

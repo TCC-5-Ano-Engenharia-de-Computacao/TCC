@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using Input;
 
 namespace StateMachine.Conditions
 {
@@ -21,11 +22,11 @@ namespace StateMachine.Conditions
             }
             //todo : faz essa função ser chamada pela maquina de estado
         }
-        public override void Initialize(RootCharacter owner)
+        public override void Initialize(PlayerRoot owner)
         {
             _analogHistory = owner.GetComponent<AnalogHistory>();
         }
-        public override bool Evaluate(RootCharacter owner)
+        public override bool Evaluate(PlayerRoot owner)
         {
             
             var history = _analogHistory.analogHistoryStr;

@@ -7,8 +7,8 @@ namespace StateMachine.Actions
     /// </summary>
     public abstract class ActionBase
     {
-        public virtual void Initialize(RootCharacter owner) { }
-        public abstract void Execute(RootCharacter owner);
+        public virtual void Initialize(PlayerRoot owner) { }
+        public abstract void Execute(PlayerRoot owner);
 
         public virtual string ToDebugString(int indentationLevel = 0)
         {
