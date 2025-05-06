@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StateMachine initialState="idle">
+
+    <States>
+
+        <!-- IDLE  -->
+        <State id="idle">
+
+            <!-- ao entrar: põe animação, ajusta gravidade normal -->
+            <OnEnter>
+<!--                <SetAnimationAction path="Sprites/PlayerIdle" frames="8"/>-->
+<!--                <SetPlayerGravityAction scale="1"/>-->
+                <LogAction msg="Entering idle"/>
+            </OnEnter>
+
+            <!-- enquanto permanecer: movimento lateral contínuo -->
+            <OnStay>
+                <LogAction msg="Idle stay"/>
+<!--                <MovePlayerAction speed="5" direction="right"/>-->
+            </OnStay>
+
+            <!-- ao sair: só loga -->
+            <OnLeave>
+                <LogAction msg="Leaving idle"/>
+            </OnLeave>
+
+            <!-- transita para “jump” assim que começar a cair -->
+            <Transitions>
+                <Transition to="jump">
+                    <Conditions>
+                        <AlwaysTrueCondition/>
+                    </Conditions>
+                </Transition>
+            </Transitions>
+        </State>
+
+        <!-- JUMP -->
+        <State id="jump">
+
+            <BeforeEnter>
+                <LogAction msg="BeforeEntering jump"/>
+            </BeforeEnter>
+            
+            <!-- ao entrar: toca animação de pulo, aplica impulso e som -->
+            <OnEnter>
+<!--                <SetAnimationAction path="Sprites/PlayerJump" frames="4"/>-->
+<!--                <JumpPlayerAction force="8"/>-->
+<!--                <MakeSoundAction path="Sounds/jump" volume="0.8"/>-->
+                <LogAction msg="Entering jump"/>
+            </OnEnter>
+
+            <!-- opcional: logs enquanto estiver no ar -->
+            <OnStay>
+                <LogAction msg="In air"/>
+            </OnStay>
+
+            <!-- volta para idle quando tocar o chão -->
+            <Transitions>
+                <Transition to="idle">
+                    <Conditions>
+                        <AlwaysFalseCondition/>
+                    </Conditions>
+                </Transition>
+            </Transitions>
+        </State>
+
+    </States>
+</StateMachine>
