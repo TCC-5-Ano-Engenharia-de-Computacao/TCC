@@ -28,7 +28,12 @@
             <Transitions>
                 <Transition to="jump">
                     <Conditions>
-                        <AlwaysTrueCondition/>
+                        <AnalogHistoryRegexCondition regexString="8$"/> <!--REGEX EXEMPLO: "^(.*[^8])?8{3,7}$"-->
+                    </Conditions>
+                </Transition>
+                <Transition to="moveRight">
+                    <Conditions>
+                        <AnalogHistoryRegexCondition regexString="6$"/>
                     </Conditions>
                 </Transition>
             </Transitions>
@@ -39,6 +44,7 @@
 
             <BeforeEnter>
                 <LogAction msg="BeforeEntering jump"/>
+                <ClearAnalogHistoryAction/>
             </BeforeEnter>
             
             <!-- ao entrar: toca animação de pulo, aplica impulso e som -->
@@ -59,6 +65,41 @@
                 <Transition to="idle">
                     <Conditions>
                         <AlwaysFalseCondition/>
+                    </Conditions>
+                </Transition>
+                <Transition to="moveRight">
+                    <Conditions>
+                        <AnalogHistoryRegexCondition regexString="6$"/>
+                    </Conditions>
+                </Transition>
+            </Transitions>
+            
+        </State>
+        
+        <!-- MoveRight -->
+        <State id="moveRight">
+            <BeforeEnter>
+                <LogAction msg="BeforeEntering moveRight"/>
+                <ClearAnalogHistoryAction/>
+            </BeforeEnter>
+            
+            <OnEnter>
+                <LogAction msg="Entering moveRight"/>
+            </OnEnter>
+            
+            <OnStay>
+                <LogAction msg="Moving right"/>
+            </OnStay>
+            
+            <Transitions>
+                <Transition to="idle">
+                    <Conditions>
+                        <AnalogHistoryRegexCondition regexString="5$"/>
+                    </Conditions>
+                </Transition>
+                <Transition to="jump">
+                    <Conditions>
+                        <AnalogHistoryRegexCondition regexString="8$"/> <!--REGEX EXEMPLO: "^(.*[^8])?8{3,7}$"-->
                     </Conditions>
                 </Transition>
             </Transitions>
