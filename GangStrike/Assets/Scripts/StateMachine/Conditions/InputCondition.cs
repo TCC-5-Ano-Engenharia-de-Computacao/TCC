@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace StateMachine.Conditions
 {
     //todo: adicionar no xml
@@ -23,7 +25,7 @@ namespace StateMachine.Conditions
             }
             //todo : faz essa função ser chamada pela maquina de estado
         }
-        public override void Initialize(PlayerRoot owner)
+        public override async Task Initialize(PlayerRoot owner)
         {
             _inputBuffer = owner.GetComponent<InputBuffer>();
         }

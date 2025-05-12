@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using StateMachine.Attributes;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace StateMachine.Actions
         [XmlAttribute("frames")] public int FrameCount { get; set; }
 
         private Sprite[] _frames;
-        public override void Initialize(PlayerRoot owner)
+        public override async Task Initialize(PlayerRoot owner)
         {
             var texture = Resources.Load<Texture2D>(SpriteSheetPath);
             if (!texture)

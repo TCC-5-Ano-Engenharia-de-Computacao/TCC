@@ -16,6 +16,7 @@ STATE‑MACHINE (Unity‑friendly)
 // ------------------------------------------------------------------------------------------------
 
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace StateMachine.Model
@@ -38,14 +39,17 @@ namespace StateMachine.Model
             return _stateLookup.GetValueOrDefault(id);
         }
 
-        public void Initialize(PlayerRoot playerRoot)
+        public async Task Initialize(PlayerRoot playerRoot)
         {
             _stateLookup = States.ToDictionary(state => state.Id, state => state);
-
+            
+            var tasks = new List<Task>();
+            
             foreach (var stateModel in States)
             {
-                stateModel.Initialize(playerRoot);
+                tasks.Add(stateModel.Initialize(playerRoot));
             }
+            await Task.WhenAll(tasks);
         }
 
         public string ToDebugString(int indentationLevel = 0)

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Examples;
 using StateMachine.Attributes;
@@ -10,7 +11,7 @@ namespace StateMachine.Conditions
     {
         [XmlAttribute("hitType")] public string HitType { get; set; } = "any";
         private PlayerHitbox _hitbox;
-        public override void Initialize(PlayerRoot owner) => _hitbox = owner.GetComponent<PlayerHitbox>();
+        public override async Task Initialize(PlayerRoot owner) => _hitbox = owner.GetComponent<PlayerHitbox>();
         public override bool Evaluate(PlayerRoot owner)
         {
             if (!_hitbox) return false;
