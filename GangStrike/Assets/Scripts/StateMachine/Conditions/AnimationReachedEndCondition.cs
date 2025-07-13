@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using StateMachine.Attributes;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace StateMachine.Conditions
     {
         private Animator _anim;
         [XmlAttribute("stateHash")] public int StateHash { get; set; }
-        public override void Initialize(PlayerRoot owner) => _anim = owner.GetComponent<Animator>();
+        public override async Task Initialize(PlayerRoot owner) => _anim = owner.GetComponent<Animator>();
         public override bool Evaluate(PlayerRoot owner)
         {
             if (!_anim) return false;

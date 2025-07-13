@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using StateMachine.Actions;
 using UnityEngine;
@@ -16,32 +18,22 @@ namespace StateMachine.Model
 
         [XmlArray("Transitions"), XmlArrayItem("Transition")] public List<TransitionModel> Transitions { get; set; }
 
-        public void Initialize(PlayerRoot playerRoot)
+        public async Task Initialize(PlayerRoot playerRoot)
         {
+            var tasks = new List<Task>();
+
             foreach (var action in BeforeEnter)
-            {
-                action.Initialize(playerRoot);
-            }
-
+                tasks.Add(action.Initialize(playerRoot));
             foreach (var action in OnEnter)
-            {
-                action.Initialize(playerRoot);
-            }
-
+                tasks.Add(action.Initialize(playerRoot));
             foreach (var action in OnStay)
-            {
-                action.Initialize(playerRoot);
-            }
-
+                tasks.Add(action.Initialize(playerRoot));
             foreach (var action in OnLeave)
-            {
-                action.Initialize(playerRoot);
-            }
-
+                tasks.Add(action.Initialize(playerRoot));
             foreach (var transition in Transitions)
-            {
-                transition.Initialize(playerRoot);
-            }
+                tasks.Add(transition.Initialize(playerRoot));
+
+            await Task.WhenAll(tasks);
         }
 
         public TransitionModel EvaluateTransitions(PlayerRoot playerRoot)

@@ -1,4 +1,4 @@
-using UnityEngine;
+using System.Threading.Tasks;
 
 namespace StateMachine.Actions
 {
@@ -7,7 +7,7 @@ namespace StateMachine.Actions
     /// </summary>
     public abstract class ActionBase
     {
-        public virtual void Initialize(PlayerRoot owner) { }
+        public virtual async Task Initialize(PlayerRoot owner) { }
         public abstract void Execute(PlayerRoot owner);
 
         public virtual string ToDebugString(int indentationLevel = 0)
