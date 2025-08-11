@@ -15,13 +15,68 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: a8eaaa018cefe764696f03b3badbeb78
   m_SerializeEntries:
+  - m_GUID: 0e2157afacc05c448b1efc6841f67ba8
+    m_Address: Animations/Jump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 602ceda4d4aae024aaab86d60f4f6631
     m_Address: SFX/AudioExample2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6658be852c261fb44ac9f60a67664a08
+    m_Address: Animations/Apex
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a7f966f7716e8542889fff0fff4384b
+    m_Address: Animations/Rise
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91235b036a1f6664a8adf3c2f248bc1d
+    m_Address: Animations/Falling
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a178cd9aee9f2574baa110fd72c379d6
+    m_Address: Animations/WeakPunch
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a18fd365b0367db42b4d0cd267ebc4d1
     m_Address: SFX/AudioExample1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b398a4f0c18c8984a97698a38a675ab5
+    m_Address: Animations/Landing
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b612a9aae346dd5499d6d744591a4ccc
+    m_Address: Animations/Idle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cee7a82c6a60d1c4dac09b3e2a2bacf5
+    m_Address: Animations/WalkingFoward
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db5de1407fd65cb4ca51866cd89b201e
+    m_Address: Animations/Knockback
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2a5212516304d54da272d617351af8a
+    m_Address: Animations/WalkingBackwards
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcef6e9c46b1e7343b1af5e0b60b781e
+    m_Address: Animations/StrongPunch
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
