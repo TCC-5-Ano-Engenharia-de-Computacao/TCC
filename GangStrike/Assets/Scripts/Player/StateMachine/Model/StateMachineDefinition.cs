@@ -25,7 +25,7 @@ namespace StateMachine.Model
     using System.Xml.Serialization;
 
     [XmlRoot("StateMachine")]
-    public class StateMachineModel
+    public class StateMachineDefinition
     {
         [XmlAttribute("initialState")] public string InitialState { get; set; }
 

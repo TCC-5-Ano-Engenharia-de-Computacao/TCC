@@ -1,0 +1,13 @@
+<StateMachine initialState="Falling">
+    <State id="Idle">
+        <OnEnter>
+            <SetCurrentStateByAddressAction address="Animations/Idle"/>
+        </OnEnter>
+    </State>
+
+    <State id="Falling">
+        <OnEnter>
+            <SetCurrentStateByAddressAction address="Animations/Falling"/>
+        </OnEnter>
+    </State>
+</StateMachine>

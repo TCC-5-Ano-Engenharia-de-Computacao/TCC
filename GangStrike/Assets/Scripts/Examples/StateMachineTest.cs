@@ -5,7 +5,8 @@ using StateMachine.Actions;
 using StateMachine.Conditions;
 using StateMachine.Serialization;
 using UnityEngine;
-
+using LogAction = Player.NewStateMachine.Actions.LogAction;
+/*
 namespace Examples
 {
     class StateMachineTest:MonoBehaviour
@@ -24,9 +25,9 @@ namespace Examples
         void PrintStateMachine()
         {
             const string file = "Assets/Scripts/Examples/state_machine.xml";
-            var serializer = StateMachineSerializerFactory.Get();
+            var serializer = StateMachineSerializerSingleton.Get();
             using var fs = File.OpenRead(file);
-            var _stateMachineModel = (StateMachine.Model.StateMachineModel)serializer.Deserialize(fs);
+            var _stateMachineModel = (StateMachine.Model.StateMachineDefinition)serializer.Deserialize(fs);
 
             print($"Initial: {_stateMachineModel.InitialState}\n");
             foreach (var st in _stateMachineModel.States)
@@ -56,14 +57,14 @@ namespace Examples
                     case LogAction log:
                         print($"    Log: {log.Message}");
                         break;
-                    /*
+                    ///
                     case PlayAnimationAction anim:
                         print($"    PlayAnimation: {anim.Clip} loop={anim.Loop}");
                         break;
                     case WaitAction wait:
                         print($"    Wait: {wait.Seconds}s");
                         break;
-                    */
+                    ///
                     default:
                         print($"    {a.GetType().Name}");
                         break;
@@ -77,14 +78,14 @@ namespace Examples
             foreach (var c in list)
                 switch (c)
                 {
-                    /*
+                    ///
                     case MovingLeftCondition ml:
                         print($"      MovingLeft expr={ml.Expression}");
                         break;
                     case CrouchCondition cr:
                         print($"      Crouch pressed={cr.IsPressed}");
                         break;
-                    */
+                    ///
                     default:
                         print($"      {c.GetType().Name}");
                         break;
@@ -92,3 +93,4 @@ namespace Examples
         }
     }
 }
+*/
