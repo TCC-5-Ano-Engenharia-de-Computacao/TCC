@@ -19,18 +19,18 @@ namespace StateMachine
         
         [SerializeField] private string filePath = "Assets/Scripts/Examples/state_machine.xml";
 
-        private void Start()
+        private async void Start()
         {
             var serializer = StateMachineSerializerFactory.Get();
-            using var fs = File.OpenRead(filePath);
+            await using var fs = File.OpenRead(filePath);
             _stateMachineModel = (StateMachineModel)serializer.Deserialize(fs);
-            _stateMachineModel.Initialize(playerRoot);
-            
-            SetStateById(_stateMachineModel.InitialState);
-            
             Debug.Log($"StateMachineModel :\n{_stateMachineModel.ToDebugString(1)}");
             
             DebugPrint();
+            await _stateMachineModel.Initialize(playerRoot);
+            SetStateById(_stateMachineModel.InitialState);
+            
+            
             //PrintStateMachine();
         }
 

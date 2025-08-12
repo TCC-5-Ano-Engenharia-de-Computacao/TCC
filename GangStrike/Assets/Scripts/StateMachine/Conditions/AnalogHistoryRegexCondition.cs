@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Input;
 using StateMachine.Attributes;
@@ -12,7 +13,7 @@ namespace StateMachine.Conditions
         [XmlAttribute("regexString")] public string RegexString { get; set; }
         private AnalogHistory _analogHistory;
         
-        public override void Initialize(PlayerRoot owner)
+        public override async Task Initialize(PlayerRoot owner)
         {
             if (RegexString == null)
             {

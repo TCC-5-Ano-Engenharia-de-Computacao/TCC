@@ -16,7 +16,7 @@
             <!-- enquanto permanecer: movimento lateral contínuo -->
             <OnStay>
                 <LogAction msg="Idle stay"/>
-<!--                <MovePlayerAction speed="5" direction="right"/>-->
+                <!--                <MovePlayerAction speed="5" direction="right"/>-->
             </OnStay>
 
             <!-- ao sair: só loga -->
@@ -53,6 +53,7 @@
 <!--                <JumpPlayerAction force="8"/>-->
 <!--                <MakeSoundAction path="Sounds/jump" volume="0.8"/>-->
                 <LogAction msg="Entering jump"/>
+                <PlaySoundAction address="SFX/AudioExample1"/>
             </OnEnter>
 
             <!-- opcional: logs enquanto estiver no ar -->
@@ -85,6 +86,7 @@
             
             <OnEnter>
                 <LogAction msg="Entering moveRight"/>
+                <PlaySoundAction address="SFX/AudioExample2" volume="0.06"/>
             </OnEnter>
             
             <OnStay>

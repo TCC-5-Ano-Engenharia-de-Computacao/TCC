@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using StateMachine.Attributes;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace StateMachine.Conditions
     [XmlTag("AlwaysTrueCondition")]
     public sealed class AlwaysTrueCondition : ConditionBase
     {
-        public override void Initialize(PlayerRoot owner) { }
+        public override async Task Initialize(PlayerRoot owner) { }
         public override bool Evaluate(PlayerRoot owner) => true;
     }
 }
