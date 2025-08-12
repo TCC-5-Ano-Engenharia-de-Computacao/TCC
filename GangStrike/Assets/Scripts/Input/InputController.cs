@@ -37,7 +37,7 @@ namespace Input
         private void HandlePunchPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log("[C] - Punch");
-            inputPerformedEvent.Invoke("Punch");
+            inputPerformedEvent.Invoke("attack");
         }
     
         private void HandlePunchCanceled(InputAction.CallbackContext ctx)
@@ -48,7 +48,7 @@ namespace Input
         private void HandleKickPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log("[V] - Kick");
-            inputPerformedEvent.Invoke("Kick");
+            inputPerformedEvent.Invoke("kick");
         }
     
         private void HandleKickCanceled(InputAction.CallbackContext ctx)
