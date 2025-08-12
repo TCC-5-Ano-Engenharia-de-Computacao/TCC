@@ -1,13 +1,37 @@
 <StateMachine initialState="Falling">
     <State id="Idle">
         <OnEnter>
-            <SetCurrentStateByAddressAction address="Animations/Idle"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/Idle"/>
+            <JumpPlayerAction force="50"/>
         </OnEnter>
+
+        <OnStay>
+            <!-- Idle: sem movimento -->
+            <!-- <MovePlayerAction speed="1" direction="right"/> -->
+        </OnStay>
+
+        <Transitions>
+            <Transition to="Falling">
+                <Conditions>
+                    <PlayerIsFallingCondition/>
+                    <PlayerIsNotGroundedCondition/>
+                </Conditions>
+            </Transition>
+        </Transitions>
     </State>
 
     <State id="Falling">
         <OnEnter>
-            <SetCurrentStateByAddressAction address="Animations/Falling"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/Falling"/>
         </OnEnter>
+
+        <Transitions>
+            <Transition to="Idle">
+                <Conditions>
+                    <PlayerIsGroundedCondition/>
+                    <PlayerIsNotFallingCondition/>
+                </Conditions>
+            </Transition>
+        </Transitions>
     </State>
 </StateMachine>
