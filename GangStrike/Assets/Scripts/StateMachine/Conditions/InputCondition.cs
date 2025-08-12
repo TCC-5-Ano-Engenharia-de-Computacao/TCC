@@ -1,47 +1,53 @@
+using System.Text.RegularExpressions;
+using System.Xml.Serialization;
+using Input;
+using StateMachine.Attributes;
+using UnityEditor.VersionControl;
+using UnityEngine;
+
 namespace StateMachine.Conditions
 {
-    //todo: adicionar no xml
+    [XmlTag("InputCondition")]
 
     public sealed class InputCondition : ConditionBase
     {        //todo: fazer funcionar de um jeito melhor e ajeitar o InputBuffer
-
-        public string InputName { get; set; } = "Jump";
-        public bool isIstantanius { get; set; } = false;
-        public bool removeInputOnEndOFFrame { get; set; } = false;
-        public bool removeInstantaniusOnTransitionSuccess { get; set; } = false;
-        
+        [XmlAttribute("inputName")] public string inputName { get; set; } = "Jump";
+        [XmlAttribute("isInstantaneous")] public string isInstantaneous { get; set; } = "false";
+        [XmlAttribute("removeInputOnEndOfFrame")] public string removeInputOnEndOfFrame { get; set; } = "false";
+       
         private InputBuffer _inputBuffer;
-
-        public void TransitionResult(bool sucess)
-        {
-            if (removeInstantaniusOnTransitionSuccess)
-            {
-                if (sucess)
-                {
-                    _inputBuffer.ConsumeInput(InputName);
-                }
-            }
-            //todo : faz essa função ser chamada pela maquina de estado
-        }
+        
         public override void Initialize(PlayerRoot owner)
         {
-            _inputBuffer = owner.GetComponent<InputBuffer>();
+            _inputBuffer = owner.inputRoot.inputBuffer;
         }
         public override bool Evaluate(PlayerRoot owner)
         {
-            if (isIstantanius)
+            var inQueue = _inputBuffer.IsInputInQueue(inputName);
+            var inInstantaneous = _inputBuffer.IsInputInstantaneous(inputName);
+            if(isInstantaneous == "true")
             {
-                
+                if (inInstantaneous)
+                {
+                    if (removeInputOnEndOfFrame == "true")
+                    {
+                        _inputBuffer.ConsumeInput(inputName);
+                    }
+                    return true;
+                }
             }
             else
             {
-                var inQueue = _inputBuffer.IsInputInQueue(InputName);
-                var inInstantaneous = _inputBuffer.IsInputInstantaneous(InputName);
-                
-                
-                return inQueue || inInstantaneous;
+                // if inQueue OR inInstantaneous
+                if (inQueue || inInstantaneous)
+                {
+                    if (removeInputOnEndOfFrame == "true")
+                    {
+                        _inputBuffer.ConsumeInput(inputName);
+                    }
+                    return true;
+                }
             }
-
             return false;
         }
     }
