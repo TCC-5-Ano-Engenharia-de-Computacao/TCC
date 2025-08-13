@@ -10,6 +10,9 @@ namespace StateMachine
         public  CharacterRoot characterRoot;
         public StateMachineMono stateMachine;
         public InputRoot inputRoot;
+        public PlayerSimpleTimer PlayerSimpleTimer;
+        //TEMPORARY, FOR TESTING
+        public StateTimerDebugText stateTimerDebugText;
 
         public async Task Initialize()
         {

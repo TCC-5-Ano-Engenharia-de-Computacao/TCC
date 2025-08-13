@@ -5,6 +5,7 @@ using Input;
 using StateMachine.Attributes;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using Task = System.Threading.Tasks.Task;
 
 namespace StateMachine.Conditions
 {
@@ -18,9 +19,10 @@ namespace StateMachine.Conditions
        
         private InputBuffer _inputBuffer;
         
-        public override void Initialize(PlayerRoot owner)
+        public override Task Initialize(PlayerRoot owner)
         {
             _inputBuffer = owner.inputRoot.inputBuffer;
+            return Task.CompletedTask;
         }
         public override bool Evaluate(PlayerRoot owner)
         {

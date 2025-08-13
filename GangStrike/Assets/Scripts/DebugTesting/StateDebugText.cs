@@ -1,3 +1,4 @@
+/*
 using StateMachine;
 using TMPro;
 using UnityEngine;
@@ -34,3 +35,4 @@ public class StateDebugText : MonoBehaviour
         }
     }
 }
+*/
