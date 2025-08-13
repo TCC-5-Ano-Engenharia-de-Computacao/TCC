@@ -1,0 +1,628 @@
+fileFormatVersion: 2
+guid: 3985d760b62d4294e8ea52c3f6745e74
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 160142986749306920
+    second: CAINDO_0
+  - first:
+      213: -3832735923453356130
+    second: CAINDO_1
+  - first:
+      213: -946752967492734019
+    second: CAINDO_2
+  - first:
+      213: -4985327990966912645
+    second: CAINDO_3
+  - first:
+      213: 7649342397824530168
+    second: CAINDO_4
+  - first:
+      213: 948148458640201758
+    second: CAINDO_5
+  - first:
+      213: -779396857102611271
+    second: CAINDO_6
+  - first:
+      213: -2354011248433118213
+    second: CAINDO_7
+  - first:
+      213: 7925240414349897957
+    second: CAINDO_8
+  - first:
+      213: 8705346849203651372
+    second: CAINDO_9
+  - first:
+      213: 1618824849236735880
+    second: CAINDO_10
+  - first:
+      213: -1677264142971044851
+    second: CAINDO_11
+  - first:
+      213: -5222343458521356724
+    second: CAINDO_12
+  - first:
+      213: 1141707224452205663
+    second: CAINDO_13
+  - first:
+      213: 7745913873192121568
+    second: CAINDO_14
+  - first:
+      213: -2891695435451968327
+    second: CAINDO_15
+  - first:
+      213: 9023640933061673341
+    second: CAINDO_16
+  - first:
+      213: 7670887925116611440
+    second: CAINDO_17
+  - first:
+      213: -4377027662688214790
+    second: CAINDO_18
+  - first:
+      213: -1849450726525148270
+    second: CAINDO_19
+  - first:
+      213: 4349199217890706302
+    second: CAINDO_20
+  - first:
+      213: -5794790636820307629
+    second: CAINDO_21
+  - first:
+      213: 6739409632586070719
+    second: CAINDO_22
+  - first:
+      213: -7773837132301044113
+    second: CAINDO_23
+  - first:
+      213: 8806883772844481727
+    second: CAINDO_24
+  - first:
+      213: 2152136495583535225
+    second: CAINDO_25
+  - first:
+      213: -6789375782057033677
+    second: CAINDO_26
+  - first:
+      213: -1869227066678884586
+    second: CAINDO_27
+  - first:
+      213: 962130077199637061
+    second: CAINDO_28
+  - first:
+      213: -6106297036960036092
+    second: CAINDO_29
+  - first:
+      213: 4098263447660149936
+    second: CAINDO_30
+  - first:
+      213: 4038450192553940462
+    second: CAINDO_31
+  - first:
+      213: 5798226004107681474
+    second: CAINDO_32
+  - first:
+      213: 2119640684817297093
+    second: CAINDO_33
+  - first:
+      213: 3014053203486611618
+    second: CAINDO_34
+  - first:
+      213: 4867547349326633944
+    second: CAINDO_35
+  - first:
+      213: 4854955120574585333
+    second: CAINDO_36
+  - first:
+      213: 6263032007907144868
+    second: CAINDO_37
+  - first:
+      213: -7627808745088225887
+    second: CAINDO_38
+  - first:
+      213: 5733532472721257722
+    second: CAINDO_39
+  - first:
+      213: 3463877998811541085
+    second: CAINDO_40
+  - first:
+      213: 5601263175001160445
+    second: CAINDO_41
+  - first:
+      213: -5468613269632502474
+    second: CAINDO_42
+  - first:
+      213: 9170058728239236900
+    second: CAINDO_43
+  - first:
+      213: 7923088547584244465
+    second: CAINDO_44
+  - first:
+      213: 1468226741026968760
+    second: CAINDO_45
+  - first:
+      213: -7448630696986689246
+    second: CAINDO_46
+  - first:
+      213: -7142591955435409515
+    second: CAINDO_47
+  - first:
+      213: -7874037285914059983
+    second: CAINDO_48
+  - first:
+      213: -4670326453183835920
+    second: CAINDO_49
+  - first:
+      213: 5074931475545196076
+    second: CAINDO_50
+  - first:
+      213: -5009730030098656553
+    second: CAINDO_51
+  - first:
+      213: -2600514784343228164
+    second: CAINDO_52
+  - first:
+      213: 6308530185323145620
+    second: CAINDO_53
+  - first:
+      213: 6103148150786263457
+    second: CAINDO_54
+  - first:
+      213: 759353243636681093
+    second: CAINDO_55
+  - first:
+      213: 7025284945230609452
+    second: CAINDO_56
+  - first:
+      213: 6391821393895752673
+    second: CAINDO_57
+  - first:
+      213: 8185762241134049216
+    second: CAINDO_58
+  - first:
+      213: -7348916287763506262
+    second: CAINDO_59
+  - first:
+      213: 5284725403553828296
+    second: CAINDO_60
+  - first:
+      213: 2367564529067847606
+    second: CAINDO_61
+  - first:
+      213: 929660721313446598
+    second: CAINDO_62
+  - first:
+      213: 6642603900200613578
+    second: CAINDO_63
+  - first:
+      213: -3574979131701807375
+    second: CAINDO_64
+  - first:
+      213: 7688243764693658536
+    second: CAINDO_65
+  - first:
+      213: -7953511551641428945
+    second: CAINDO_66
+  - first:
+      213: 4199095985240624890
+    second: CAINDO_67
+  - first:
+      213: -8741035074700758752
+    second: CAINDO_68
+  - first:
+      213: 1994935895826315873
+    second: CAINDO_69
+  - first:
+      213: -2251583455081645849
+    second: CAINDO_70
+  - first:
+      213: -7416986906823474265
+    second: CAINDO_71
+  - first:
+      213: -1706521677556477
+    second: CAINDO_72
+  - first:
+      213: 1159600314891903307
+    second: CAINDO_73
+  - first:
+      213: -8232622755405477668
+    second: CAINDO_74
+  - first:
+      213: -6835208115972085209
+    second: CAINDO_75
+  - first:
+      213: -9011828469464451697
+    second: CAINDO_76
+  - first:
+      213: 6987043045007400188
+    second: CAINDO_77
+  - first:
+      213: -6434211993473690531
+    second: CAINDO_78
+  - first:
+      213: -3452362041088240395
+    second: CAINDO_79
+  - first:
+      213: 2346945292954034783
+    second: CAINDO_80
+  - first:
+      213: 502520168745107653
+    second: CAINDO_81
+  - first:
+      213: -6111846820292687852
+    second: CAINDO_82
+  - first:
+      213: 8158580653249263134
+    second: CAINDO_83
+  - first:
+      213: -5859832880417351390
+    second: CAINDO_84
+  - first:
+      213: 7625052812790344013
+    second: CAINDO_85
+  - first:
+      213: 5030819157585726908
+    second: CAINDO_86
+  - first:
+      213: -4356990648449568635
+    second: CAINDO_87
+  - first:
+      213: -7075612602405678365
+    second: CAINDO_88
+  - first:
+      213: 6998143052886651262
+    second: CAINDO_89
+  - first:
+      213: -6653540141105985417
+    second: CAINDO_90
+  - first:
+      213: 4077960866250449827
+    second: CAINDO_91
+  - first:
+      213: -2046305501507080732
+    second: CAINDO_92
+  - first:
+      213: 3837112132665610891
+    second: CAINDO_93
+  - first:
+      213: -2076212752023859137
+    second: CAINDO_94
+  - first:
+      213: 5705564439878656139
+    second: CAINDO_95
+  - first:
+      213: -7929624283743046277
+    second: CAINDO_96
+  - first:
+      213: 8740187557296120967
+    second: CAINDO_97
+  - first:
+      213: -2210647944743756157
+    second: CAINDO_98
+  - first:
+      213: -6947755918869093756
+    second: CAINDO_99
+  - first:
+      213: -6467086966382885389
+    second: CAINDO_100
+  - first:
+      213: -8513482174045403870
+    second: CAINDO_101
+  - first:
+      213: 1169312576705318135
+    second: CAINDO_102
+  - first:
+      213: 5483136874513092132
+    second: CAINDO_103
+  - first:
+      213: 1500868991728326694
+    second: CAINDO_104
+  - first:
+      213: -5020941395035504147
+    second: CAINDO_105
+  - first:
+      213: 8166101163023461578
+    second: CAINDO_106
+  - first:
+      213: -1924017815358265653
+    second: CAINDO_107
+  - first:
+      213: -4266733087421525584
+    second: CAINDO_108
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CAINDO_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.82400006, y: 0.1595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828667ea231f83200800000000000000
+      internalID: 160142986749306920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAINDO_1
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.8345, y: 0.13450001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e971facfbf26fcac0800000000000000
+      internalID: -3832735923453356130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAINDO_2
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.82350004, y: 0.13450001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db37c8231357cd2f0800000000000000
+      internalID: -946752967492734019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAINDO_3
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.7975, y: 0.081}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b79fa990b9e80dab0800000000000000
+      internalID: -4985327990966912645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAINDO_4
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.72450006, y: 0.09150001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f67aa3026ce72a60800000000000000
+      internalID: 7649342397824530168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAINDO_5
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.6265, y: 0.013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e185597efff782d00800000000000000
+      internalID: 948148458640201758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAINDO_6
+      rect:
+        serializedVersion: 2
+        x: 12000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.047500003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bcc75910b60f25f0800000000000000
+      internalID: -779396857102611271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAINDO_7
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf3cedbdd3fd45fd0800000000000000
+      internalID: -2354011248433118213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9fa1ca6712ee2e3488c0dee6b68217eb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CAINDO_0: 160142986749306920
+      CAINDO_1: -3832735923453356130
+      CAINDO_2: -946752967492734019
+      CAINDO_3: -4985327990966912645
+      CAINDO_4: 7649342397824530168
+      CAINDO_5: 948148458640201758
+      CAINDO_6: -779396857102611271
+      CAINDO_7: -2354011248433118213
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

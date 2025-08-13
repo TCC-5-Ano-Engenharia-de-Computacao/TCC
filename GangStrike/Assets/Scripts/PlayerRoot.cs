@@ -1,5 +1,3 @@
-using Input;
-using UnityEngine;
 
 namespace StateMachine
 {

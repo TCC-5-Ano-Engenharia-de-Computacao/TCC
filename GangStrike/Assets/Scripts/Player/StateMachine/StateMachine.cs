@@ -8,39 +8,61 @@ using StateMachine.Model;
 using StateMachine.Serialization;
 using UnityEngine;
 using UnityEngine.Serialization;
-
+/*
 namespace StateMachine
 {
     public class StateMachine:MonoBehaviour
     {
-        private StateMachineModel _stateMachineModel;
-        private StateModel _currentStateModel;
-        [SerializeField] private PlayerRoot playerRoot;
         
-        [SerializeField] private string filePath = "Assets/Scripts/Examples/state_machine.xml";
+        [SerializeField] private TextAsset stateMachineXMLAsset;
+        
+        private StateMachineDefinition _stateMachineDefinition;
+        private StateMachineInstance _stateMachineInstance;
+        
+        private StateInstance _currentStateModel;
+        private PlayerRoot _playerRoot;
 
-        private async void Start()
+        private void Awake()
         {
-            var serializer = StateMachineSerializerFactory.Get();
-            await using var fs = File.OpenRead(filePath);
-            _stateMachineModel = (StateMachineModel)serializer.Deserialize(fs);
-            Debug.Log($"StateMachineModel :\n{_stateMachineModel.ToDebugString(1)}");
-            
-            DebugPrint();
-            await _stateMachineModel.Initialize(playerRoot);
-            SetStateById(_stateMachineModel.InitialState);
-            
-            
-            //PrintStateMachine();
+            _playerRoot = GetComponentInParent<PlayerRoot>();
         }
+        
+        
+    
+        private async void Initialize()
+        {
+            try
+            {
+                var serializer = StateMachineSerializerSingleton.Get();
+
+                using (var reader = new StringReader(stateMachineXMLAsset.text))
+                {
+                    _stateMachineDefinition = (StateMachineDefinition)serializer.Deserialize(reader);
+                }
+
+                await _stateMachineDefinition.Initialize(_playerRoot);
+                SetStateById(_stateMachineDefinition.InitialState);
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Erros específicos de XmlSerializer (XML malformado ou tipo incompatível)
+                Debug.LogError($"Erro ao desserializar máquina de estados: {ex.Message}\n{ex.InnerException}");
+            }
+            catch (Exception ex)
+            {
+                // Qualquer outro erro inesperado
+                Debug.LogError($"Falha ao inicializar StateMachine: {ex}");
+            }
+        }
+
 
         private void Update()
         {
             if (_currentStateModel != null)
             {
-                _currentStateModel.DoStay(playerRoot);
+                _currentStateModel.DoStay(_playerRoot);
                 
-                var validTransitionModel = _currentStateModel.EvaluateTransitions(playerRoot);
+                var validTransitionModel = _currentStateModel.EvaluateTransitions(_playerRoot);
                 
                 if (validTransitionModel != null)
                 {
@@ -53,9 +75,9 @@ namespace StateMachine
 
         private void SetStateById(string id,List<StateModel> history = null)
         {
-            if (_stateMachineModel != null)
+            if (_stateMachineDefinition != null)
             {
-                var state = _stateMachineModel.GetStateFromId(id);
+                var state = _stateMachineDefinition.GetStateFromId(id);
                 if (state != null)
                 {
                     SetStateByModel(state,history);
@@ -81,15 +103,15 @@ namespace StateMachine
             history.Add(state);
             
             
-            _currentStateModel?.DoLeave(playerRoot);
+            _currentStateModel?.DoLeave(_playerRoot);
 
             _currentStateModel = state;
 
             if (_currentStateModel!=null)
             {
-                _currentStateModel.DoBeforeEnter(playerRoot);
+                _currentStateModel.DoBeforeEnter(_playerRoot);
 
-                var validTransitionModel = _currentStateModel.EvaluateTransitions(playerRoot); 
+                var validTransitionModel = _currentStateModel.EvaluateTransitions(_playerRoot); 
                 
                 if (validTransitionModel != null)
                 {
@@ -97,7 +119,7 @@ namespace StateMachine
                 }
                 else
                 {
-                    _currentStateModel.DoEnter(playerRoot);
+                    _currentStateModel.DoEnter(_playerRoot);
                 }
             }
                 
@@ -123,3 +145,5 @@ namespace StateMachine
         }
     }
 }
+
+*/

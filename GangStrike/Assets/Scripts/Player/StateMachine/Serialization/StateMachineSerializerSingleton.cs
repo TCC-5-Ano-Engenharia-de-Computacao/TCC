@@ -15,10 +15,10 @@ using StateMachine.Model;
 
 namespace StateMachine.Serialization
 {
-    public static class StateMachineSerializerFactory
+    public static class StateMachineSerializerSingleton
     {
         private static XmlSerializer _cached;
-
+            
         public static XmlSerializer Get()
         {
             if (_cached != null) return _cached;
@@ -35,7 +35,7 @@ namespace StateMachine.Serialization
             Register(ovs, typeof(StateModel),      nameof(StateModel.OnLeave),     actionTypes);
             Register(ovs, typeof(TransitionModel), nameof(TransitionModel.Conditions), conditionTypes);
 
-            _cached = new XmlSerializer(typeof(Model.StateMachineModel), ovs);
+            _cached = new XmlSerializer(typeof(Model.StateMachineDefinition), ovs);
             return _cached;
         }
 
