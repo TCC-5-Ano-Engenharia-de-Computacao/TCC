@@ -132,6 +132,17 @@ namespace StateMachine
                       (_currentStateModel != null ? $"Current State: {_currentStateModel.Id}" : "No current state") +
                       "\n}");
         }
+
+        public string GetCurrentStateDebugInfo()
+        {
+            if (_currentStateModel == null)
+            {
+                return "Current State: None";
+            }
+
+            return $"Current State: {_currentStateModel.Id}\n" +
+                   $"Transitions: {string.Join(", ", _currentStateModel.Transitions.Select(t => t.To))}";
+        }
     }
 }
 

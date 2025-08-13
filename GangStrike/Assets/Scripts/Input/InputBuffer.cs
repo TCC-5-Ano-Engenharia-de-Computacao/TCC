@@ -21,6 +21,8 @@ public class InputBuffer : MonoBehaviour
     private void Awake()
     {
         _inputController = FindFirstObjectByType<InputController>();
+        _instantaneousInput.Add("attack", false);
+        _instantaneousInput.Add("kick", false);
     }
 
     private void OnEnable()
@@ -59,6 +61,8 @@ public class InputBuffer : MonoBehaviour
                 _inputQueue.Remove(key);
             }
         }
+        // Logs the inputs in the queue
+        Debug.Log("Inputs in queue: " + string.Join(", ", _inputQueue.Keys));
     }
 
     private void OnInputPerformedRegisterInstantInput(string inputName)
@@ -126,7 +130,7 @@ public class InputBuffer : MonoBehaviour
         if(_instantaneousInput[inputName] == true) 
         {
             _instantaneousInput[inputName] = false;
-            // Debug.Log("Input consumed: " + inputName);
+            Debug.Log("Input consumed: " + inputName);
         }
         else
         {
@@ -134,12 +138,28 @@ public class InputBuffer : MonoBehaviour
             if (_inputQueue.ContainsKey(inputName))
             {
                 _inputQueue.Remove(inputName);
-                // Debug.Log("Input consumed from queue: " + inputName);
+                Debug.Log("Input consumed from queue: " + inputName);
             }
             else
             {
-                // Debug.Log("Input failed to consume: " + inputName);
+                Debug.Log("Input failed to consume: " + inputName);
             }
         }
+    }
+
+    public void ClearInputBuffer()
+    {
+        foreach (var key in _instantaneousInput.Keys.ToList())
+        {
+            _instantaneousInput[key] = false;
+        }
+        _inputQueue.Clear();
+    }
+    
+    public string GetFormattedInputBuffer()
+    {
+        string bufferedInputs = string.Join(", ", _inputQueue.Select(kvp => $"{kvp.Key} ({kvp.Value:F2}s)"));
+
+        return $"Buffered Inputs: [{bufferedInputs}]";
     }
 }
