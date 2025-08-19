@@ -11,7 +11,7 @@ namespace Player.NewStateMachine
     {
         [SerializeField] private string initialStateId;
 
-        private StateMono _current;
+        [SerializeField] private StateMono _current;
         private PlayerRoot _player;
 
         private void Update()

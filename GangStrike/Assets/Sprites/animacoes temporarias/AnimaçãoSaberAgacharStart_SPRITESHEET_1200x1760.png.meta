@@ -1,31 +1,58 @@
 fileFormatVersion: 2
-guid: bab39d75c81bd534da41b042b9f5d6ad
+guid: b726dfef9852f9b4286112b6d58d4e69
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4624149479281342697
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_0"
+      213: -6872183707453423938
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_0"
   - first:
-      213: -1336964298355128836
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_1"
+      213: 3027290203719730881
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_1"
   - first:
-      213: -6770150254606911115
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_2"
+      213: -4641355888469185610
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_2"
   - first:
-      213: -2696773057044989967
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_3"
+      213: 8071592027361414303
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_3"
   - first:
-      213: -2661950582907820767
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_4"
+      213: -7546146502151465055
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_4"
   - first:
-      213: 3588475307587150801
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_5"
+      213: 5684755679669946978
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_5"
   - first:
-      213: -1484926826013143576
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_6"
+      213: 3013589125878212622
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_6"
   - first:
-      213: -5615491552567090428
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_7"
+      213: -6440045340486499725
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_7"
+  - first:
+      213: -1807068835498892544
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_8"
+  - first:
+      213: 5328954678324780198
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_9"
+  - first:
+      213: -990650550239850212
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_10"
+  - first:
+      213: -5795335430472502116
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_11"
+  - first:
+      213: 2023213170741791371
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_12"
+  - first:
+      213: 6196589622601163855
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_13"
+  - first:
+      213: 3574417937931918651
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_14"
+  - first:
+      213: -4846735626185752952
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_15"
+  - first:
+      213: 5297601340777886324
+    second: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_16"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,12 +148,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_0"
+      name: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1560
+        width: 1200
         height: 1760
       alignment: 9
       pivot: {x: 0.5, y: 0.11363637}
@@ -134,21 +161,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e83fdc93774c2040800000000000000
-      internalID: 4624149479281342697
+      spriteID: 60e5a28dd8875a648b0e17df9132da6f
+      internalID: 366624202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_1"
+      name: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_1"
       rect:
         serializedVersion: 2
-        x: 1560
+        x: 1200
         y: 0
-        width: 1560
+        width: 1200
         height: 1760
       alignment: 9
       pivot: {x: 0.5, y: 0.11363637}
@@ -156,21 +183,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cf5c92fdd06227de0800000000000000
-      internalID: -1336964298355128836
+      spriteID: 9c17c49bc083de147a0de00b39269c96
+      internalID: -1912345911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_2"
+      name: "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_2"
       rect:
         serializedVersion: 2
-        x: 3120
+        x: 2400
         y: 0
-        width: 1560
+        width: 1200
         height: 1760
       alignment: 9
       pivot: {x: 0.5, y: 0.11363637}
@@ -178,10 +205,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 579722696389b02a0800000000000000
-      internalID: -6770150254606911115
+      spriteID: 09e139c2d0730e542abd845a4d897f8b
+      internalID: -672152181
       vertices: []
       indices: 
       edges: []
@@ -190,7 +217,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3aad53e449dbeba40a8dee1e263e9a19
+    spriteID: f1f1b966920326d43b98854a1fe4fadf
     internalID: 0
     vertices: []
     indices: 
@@ -200,9 +227,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_0": 4624149479281342697
-      "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_1": -1336964298355128836
-      "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_2": -6770150254606911115
+      "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_0": 366624202
+      "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_1": -1912345911
+      "Anima\xE7\xE3oSaberAgacharStart_SPRITESHEET_1200x1760_2": -672152181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

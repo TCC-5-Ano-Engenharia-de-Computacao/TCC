@@ -1,31 +1,58 @@
 fileFormatVersion: 2
-guid: bab39d75c81bd534da41b042b9f5d6ad
+guid: ccf08298187bd2644a053986ae4f117b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4624149479281342697
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_0"
+      213: -7428694919643161076
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_0"
   - first:
-      213: -1336964298355128836
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_1"
+      213: 6262357627949092235
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_1"
   - first:
-      213: -6770150254606911115
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_2"
+      213: -4491018815418395109
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_2"
   - first:
-      213: -2696773057044989967
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_3"
+      213: -9073259984594321646
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_3"
   - first:
-      213: -2661950582907820767
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_4"
+      213: -8678132463175619168
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_4"
   - first:
-      213: 3588475307587150801
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_5"
+      213: 3762224437612136874
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_5"
   - first:
-      213: -1484926826013143576
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_6"
+      213: -1395276492440796734
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_6"
   - first:
-      213: -5615491552567090428
-    second: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_7"
+      213: -2981731837800841141
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_7"
+  - first:
+      213: -9091830520757418330
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_8"
+  - first:
+      213: 3493177832137298534
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_9"
+  - first:
+      213: -881630900013550102
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_10"
+  - first:
+      213: -4914803543415125873
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_11"
+  - first:
+      213: -2651939923475979143
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_12"
+  - first:
+      213: -6396298516278695657
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_13"
+  - first:
+      213: -6260201784842753691
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_14"
+  - first:
+      213: -8617558039524628832
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_15"
+  - first:
+      213: -1986890932036002947
+    second: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_16"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,12 +148,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_0"
+      name: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1560
+        width: 1200
         height: 1760
       alignment: 9
       pivot: {x: 0.5, y: 0.11363637}
@@ -136,19 +163,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e83fdc93774c2040800000000000000
-      internalID: 4624149479281342697
+      spriteID: c0e9be95459f7e890800000000000000
+      internalID: -7428694919643161076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_1"
+      name: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_1"
       rect:
         serializedVersion: 2
-        x: 1560
+        x: 1200
         y: 0
-        width: 1560
+        width: 1200
         height: 1760
       alignment: 9
       pivot: {x: 0.5, y: 0.11363637}
@@ -158,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf5c92fdd06227de0800000000000000
-      internalID: -1336964298355128836
+      spriteID: b8d0d5e451d58e650800000000000000
+      internalID: 6262357627949092235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_2"
+      name: "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_2"
       rect:
         serializedVersion: 2
-        x: 3120
+        x: 2400
         y: 0
-        width: 1560
+        width: 1200
         height: 1760
       alignment: 9
       pivot: {x: 0.5, y: 0.11363637}
@@ -180,8 +207,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 579722696389b02a0800000000000000
-      internalID: -6770150254606911115
+      spriteID: b16146b8e22bca1c0800000000000000
+      internalID: -4491018815418395109
       vertices: []
       indices: 
       edges: []
@@ -190,7 +217,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3aad53e449dbeba40a8dee1e263e9a19
+    spriteID: 274626b8b63aa0449b09b501b6c0f2c3
     internalID: 0
     vertices: []
     indices: 
@@ -200,9 +227,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_0": 4624149479281342697
-      "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_1": -1336964298355128836
-      "Anima\xE7\xE3oSaberSocoFraco_SPRITESHEET_1560x1760_2": -6770150254606911115
+      "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_0": -7428694919643161076
+      "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_1": 6262357627949092235
+      "Anima\xE7\xE3oSaberAgacharFinish_SPRITESHEET_1200x1760_2": -4491018815418395109
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

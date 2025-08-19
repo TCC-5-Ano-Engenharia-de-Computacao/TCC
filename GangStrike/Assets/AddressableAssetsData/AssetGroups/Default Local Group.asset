@@ -20,6 +20,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ec044924fe5ee6459e1b9acbb6ec44a
+    m_Address: Animations/CrouchEnd
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 524716c2224139847a71ec4c84fb7a2f
+    m_Address: Animations/CrouchStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 602ceda4d4aae024aaab86d60f4f6631
     m_Address: SFX/AudioExample2
     m_ReadOnly: 0
@@ -67,6 +77,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: db5de1407fd65cb4ca51866cd89b201e
     m_Address: Animations/Knockback
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec578ba1c5d5ca4469036da31958d19a
+    m_Address: Animations/CrouchIdle
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

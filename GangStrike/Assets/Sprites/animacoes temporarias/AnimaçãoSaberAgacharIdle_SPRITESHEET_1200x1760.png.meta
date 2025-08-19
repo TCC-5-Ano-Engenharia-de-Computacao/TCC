@@ -1,0 +1,342 @@
+fileFormatVersion: 2
+guid: 6951a6d887e0524498228420089cf31f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4894463883071057192
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_0"
+  - first:
+      213: 2139841894941243299
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_1"
+  - first:
+      213: -6597492525616835428
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_2"
+  - first:
+      213: 4273004697254268588
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_3"
+  - first:
+      213: -6461215773468982465
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_4"
+  - first:
+      213: 8185143817885866231
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_5"
+  - first:
+      213: -6772391463046090393
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_6"
+  - first:
+      213: -2052471029205356426
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_7"
+  - first:
+      213: 8831498831478845456
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_8"
+  - first:
+      213: -6224697478257234598
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_9"
+  - first:
+      213: 1250849949224477368
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_10"
+  - first:
+      213: 1417572715399500974
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_11"
+  - first:
+      213: -7739790381030711705
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_12"
+  - first:
+      213: 6795222529485589776
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_13"
+  - first:
+      213: 9174376512099884761
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_14"
+  - first:
+      213: 5853585021481169946
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_15"
+  - first:
+      213: 274846564062592206
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_16"
+  - first:
+      213: -1614820701247401220
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_17"
+  - first:
+      213: -7541972408799553560
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_18"
+  - first:
+      213: -865513622440621428
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_19"
+  - first:
+      213: -8240010707211443
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_20"
+  - first:
+      213: -1496390079870290602
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_21"
+  - first:
+      213: 3901763616080238822
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_22"
+  - first:
+      213: 4879161932701299067
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_23"
+  - first:
+      213: 7777311133421678216
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_24"
+  - first:
+      213: 8538879365476061798
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_25"
+  - first:
+      213: 2808383269599343891
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_26"
+  - first:
+      213: 7832662511124248004
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_27"
+  - first:
+      213: 456259086326751947
+    second: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_28"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1200
+        height: 1760
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d21293c70f531cb0800000000000000
+      internalID: -4894463883071057192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_1"
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 1200
+        height: 1760
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a7b877bdde32bd10800000000000000
+      internalID: 2139841894941243299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_2"
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 1200
+        height: 1760
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c945052c08ff074a0800000000000000
+      internalID: -6597492525616835428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_3"
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 1200
+        height: 1760
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae8a6ff123cc4b30800000000000000
+      internalID: 4273004697254268588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_4"
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 1200
+        height: 1760
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f330b3dac762556a0800000000000000
+      internalID: -6461215773468982465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_5"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 1200
+        height: 1760
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f852948fe8779170800000000000000
+      internalID: 8185143817885866231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ad13454434394744da396cbf14c05d9d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_0": -4894463883071057192
+      "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_1": 2139841894941243299
+      "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_2": -6597492525616835428
+      "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_3": 4273004697254268588
+      "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_4": -6461215773468982465
+      "Anima\xE7\xE3oSaberAgacharIdle_SPRITESHEET_1200x1760_5": 8185143817885866231
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
