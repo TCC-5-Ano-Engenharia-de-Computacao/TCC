@@ -17,6 +17,8 @@ namespace Player.NewStateMachine.Actions
         public override void Execute()
         {
             animator.runtimeAnimatorController = overrideController;
+            animator.Play("CurrentState", 0, 0f);
+            
         }
 
         public static async Task<ActionBase> ConstructFromXmlAsync(XElement node, Transform parent, PlayerRoot player)

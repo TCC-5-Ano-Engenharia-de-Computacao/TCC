@@ -62,7 +62,7 @@ public class InputBuffer : MonoBehaviour
             }
         }
         // Logs the inputs in the queue
-        Debug.Log("Inputs in queue: " + string.Join(", ", _inputQueue.Keys));
+        //Debug.Log("Inputs in queue: " + string.Join(", ", _inputQueue.Keys));
     }
 
     private void OnInputPerformedRegisterInstantInput(string inputName)
