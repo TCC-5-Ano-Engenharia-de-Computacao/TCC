@@ -6,7 +6,7 @@ namespace Input
     public class InputRoot : MonoBehaviour
     {
         public InputController inputController;
-        public InputBuffer inputBuffer;
+        public NewInputBuffer inputBuffer;
         public AnalogHistory analogHistory;
     }
 }

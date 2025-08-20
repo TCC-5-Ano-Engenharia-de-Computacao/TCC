@@ -1,3 +1,4 @@
+/*
 using System.Xml.Serialization;
 using StateMachine.Attributes;
 using UnityEngine;
@@ -18,4 +19,4 @@ namespace StateMachine.Actions
             return indentation + GetType().Name;
         }
     }
-}
+}*/
