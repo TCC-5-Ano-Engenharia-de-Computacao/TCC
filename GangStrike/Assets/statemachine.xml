@@ -7,31 +7,35 @@
         </OnEnter>
 
         <Transitions>
-            <!-- Ataque leve – começa em um ou mais “5”, depois 2 × (1-6), 3 × (1-6) e termina em UM “6” -->
+            <!-- Ataque leve: input “attack” -->
             <Transition to="WeakPunch">
                 <Conditions>
-                    <!-- 5+2{1,9}3{1,9}6$ -->
-                    <AnalogHistoryRegexCondition regexString="5+2{1,9}3{1,9}6$"/>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
 
-            <!-- Ataque pesado – começa em um ou mais “5”, depois 8 × (1-6), 9 × (1-6) e termina em UM “6” -->
+            <!-- Ataque pesado: input “kick” -->
             <Transition to="StrongPunch">
                 <Conditions>
-                    <!-- 5+8{1,9}9{1,9}6$ -->
-                    <AnalogHistoryRegexCondition regexString="5+8{1,9}9{1,9}6$"/>
+                    <BufferedInputCondition inputName="kick"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
 
-            <!-- Pulo: último caractere 8 (11 vezes) -->
+            <!-- Pulo vertical -->
             <Transition to="Jump">
                 <Conditions>
-                    <AnalogHistoryRegexCondition regexString="8{10}$"/>
+                    <BufferedInputCondition inputName="jump"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
                     <PlayerIsGroundedCondition/>
                 </Conditions>
             </Transition>
 
-            <!-- Andar pra frente: termina com “66” -->
+            <!-- Andar pra frente -->
             <Transition to="WalkingFoward">
                 <Conditions>
                     <AnalogHistoryRegexCondition regexString="66$"/>
@@ -39,7 +43,7 @@
                 </Conditions>
             </Transition>
 
-            <!-- Andar pra trás: termina com “4” -->
+            <!-- Andar pra trás -->
             <Transition to="WalkingBackwards">
                 <Conditions>
                     <AnalogHistoryRegexCondition regexString="4$"/>
@@ -47,29 +51,52 @@
                 </Conditions>
             </Transition>
 
-            <!-- Agachar: dez “2” no fim -->
+            <!-- Agachar -->
             <Transition to="CrouchStart">
                 <Conditions>
-                    <AnalogHistoryRegexCondition regexString="2{10}$"/>
+                    <AnalogHistoryRegexCondition regexString="([123])$"/>
                     <PlayerIsGroundedCondition/>
                 </Conditions>
             </Transition>
         </Transitions>
     </State>
 
-    <!-- ============== WALKING FORWARD (6) ============== -->
+    <!-- ============== WALKING FORWARD ============== -->
     <State id="WalkingFoward">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WalkingFoward"/>
         </OnEnter>
 
-        <!-- Move continuamente para a direita enquanto permanecer neste estado -->
         <OnStay>
             <MovePlayerAction speed="1" direction="right"/>
         </OnStay>
 
         <Transitions>
-            <!-- Voltou a não ser 6 -->
+            <Transition to="WeakPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            <Transition to="StrongPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="kick"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+
+            <!-- Pulo diagonal para frente -->
+            <Transition to="JumpForward">
+                <Conditions>
+                    <BufferedInputCondition inputName="jump"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                    <PlayerIsGroundedCondition/>
+                </Conditions>
+            </Transition>
+
             <Transition to="Idle">
                 <Conditions>
                     <AnalogHistoryRegexCondition regexString="[^6]$"/>
@@ -78,19 +105,42 @@
         </Transitions>
     </State>
 
-    <!-- ============= WALKING BACKWARDS (4) ============= -->
+    <!-- ============= WALKING BACKWARDS ============= -->
     <State id="WalkingBackwards">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WalkingBackwards"/>
         </OnEnter>
 
-        <!-- Move continuamente para a esquerda enquanto permanecer neste estado -->
         <OnStay>
             <MovePlayerAction speed="1" direction="left"/>
         </OnStay>
 
         <Transitions>
-            <!-- Voltou a não ser 4 -->
+            <Transition to="WeakPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            <Transition to="StrongPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="kick"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+
+            <!-- Pulo diagonal para trás -->
+            <Transition to="JumpBackward">
+                <Conditions>
+                    <BufferedInputCondition inputName="jump"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                    <PlayerIsGroundedCondition/>
+                </Conditions>
+            </Transition>
+
             <Transition to="Idle">
                 <Conditions>
                     <AnalogHistoryRegexCondition regexString="[^4]$"/>
@@ -99,13 +149,12 @@
         </Transitions>
     </State>
 
-    <!-- ================== CROUCH START (2) ================== -->
+    <!-- ================== CROUCH START ================== -->
     <State id="CrouchStart">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/CrouchStart"/>
         </OnEnter>
         <Transitions>
-            <!-- Fim do CrouchStart -> CrouchIdle -->
             <Transition to="CrouchIdle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="CrouchStart"/>
@@ -120,10 +169,24 @@
             <PlayAnimationClipAction animationClipAddress="Animations/CrouchIdle"/>
         </OnEnter>
         <Transitions>
-            <!-- Soltar o 2 -->
+            <Transition to="CrouchWeakPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            <Transition to="CrouchStrongPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="kick"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+
             <Transition to="CrouchEnd">
                 <Conditions>
-                    <AnalogHistoryRegexCondition regexString="[^2]$"/>
+                    <AnalogHistoryRegexCondition regexString="[^123]$"/>
                 </Conditions>
             </Transition>
         </Transitions>
@@ -135,7 +198,6 @@
             <PlayAnimationClipAction animationClipAddress="Animations/CrouchEnd"/>
         </OnEnter>
         <Transitions>
-            <!-- Fim do CrouchEnd -> Idle -->
             <Transition to="Idle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="CrouchEnd"/>
@@ -144,14 +206,100 @@
         </Transitions>
     </State>
 
-    <!-- ================== JUMP ================== -->
+    <!-- ================== JUMP (vertical) ================== -->
     <State id="Jump">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
             <JumpPlayerAction force="50"/>
         </OnEnter>
         <Transitions>
-            <!-- Fim do Jump -> Rise -->
+            <Transition to="JumpWeakPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            <Transition to="JumpStrongPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="kick"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+
+            <Transition to="Rise">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="Jump"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <!-- ================== JUMP FORWARD ================== -->
+    <State id="JumpForward">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
+            <JumpPlayerAction force="50"/>
+        </OnEnter>
+
+        <OnStay>
+            <!-- mesmo movimento horizontal do WalkingFoward -->
+            <MovePlayerAction speed="1" direction="right"/>
+        </OnStay>
+
+        <Transitions>
+            <Transition to="JumpWeakPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            <Transition to="JumpStrongPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="kick"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+
+            <Transition to="Rise">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="Jump"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <!-- ================== JUMP BACKWARD ================== -->
+    <State id="JumpBackward">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
+            <JumpPlayerAction force="50"/>
+        </OnEnter>
+
+        <OnStay>
+            <!-- mesmo movimento horizontal do WalkingBackwards -->
+            <MovePlayerAction speed="1" direction="left"/>
+        </OnStay>
+
+        <Transitions>
+            <Transition to="JumpWeakPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            <Transition to="JumpStrongPunch">
+                <Conditions>
+                    <BufferedInputCondition inputName="kick"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+
             <Transition to="Rise">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="Jump"/>
@@ -166,7 +314,15 @@
             <PlayAnimationClipAction animationClipAddress="Animations/Rise"/>
         </OnEnter>
         <Transitions>
-            <!-- Começou a cair -> Apex -->
+            <!-- Se tocar o chão antes de cair, vai para Landing -->
+            <Transition to="Landing">
+                <Conditions>
+                    <PlayerIsGroundedCondition/>
+                    <PlayerIsNotFallingCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- Começou a cair -->
             <Transition to="Apex">
                 <Conditions>
                     <PlayerIsFallingCondition/>
@@ -181,7 +337,13 @@
             <PlayAnimationClipAction animationClipAddress="Animations/Apex"/>
         </OnEnter>
         <Transitions>
-            <!-- Fim do Apex -> Falling -->
+            <!-- Se tocar o chão direto do Apex -->
+            <Transition to="Landing">
+                <Conditions>
+                    <PlayerIsGroundedCondition/>
+                </Conditions>
+            </Transition>
+
             <Transition to="Falling">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="Apex"/>
@@ -196,7 +358,6 @@
             <PlayAnimationClipAction animationClipAddress="Animations/Falling"/>
         </OnEnter>
         <Transitions>
-            <!-- Tocou o chão -> Landing -->
             <Transition to="Landing">
                 <Conditions>
                     <PlayerIsGroundedCondition/>
@@ -212,7 +373,6 @@
             <PlayAnimationClipAction animationClipAddress="Animations/Landing"/>
         </OnEnter>
         <Transitions>
-            <!-- Fim do Landing -> Idle -->
             <Transition to="Idle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="Landing"/>
@@ -221,13 +381,12 @@
         </Transitions>
     </State>
 
-    <!-- ================== WEAK PUNCH ================== -->
+    <!-- ============== STANDING ATTACKS ============== -->
     <State id="WeakPunch">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
         </OnEnter>
         <Transitions>
-            <!-- Fim do ataque -> Idle -->
             <Transition to="Idle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="WeakPunch"/>
@@ -236,13 +395,66 @@
         </Transitions>
     </State>
 
-    <!-- ================== STRONG PUNCH ================== -->
     <State id="StrongPunch">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
         </OnEnter>
         <Transitions>
             <Transition to="Idle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="StrongPunch"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <!-- ============== CROUCH ATTACKS ============== -->
+    <State id="CrouchWeakPunch">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
+        </OnEnter>
+        <Transitions>
+            <Transition to="CrouchIdle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="WeakPunch"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="CrouchStrongPunch">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
+        </OnEnter>
+        <Transitions>
+            <Transition to="CrouchIdle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="StrongPunch"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <!-- ============== AIR ATTACKS ============== -->
+    <State id="JumpWeakPunch">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
+        </OnEnter>
+        <Transitions>
+            <Transition to="Rise">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="WeakPunch"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="JumpStrongPunch">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
+        </OnEnter>
+        <Transitions>
+            <Transition to="Rise">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="StrongPunch"/>
                 </Conditions>
