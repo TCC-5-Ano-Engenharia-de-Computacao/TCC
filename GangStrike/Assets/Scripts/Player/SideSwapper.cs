@@ -37,7 +37,7 @@ public class SideSwapper : MonoBehaviour
         }
     }
     
-    private void Update()
+    public void UpdateSideSwap()
     {
         if ((!swapped && enemyPlayer.position.x < characterRoot.position.x) || (swapped && enemyPlayer.position.x > characterRoot.position.x))
         {
@@ -50,7 +50,7 @@ public class SideSwapper : MonoBehaviour
         Debug.Log("SWAP");
         swapped = !swapped;
         var localScale = characterRoot.transform.localScale;
-        localScale = new Vector3(- localScale.x, localScale.y, localScale.z);
+        localScale.x *= -1;
         characterRoot.transform.localScale = localScale;
     }
 }

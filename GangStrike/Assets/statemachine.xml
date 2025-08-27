@@ -6,6 +6,10 @@
             <PlayAnimationClipAction animationClipAddress="Animations/Idle"/>
         </OnEnter>
 
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <!-- Ataque leve: input “attack” -->
             <Transition to="WeakPunch">
@@ -68,7 +72,8 @@
         </OnEnter>
 
         <OnStay>
-            <MovePlayerAction speed="1" direction="right"/>
+            <UpdateSideAction/>
+            <MovePlayerAction speed="1" direction="forward"/>
         </OnStay>
 
         <Transitions>
@@ -112,7 +117,8 @@
         </OnEnter>
 
         <OnStay>
-            <MovePlayerAction speed="1" direction="left"/>
+            <UpdateSideAction/>
+            <MovePlayerAction speed="1" direction="backward"/>
         </OnStay>
 
         <Transitions>
@@ -154,6 +160,11 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/CrouchStart"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <Transition to="CrouchIdle">
                 <Conditions>
@@ -168,6 +179,11 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/CrouchIdle"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <Transition to="CrouchWeakPunch">
                 <Conditions>
@@ -197,6 +213,11 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/CrouchEnd"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <Transition to="Idle">
                 <Conditions>
@@ -212,6 +233,11 @@
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
             <JumpPlayerAction force="50"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <Transition to="JumpWeakPunch">
                 <Conditions>
@@ -244,8 +270,7 @@
         </OnEnter>
 
         <OnStay>
-            <!-- mesmo movimento horizontal do WalkingFoward -->
-            <MovePlayerAction speed="1" direction="right"/>
+            <MovePlayerAction speed="1" direction="forward"/>
         </OnStay>
 
         <Transitions>
@@ -280,8 +305,7 @@
         </OnEnter>
 
         <OnStay>
-            <!-- mesmo movimento horizontal do WalkingBackwards -->
-            <MovePlayerAction speed="1" direction="left"/>
+            <MovePlayerAction speed="1" direction="backward"/>
         </OnStay>
 
         <Transitions>
@@ -313,6 +337,11 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Rise"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <!-- Se tocar o chão antes de cair, vai para Landing -->
             <Transition to="Landing">
@@ -336,6 +365,11 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Apex"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <!-- Se tocar o chão direto do Apex -->
             <Transition to="Landing">
@@ -357,6 +391,11 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Falling"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <Transition to="Landing">
                 <Conditions>
@@ -372,6 +411,11 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Landing"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <Transition to="Idle">
                 <Conditions>
@@ -386,6 +430,10 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
         </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
         <Transitions>
             <Transition to="Idle">
                 <Conditions>
@@ -399,6 +447,10 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
         </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
         <Transitions>
             <Transition to="Idle">
                 <Conditions>
@@ -413,6 +465,10 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
         </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
         <Transitions>
             <Transition to="CrouchIdle">
                 <Conditions>
@@ -426,6 +482,10 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
         </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
         <Transitions>
             <Transition to="CrouchIdle">
                 <Conditions>
@@ -440,6 +500,10 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
         </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
         <Transitions>
             <Transition to="Rise">
                 <Conditions>
@@ -453,6 +517,10 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
         </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
         <Transitions>
             <Transition to="Rise">
                 <Conditions>
@@ -467,6 +535,11 @@
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Knockback"/>
         </OnEnter>
+
+        <OnStay>
+            <UpdateSideAction/>
+        </OnStay>
+
         <Transitions>
             <Transition to="Idle">
                 <Conditions>

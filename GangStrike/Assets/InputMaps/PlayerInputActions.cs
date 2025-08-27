@@ -277,9 +277,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ee256cba-eb40-40df-9b7d-c892f45c7c27"",
-                    ""path"": ""<Joystick>/stick"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""groups"": "";Gamepad"",
                     ""action"": ""AnalogStick"",
                     ""isComposite"": false,

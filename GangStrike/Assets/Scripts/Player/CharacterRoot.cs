@@ -8,7 +8,7 @@ namespace StateMachine
         public Animator animator;
         public Rigidbody2D rigidbody2D;
         public Collider2D footGroundCollider;
-
+        public SideSwapper sideSwapper;
 
     }
 }

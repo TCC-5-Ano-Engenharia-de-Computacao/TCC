@@ -430,6 +430,7 @@ MonoBehaviour:
   animator: {fileID: 2340634700699290823}
   rigidbody2D: {fileID: 6267009337946522524}
   footGroundCollider: {fileID: 7395254102628424992}
+  sideSwapper: {fileID: 4413631703263350532}
 --- !u!95 &2340634700699290823
 Animator:
   serializedVersion: 7
@@ -819,5 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   analogHistoryStr: 
+  sideSwapper: {fileID: 4413631703263350532}
   analogHistorySize: 50
   inputTest: {fileID: 4209722315018630619}
+  deadzone: 0.2

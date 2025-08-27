@@ -6,9 +6,12 @@ namespace Input
     public class AnalogHistory : MonoBehaviour
     {
         /*SerializedDebug*/public string analogHistoryStr = "";
-    
+
+        [SerializeField] private SideSwapper sideSwapper;
         [SerializeField] private int analogHistorySize = 50;
         [SerializeField] private InputController inputTest;
+        [SerializeField] private float deadzone;
+        
 
         private int _currentFrameDir;
 
@@ -16,33 +19,22 @@ namespace Input
     
         private enum AnalogDir
         {
-            SouthWest = 1,
-            South, // = 2
-            SouthEast, // = 3
-            West, // = 4
+            BackwardsDown = 1,
+            Down, // = 2
+            ForwardsDown, // = 3
+            Backwards, // = 4
             Center, // = 5
-            East, // = 6
-            NorthWest, // = 7
-            North, // = 8
-            NorthEast, // = 9
+            Forwards, // = 6
+            BackwardsUp, // = 7
+            Up, // = 8
+            ForwardsUp, // = 9
         }
-
-        private readonly Dictionary<Vector2, AnalogDir> _eightDirMap = new()
-        {
-            {new Vector2(-1, -1).normalized, AnalogDir.SouthWest},
-            {Vector2.down, AnalogDir.South},
-            {new Vector2(1, -1).normalized, AnalogDir.SouthEast},
-            {Vector2.left, AnalogDir.West},
-            {Vector2.zero, AnalogDir.Center},
-            {Vector2.right, AnalogDir.East},
-            {new Vector2(-1, 1).normalized, AnalogDir.NorthWest},
-            {Vector2.up, AnalogDir.North},
-            {new Vector2(1, 1).normalized, AnalogDir.NorthEast},
-        };
 
         private void Update()
         {
-            _currentFrameDir = (int) _eightDirMap[inputTest.playerInputActions.Default.AnalogStick.ReadValue<Vector2>().normalized];
+            var readValue = inputTest.playerInputActions.Default.AnalogStick.ReadValue<Vector2>();
+            readValue.x *= sideSwapper.swapped ? -1 : 1;
+            _currentFrameDir = (int) GetAnalogDir(readValue);
             AddToDirRegex(_currentFrameDir);
         }
 
@@ -56,6 +48,44 @@ namespace Input
             {
                 analogHistoryStr = analogHistoryStr.Remove(0, 1) + dir;
             }
+        }
+
+        private AnalogDir GetAnalogDir(Vector2 input)
+        {
+            // Deadzone
+            if (input.sqrMagnitude < deadzone)
+                return AnalogDir.Center;
+            
+            Vector2 normalized = input.normalized;
+            
+            Vector2[] dirs =
+            {
+                new Vector2(-1, -1).normalized, // SouthWest
+                new Vector2(0, -1).normalized, // South
+                new Vector2(1, -1).normalized, // SouthEast
+                new Vector2(-1, 0).normalized, // West
+                Vector2.zero, // Center (não usado aqui)
+                new Vector2(1, 0).normalized, // East
+                new Vector2(-1, 1).normalized, // NorthWest
+                new Vector2(0, 1).normalized, // North
+                new Vector2(1, 1).normalized, // NorthEast
+            };
+            
+            float bestDot = -Mathf.Infinity;
+            int bestIndex = 0;
+
+            for (int i = 0; i < dirs.Length; i++)
+            {
+                if (dirs[i] == Vector2.zero) continue; // ignora o Center, já incluído na deadzone
+                float dot = Vector2.Dot(normalized, dirs[i]);
+                if (dot > bestDot)
+                {
+                    bestDot = dot;
+                    bestIndex = i;
+                }
+            }
+
+            return (AnalogDir)(bestIndex + 1);
         }
     }
 }
