@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2 Root
       objectReference: {fileID: 0}
+    - target: {fileID: 4413631703263350532, guid: 3eefa774d3ca931408e58374e7281239, type: 3}
+      propertyPath: startSwapped
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5471993620949986263, guid: 3eefa774d3ca931408e58374e7281239, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5471993620949986263, guid: 3eefa774d3ca931408e58374e7281239, type: 3}
       propertyPath: m_LocalPosition.x

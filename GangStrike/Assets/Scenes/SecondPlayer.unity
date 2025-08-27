@@ -528,9 +528,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 0
-  m_MaxPlayerCount: -1
+  m_MaxPlayerCount: 2
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1Prefab: {fileID: 3177370308563021893, guid: 3eefa774d3ca931408e58374e7281239, type: 3}
-  player2Prefab: {fileID: 3177370308563021893, guid: 3eefa774d3ca931408e58374e7281239, type: 3}
+  player2Prefab: {fileID: 2271089584130409616, guid: 9d0fd8b83d594624e8d251735bf110d7, type: 3}
   player1SpawnPoint: {fileID: 1730453533}
   player2SpawnPoint: {fileID: 1299749413}
 --- !u!1660057539 &9223372036854775807
