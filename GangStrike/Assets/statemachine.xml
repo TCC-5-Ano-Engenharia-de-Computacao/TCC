@@ -429,6 +429,7 @@
     <State id="WeakPunch">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
+            <AddHitToEnemyBufferAction damage="5" effect="stun" tag="weakPunch" sameAttackCooldown="1f" genericCooldown="0.5f" stunDuration="0.5f" knockBackForce="0f" />
         </OnEnter>
 
         <OnStay>

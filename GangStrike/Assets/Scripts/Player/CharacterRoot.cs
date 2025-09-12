@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace StateMachine
@@ -7,8 +8,11 @@ namespace StateMachine
         public AudioSource audioSource;
         public Animator animator;
         public Rigidbody2D rigidbody2D;
-        public Collider2D footGroundCollider;
         public SideSwapper sideSwapper;
+        public IncomingHitBuffer incomingHitBuffer;
+        public Collider2D footGroundCollider;
+        public Collider2D bodyCollider;
+        public Collider2D attackCollider;
 
     }
 }
