@@ -15,10 +15,11 @@ namespace Player.NewStateMachine.Actions
             [SerializeField] private float speed = 5f;
             [SerializeField] private int dirSign = 1;
             [SerializeField] private new Rigidbody2D rigidbody2D;
+            [SerializeField] private SideSwapper sideSwapper;
 
             public override void Execute()
             {
-                rigidbody2D.linearVelocity = new Vector2(dirSign * speed, rigidbody2D.linearVelocityY);
+                rigidbody2D.linearVelocity = new Vector2(dirSign * speed * (sideSwapper.swapped ? -1 : 1), rigidbody2D.linearVelocityY);
             }
 
             public static async Task<ActionBase> ConstructFromXmlAsync(XElement node, Transform parent, PlayerRoot player)
@@ -27,9 +28,10 @@ namespace Player.NewStateMachine.Actions
                 go.transform.SetParent(parent, false);
 
                 var action = go.AddComponent<MovePlayerAction>();
-
+                
                 action.rigidbody2D = player.characterRoot.rigidbody2D;
-
+                action.sideSwapper = player.characterRoot.sideSwapper;
+                
                 action.speed =
                     float.TryParse((string)node.Attribute("speed"),
                         NumberStyles.Float,
@@ -37,12 +39,12 @@ namespace Player.NewStateMachine.Actions
                         out var spd)
                         ? spd : action.speed;
 
-                // direction="left" | "right"
+                // direction="forward" | "backward"
                 action.dirSign =
                     (((string)node.Attribute("direction"))?
                         .Trim()
-                        .StartsWith("l", StringComparison.OrdinalIgnoreCase) ?? false)
-                        ? -1 : 1;
+                        .StartsWith("f", StringComparison.OrdinalIgnoreCase) ?? false) // forward
+                        ? 1 : -1;
 
                 
                 return action;      
