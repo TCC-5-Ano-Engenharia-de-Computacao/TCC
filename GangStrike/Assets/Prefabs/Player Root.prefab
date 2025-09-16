@@ -336,6 +336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6083303662717628191}
   - {fileID: 5531929547004180420}
   - {fileID: 143590361948351598}
   - {fileID: 2637925044492450452}
@@ -356,8 +357,10 @@ MonoBehaviour:
   characterRoot: {fileID: 1042181823519266613}
   stateMachine: {fileID: 0}
   inputRoot: {fileID: 698114262836227300}
+  attributeController: {fileID: 2640786784819686136}
   PlayerSimpleTimer: {fileID: 0}
   stateTimerDebugText: {fileID: 0}
+  attributeSystem: {fileID: 0}
 --- !u!1 &3267647945385290403
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +781,70 @@ MonoBehaviour:
   m_DefaultActionMap: Default
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &6209342058402868668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6083303662717628191}
+  - component: {fileID: 5633331171259353376}
+  - component: {fileID: 2640786784819686136}
+  m_Layer: 0
+  m_Name: Attribute Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6083303662717628191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6209342058402868668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5471993620949986263}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5633331171259353376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6209342058402868668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f04c01128df44747bd4947391805150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 100
+  staminaMax: 100
+  ultimateMax: 100
+--- !u!114 &2640786784819686136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6209342058402868668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7654597e2bbacca4f886265f35353c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 1
+  uiControllerPrefab: {fileID: 5613761470024541841, guid: f6d71e07e7da71e43a89580aa9965ef1, type: 3}
+  uiParent: {fileID: 0}
+  uiOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8641384987561283748
 GameObject:
   m_ObjectHideFlags: 0

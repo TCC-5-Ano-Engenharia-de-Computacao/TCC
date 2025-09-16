@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2640786784819686136, guid: 3eefa774d3ca931408e58374e7281239, type: 3}
+      propertyPath: playerId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640786784819686136, guid: 3eefa774d3ca931408e58374e7281239, type: 3}
+      propertyPath: uiControllerPrefab
+      value: 
+      objectReference: {fileID: 6077235284768546871, guid: ca7cee458e047914ca1a8271cb1fc4ef, type: 3}
     - target: {fileID: 3177370308563021893, guid: 3eefa774d3ca931408e58374e7281239, type: 3}
       propertyPath: m_Name
       value: Player2 Root

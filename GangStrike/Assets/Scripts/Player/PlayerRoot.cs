@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Input;
+using Player;
 using Player.NewStateMachine;
 using UnityEngine;
 
@@ -7,14 +8,17 @@ namespace StateMachine
 {
     public class PlayerRoot : MonoBehaviour
     {
-        public  CharacterRoot characterRoot;
+        public CharacterRoot characterRoot;
         public StateMachineMono stateMachine;
         public InputRoot inputRoot;
+        public PlayerAttributeController attributeController;
         
         public PlayerSimpleTimer PlayerSimpleTimer;
         //TEMPORARY, FOR TESTING
         public StateTimerDebugText stateTimerDebugText;
 
+        public AttributeSystem attributeSystem;
+        
         public async Task Initialize()
         {
             throw new System.NotImplementedException();
