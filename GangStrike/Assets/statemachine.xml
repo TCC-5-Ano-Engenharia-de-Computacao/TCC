@@ -2,8 +2,11 @@
 
     <!-- ================== IDLE ================== -->
     <State id="Idle">
-        <OnEnter>
+        <BeforeEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Idle"/>
+        </BeforeEnter>
+        
+        <OnEnter>
         </OnEnter>
 
         <OnStay>
@@ -15,7 +18,7 @@
             <Transition to="WeakPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="attack"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
@@ -24,7 +27,7 @@
             <Transition to="StrongPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="kick"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
@@ -33,7 +36,7 @@
             <Transition to="Jump">
                 <Conditions>
                     <BufferedInputCondition inputName="jump"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                     <PlayerIsGroundedCondition/>
                 </Conditions>
@@ -80,14 +83,14 @@
             <Transition to="WeakPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="attack"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
             <Transition to="StrongPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="kick"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
@@ -96,7 +99,7 @@
             <Transition to="JumpForward">
                 <Conditions>
                     <BufferedInputCondition inputName="jump"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                     <PlayerIsGroundedCondition/>
                 </Conditions>
@@ -125,14 +128,14 @@
             <Transition to="WeakPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="attack"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
             <Transition to="StrongPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="kick"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
@@ -141,7 +144,7 @@
             <Transition to="JumpBackward">
                 <Conditions>
                     <BufferedInputCondition inputName="jump"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                     <PlayerIsGroundedCondition/>
                 </Conditions>
@@ -188,14 +191,14 @@
             <Transition to="CrouchWeakPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="attack"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
             <Transition to="CrouchStrongPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="kick"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
@@ -229,6 +232,10 @@
 
     <!-- ================== JUMP (vertical) ================== -->
     <State id="Jump">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
             <JumpPlayerAction force="50"/>
@@ -242,14 +249,14 @@
             <Transition to="JumpWeakPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="attack"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
             <Transition to="JumpStrongPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="kick"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
@@ -264,6 +271,10 @@
 
     <!-- ================== JUMP FORWARD ================== -->
     <State id="JumpForward">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
             <JumpPlayerAction force="50"/>
@@ -277,14 +288,14 @@
             <Transition to="JumpWeakPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="attack"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
             <Transition to="JumpStrongPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="kick"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
@@ -299,6 +310,10 @@
 
     <!-- ================== JUMP BACKWARD ================== -->
     <State id="JumpBackward">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
             <JumpPlayerAction force="50"/>
@@ -312,14 +327,14 @@
             <Transition to="JumpWeakPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="attack"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
             <Transition to="JumpStrongPunch">
                 <Conditions>
                     <BufferedInputCondition inputName="kick"
-                                            isInstantaneous="true"
+                                            isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
@@ -427,6 +442,9 @@
 
     <!-- ============== STANDING ATTACKS ============== -->
     <State id="WeakPunch">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
             <AddHitToEnemyBufferAction damage="5" effect="stun" tag="weakPunch" sameAttackCooldown="1f" genericCooldown="0.5f" stunDuration="0.5f" knockBackForce="0f" />
@@ -445,6 +463,9 @@
     </State>
 
     <State id="StrongPunch">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
         </OnEnter>
@@ -498,6 +519,10 @@
 
     <!-- ============== AIR ATTACKS ============== -->
     <State id="JumpWeakPunch">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
         </OnEnter>
@@ -515,6 +540,10 @@
     </State>
 
     <State id="JumpStrongPunch">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
         </OnEnter>
