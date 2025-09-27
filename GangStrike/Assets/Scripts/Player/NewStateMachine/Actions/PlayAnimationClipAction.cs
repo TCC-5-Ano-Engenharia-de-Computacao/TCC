@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using StateMachine;
@@ -50,5 +51,13 @@ namespace Player.NewStateMachine.Actions
         [RuntimeInitializeOnLoadMethod]
         private static void Register() =>
             ActionFactory.Register(nameof(PlayAnimationClipAction), ConstructFromXmlAsync);
+
+        private void OnDestroy()
+        {
+            if (animationClip != null)
+            {
+                Addressables.Release(animationClip);
+            }
+        }
     }
 }
