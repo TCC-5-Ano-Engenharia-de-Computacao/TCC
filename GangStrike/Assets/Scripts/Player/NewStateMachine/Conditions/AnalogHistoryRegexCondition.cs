@@ -1,4 +1,7 @@
 // Player.NewStateMachine.Conditions.AnalogHistoryRegexCondition.cs
+
+using Input;
+
 namespace Player.NewStateMachine.Conditions
 {
     using System.Text.RegularExpressions;
