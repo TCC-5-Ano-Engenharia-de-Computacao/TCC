@@ -29,7 +29,7 @@ public sealed class AnimationReachedEndCondition : ConditionBase
         bool ended = elapsedSec >= currentClip.length;
 
         // debug opcional
-        Debug.Log($"clip:{currentClip.name} t={elapsedSec:F3}/{currentClip.length:F3}");
+        //Debug.Log($"clip:{currentClip.name} t={elapsedSec:F3}/{currentClip.length:F3}");
 
         return correctClip && ended;
     }
