@@ -1,3 +1,4 @@
+using Player.Input;
 using UnityEngine;
 using UnityEngine.Serialization;
 
