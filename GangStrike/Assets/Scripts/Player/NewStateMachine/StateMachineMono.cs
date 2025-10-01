@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -23,20 +25,31 @@ namespace Player.NewStateMachine
             if (next != null) SetState(next);
         }
 
-        private void SetState(string id)
+        private void SetState(string id, List<string> previousAttempts = null)
         {
+            if (previousAttempts?.Count(x => x == id) > 1)
+            {
+                Debug.LogError("Entrou em loop de transições");
+                Debug.LogError($"Tentativas anteriores: {string.Join(", ", previousAttempts)}");
+                throw new Exception();
+            }
+            
             var next = FindChildState(id);
+            
             if (next == null)
             {
                 Debug.LogError($"State '{id}' não encontrado entre os filhos de '{name}'. Certifique-se que o GameObject filho se chama exatamente '{id}'.");
                 return;
             }
+            
+            previousAttempts ??= new List<string>();
+            previousAttempts.Add(id);
 
             _current?.OnLeave();
             _current = next;
 
             var jump = _current.OnBeforeEnterAndCheckImmediate();
-            if (jump != null) { SetState(jump); return; }
+            if (jump != null) { SetState(jump, previousAttempts); return; }
 
             _current.OnEnter();
         }

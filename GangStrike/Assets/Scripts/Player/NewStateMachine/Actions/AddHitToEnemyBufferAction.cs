@@ -17,8 +17,8 @@ namespace Player.NewStateMachine.Actions
         {
             if (attackCollider.IsTouching(enemyCollider))
             {
-                Debug.LogWarning("HIT!");
-                enemyHitBuffer.hitBuffer.Add(hit);
+                //Debug.Log("HIT!");
+                enemyHitBuffer.AddHitToBuffer(hit);
             }
         }
 

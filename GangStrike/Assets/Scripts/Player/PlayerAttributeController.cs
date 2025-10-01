@@ -108,14 +108,14 @@ namespace Player
                         rectTransform.anchorMin = new Vector2(0f, 1f);
                         rectTransform.anchorMax = new Vector2(0f, 1f);
                         rectTransform.pivot = new Vector2(0f, 1f);
-                        anchoredPosition = new Vector2(20f, -20f); // Top-left with margin
+                        anchoredPosition = new Vector2(150f, -20f); // Top-left with margin
                         break;
                     case 2:
                         // Player 2 - Right side
                         rectTransform.anchorMin = new Vector2(1f, 1f);
                         rectTransform.anchorMax = new Vector2(1f, 1f);
                         rectTransform.pivot = new Vector2(1f, 1f);
-                        anchoredPosition = new Vector2(-20f, -20f); // Top-right with margin
+                        anchoredPosition = new Vector2(-150f, -20f); // Top-right with margin
                         break;
                     default:
                         // Default positioning

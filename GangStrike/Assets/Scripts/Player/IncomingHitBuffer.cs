@@ -1,11 +1,24 @@
 using System.Collections.Generic;
+using StateMachine;
 using UnityEngine;
 
 namespace Player
 {
     public class IncomingHitBuffer : MonoBehaviour
     {
-        public List<Hit> hitBuffer = new List<Hit>();
+        public List<Hit> HitBufferList { get; private set; } = new List<Hit>();
+        [SerializeField] private PlayerRoot playerRoot;
+
+        public void AddHitToBuffer(Hit hit)
+        {
+            HitBufferList.Add(hit);
+            ApplyDamage(hit.damage);
+        }
+
+        private void ApplyDamage(float damage)
+        {
+            playerRoot.attributeSystem.TakeDamage(damage);
+        }
         
         public class Hit // Trocar por struct?
         {

@@ -34,12 +34,10 @@ namespace Player.NewStateMachine.Conditions
         public override bool Evaluate()
         {
             // Lógica de validação
-            bool pressedNow    = _buffer.StartedThisFrame(actionName);
-            bool stillBuffered = _buffer.IsLingering(actionName);
-
+            
             bool matched = requireInstantPress
-                           ? pressedNow
-                           : (pressedNow || stillBuffered);
+                           ? _buffer.StartedThisFrame(actionName)
+                           : (_buffer.IsLingering(actionName, true) || _buffer.StartedThisFrame(actionName, true));
 
             // Se não quisermos consumir, precisamos “recolocar” o input
             // (os métodos acima marcam triedConsume=true).

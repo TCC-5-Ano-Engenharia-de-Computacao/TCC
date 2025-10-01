@@ -66,35 +66,35 @@ namespace Input
         // ------------------------------------------------------- HANDLERS
         private void HandlePunchPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log("[C] - Punch");
+            //Debug.Log("[C] - Punch");
             inputPerformedEvent?.Invoke("attack");
         }
 
         private void HandlePunchCanceled(InputAction.CallbackContext ctx)
         {
-            Debug.Log("Punch canceled");
+            //Debug.Log("Punch canceled");
         }
 
         private void HandleKickPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log("[V] - Kick");
+            //Debug.Log("[V] - Kick");
             inputPerformedEvent?.Invoke("kick");
         }
 
         private void HandleKickCanceled(InputAction.CallbackContext ctx)
         {
-            Debug.Log("Kick canceled");
+            //Debug.Log("Kick canceled");
         }
 
         private void HandleJumpPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log("[Space] - Jump");
+            //Debug.Log("[Space] - Jump");
             inputPerformedEvent?.Invoke("jump");
         }
 
         private void HandleJumpCanceled(InputAction.CallbackContext ctx)
         {
-            Debug.Log("Jump canceled");
+            //Debug.Log("Jump canceled");
         }
     }
 }
