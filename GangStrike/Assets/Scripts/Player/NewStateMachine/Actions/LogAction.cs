@@ -20,7 +20,7 @@ namespace Player.NewStateMachine.Actions
             go.transform.SetParent(parent, false);
 
             var a = go.AddComponent<LogAction>();
-            a.message = (string)node.Attribute("msg") ?? string.Empty;
+            a.message = (string)node.Attribute("message") ?? string.Empty;
 
             return Task.FromResult<ActionBase>(a);
         }

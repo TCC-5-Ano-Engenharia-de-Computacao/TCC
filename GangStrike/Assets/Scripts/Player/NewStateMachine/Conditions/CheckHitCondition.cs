@@ -19,13 +19,13 @@ namespace Player.NewStateMachine.Conditions
     /// </summary>
     public sealed class CheckHitCondition : ConditionBase
     {
-        [SerializeField] private string hitEffect = "Stagger";
+        [SerializeField] private string hitEffect = "stagger";
         [SerializeField] private IncomingHitBuffer buffer;
         
 
         public override bool Evaluate()
         {
-            return buffer.HitBufferList.Find(hit => hit.effect == hitEffect) != null;
+            return buffer.HasHitEffect(hitEffect);
         }
         
         public static Task<ConditionBase> ConstructFromXmlAsync(

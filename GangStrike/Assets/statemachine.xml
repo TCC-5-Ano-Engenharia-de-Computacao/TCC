@@ -65,6 +65,16 @@
                     <PlayerIsGroundedCondition/>
                 </Conditions>
             </Transition>
+
+            <!-- Apply Stagger -->
+            <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
         </Transitions>
     </State>
 
@@ -110,6 +120,16 @@
                     <AnalogHistoryRegexCondition regexString="[^6]$"/>
                 </Conditions>
             </Transition>
+            
+            <!-- Apply Stagger -->
+            <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
         </Transitions>
     </State>
 
@@ -154,6 +174,16 @@
                 <Conditions>
                     <AnalogHistoryRegexCondition regexString="[^4]$"/>
                 </Conditions>
+            </Transition>
+
+            <!-- Apply Stagger -->
+            <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
             </Transition>
         </Transitions>
     </State>
@@ -447,7 +477,7 @@
         </BeforeEnter>
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
-            <AddHitToEnemyBufferAction damage="5" effect="stun" tag="weakPunch" sameAttackCooldown="1f" genericCooldown="0.5f" stunDuration="0.5f" knockBackForce="0f" />
+            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="weakPunch" sameAttackCooldown="1f" genericCooldown="0.5f" stunDuration="0.5f" knockBackForce="0f" />
         </OnEnter>
 
         <OnStay>
@@ -574,6 +604,21 @@
             <Transition to="Idle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="Knockback"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <!-- ================== STAGGER ================== -->
+    <State id="Stagger">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/Stagger"/>
+        </OnEnter>
+
+        <Transitions>
+            <Transition to="Idle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="Stagger"/>
                 </Conditions>
             </Transition>
         </Transitions>
