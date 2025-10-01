@@ -49,8 +49,9 @@ public class SideSwapper : MonoBehaviour
     {
         //Debug.Log("SWAP");
         swapped = !swapped;
-        var localScale = characterRoot.transform.localScale;
-        localScale.x *= -1;
-        characterRoot.transform.localScale = localScale;
+        //var localScale = characterRoot.transform.localScale;
+        //localScale.x *= -1;
+        //characterRoot.transform.localScale = localScale;
+        characterRoot.transform.right *= -1;
     }
 }
