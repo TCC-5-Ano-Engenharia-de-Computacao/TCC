@@ -32,7 +32,17 @@ namespace Player.NewStateMachine.Runtime
         public string TryGetValidTransition()
         {
             foreach (var t in transitions)
-                if (t.IsValid()) return t.ToId;
+            {
+                if (!t.IsValid())
+                {
+                    t.OnFail();
+                }
+                else
+                {
+                    t.OnSuccess();
+                    return t.ToId;
+                }
+            }
             return null;
         }
 

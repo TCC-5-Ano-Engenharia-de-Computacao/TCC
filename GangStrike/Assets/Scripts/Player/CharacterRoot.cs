@@ -12,7 +12,7 @@ namespace StateMachine
         public IncomingHitBuffer incomingHitBuffer;
         public Collider2D footGroundCollider;
         public Collider2D bodyCollider;
-        public Collider2D attackCollider;
+        public AttackTriggers attackTriggers;
 
     }
 }

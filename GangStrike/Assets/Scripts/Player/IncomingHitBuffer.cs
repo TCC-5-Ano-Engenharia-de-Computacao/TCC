@@ -6,13 +6,23 @@ namespace Player
 {
     public class IncomingHitBuffer : MonoBehaviour
     {
-        public List<Hit> HitBufferList { get; private set; } = new List<Hit>();
+        private readonly List<Hit> hitBufferList = new();
         [SerializeField] private PlayerRoot playerRoot;
 
         public void AddHitToBuffer(Hit hit)
         {
-            HitBufferList.Add(hit);
+            hitBufferList.Add(hit);
             ApplyDamage(hit.damage);
+        }
+        
+        public bool HasHitEffect(string hitEffect)
+        {
+            return hitBufferList.Find(hit => hit.effect == hitEffect) != null;
+        }
+
+        public void ClearHitBuffer()
+        {
+            hitBufferList.Clear();
         }
 
         private void ApplyDamage(float damage)

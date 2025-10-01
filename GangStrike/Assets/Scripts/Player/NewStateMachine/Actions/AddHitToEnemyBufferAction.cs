@@ -39,7 +39,7 @@ namespace Player.NewStateMachine.Actions
                 stunDuration: ConvertStrToFloat((string)node.Attribute("stunDuration"))
             );
             
-            a.attackCollider = player.characterRoot.attackCollider;
+            a.attackCollider = player.characterRoot.attackTriggers.GetAttackColliderByName(a.hit.tag);
 
             var allPlayers = GameObject.FindObjectsByType<PlayerRoot>(FindObjectsSortMode.None);
             foreach (PlayerRoot e in allPlayers)
