@@ -1,0 +1,809 @@
+fileFormatVersion: 2
+guid: d147aa4509583dd4ebe3d0aae24ace63
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8613395997443305226
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_0
+  - first:
+      213: 5421702280704276362
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_1
+  - first:
+      213: -7663556120304788513
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_2
+  - first:
+      213: 3836825882352519306
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_3
+  - first:
+      213: -8352178499993170647
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_4
+  - first:
+      213: 7559850792997958367
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_5
+  - first:
+      213: -3140424257997519535
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_6
+  - first:
+      213: 2610654830632369658
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_7
+  - first:
+      213: -4478252299246436552
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_8
+  - first:
+      213: 6685621565358870305
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_9
+  - first:
+      213: 3264201278809902289
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_10
+  - first:
+      213: 8073937343718599492
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_11
+  - first:
+      213: 8440262323191215970
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_12
+  - first:
+      213: -7894706801767471479
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_13
+  - first:
+      213: -981044236212369329
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_14
+  - first:
+      213: -5529024578424732409
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_15
+  - first:
+      213: -5080409631904302129
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_16
+  - first:
+      213: -5618357257572174496
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_17
+  - first:
+      213: 7597130031331756075
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_18
+  - first:
+      213: 3041924227962098101
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_19
+  - first:
+      213: -445470571959947253
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_20
+  - first:
+      213: 4002398626359308295
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_21
+  - first:
+      213: 3749443987122198047
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_22
+  - first:
+      213: -3916380546446711101
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_23
+  - first:
+      213: -4654725059338928045
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_24
+  - first:
+      213: -608692175832718221
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_25
+  - first:
+      213: -5633502634474899488
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_26
+  - first:
+      213: -1517364193819161501
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_27
+  - first:
+      213: -7830581725592838382
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_28
+  - first:
+      213: -1885219401712790178
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_29
+  - first:
+      213: -1386879123481559278
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_30
+  - first:
+      213: 5746825728048610132
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_31
+  - first:
+      213: 5189180278635604337
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_32
+  - first:
+      213: 2388539436819020251
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_33
+  - first:
+      213: -8787627082865734348
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_34
+  - first:
+      213: -6706600853080631509
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_35
+  - first:
+      213: -4965765397694537891
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_36
+  - first:
+      213: -4871807639674799423
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_37
+  - first:
+      213: 4354787129324972266
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_38
+  - first:
+      213: 6160241922261394091
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_39
+  - first:
+      213: 7471439528292406680
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_40
+  - first:
+      213: 2029536530337540270
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_41
+  - first:
+      213: -1733566739123138376
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_42
+  - first:
+      213: 5417121771633688131
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_43
+  - first:
+      213: 9122116784003246331
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_44
+  - first:
+      213: 2542311398292663796
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_45
+  - first:
+      213: -6275330544156516579
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_46
+  - first:
+      213: 3306291301797734939
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_47
+  - first:
+      213: -4268209986276715844
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_48
+  - first:
+      213: 4694146979409511112
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_49
+  - first:
+      213: -3686810472061905535
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_50
+  - first:
+      213: -593735074810223280
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_51
+  - first:
+      213: -8132399708312627523
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_52
+  - first:
+      213: 3862731707554762285
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_53
+  - first:
+      213: 4427352310819936905
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_54
+  - first:
+      213: 5879098682182184919
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_55
+  - first:
+      213: -7230985109971587480
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_56
+  - first:
+      213: -8254005893036210000
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_57
+  - first:
+      213: 8442300003788680198
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_58
+  - first:
+      213: -5219158688827006082
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_59
+  - first:
+      213: -5850359833521213594
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_60
+  - first:
+      213: 329368996243694629
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_61
+  - first:
+      213: -256368336591884814
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_62
+  - first:
+      213: 4952021760179851199
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_63
+  - first:
+      213: 1864751971740141209
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_64
+  - first:
+      213: 6388529025320810269
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_65
+  - first:
+      213: -4792966254444991753
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_66
+  - first:
+      213: 5351523469745451423
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_67
+  - first:
+      213: 5035752986396207012
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_68
+  - first:
+      213: -5833732616857490798
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_69
+  - first:
+      213: 6005710215597447081
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_70
+  - first:
+      213: 7065073463725261190
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_71
+  - first:
+      213: -8861274834121797102
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_72
+  - first:
+      213: 6378946793604667054
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_73
+  - first:
+      213: -5772829379267265407
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_74
+  - first:
+      213: -7125930890358730162
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_75
+  - first:
+      213: 4457684421380294210
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_76
+  - first:
+      213: -8033707860027083561
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_77
+  - first:
+      213: 7717849995558421980
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_78
+  - first:
+      213: 1851761709836979985
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_79
+  - first:
+      213: -4677219995420722810
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_80
+  - first:
+      213: -1587904679110414194
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_81
+  - first:
+      213: -4671401726161002817
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_82
+  - first:
+      213: 2251722862536461207
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_83
+  - first:
+      213: -1995398609495310960
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_84
+  - first:
+      213: -7797013297492791292
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_85
+  - first:
+      213: 8176253648572692433
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_86
+  - first:
+      213: -4395628447284101417
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_87
+  - first:
+      213: 8693478561149711982
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_88
+  - first:
+      213: 8977321797994673774
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_89
+  - first:
+      213: 7890601169720708161
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_90
+  - first:
+      213: -4093882342420338431
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_91
+  - first:
+      213: 4856688517624513372
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_92
+  - first:
+      213: 5037770398323811764
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_93
+  - first:
+      213: 8273681184428220651
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_94
+  - first:
+      213: 4992577537181454203
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_95
+  - first:
+      213: -2596887500405640652
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_96
+  - first:
+      213: 8576328615389638127
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_97
+  - first:
+      213: -6371179323307232108
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_98
+  - first:
+      213: 7267741260019440207
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_99
+  - first:
+      213: 7444513943827542782
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_100
+  - first:
+      213: 1870750953171926755
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_101
+  - first:
+      213: 3207783472215548299
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_102
+  - first:
+      213: 2828387239310015960
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_103
+  - first:
+      213: -5761921892724384787
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_104
+  - first:
+      213: -6239189554435667560
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_105
+  - first:
+      213: -2793557371997195407
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_106
+  - first:
+      213: 1399227996263377165
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_107
+  - first:
+      213: 3305042857648455937
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_108
+  - first:
+      213: -2723979799120767754
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_109
+  - first:
+      213: -578369096080713286
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_110
+  - first:
+      213: -2781312782113752053
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_111
+  - first:
+      213: -6667388115705410176
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_112
+  - first:
+      213: 9056071609642263794
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_113
+  - first:
+      213: 4310559895014181369
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_114
+  - first:
+      213: 3506924815833677887
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_115
+  - first:
+      213: 404165195938086381
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_116
+  - first:
+      213: -3150814420084480074
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_117
+  - first:
+      213: -1232945117808785093
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_118
+  - first:
+      213: -2954552286717821585
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_119
+  - first:
+      213: -3542408864484307515
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_120
+  - first:
+      213: 6817570136926218934
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_121
+  - first:
+      213: 1112991438875557923
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_122
+  - first:
+      213: 7518073500489118842
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_123
+  - first:
+      213: 7183767813538719901
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_124
+  - first:
+      213: 170836395973229867
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_125
+  - first:
+      213: -8428614952872881525
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_126
+  - first:
+      213: 3381693506282864
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_127
+  - first:
+      213: -45033160866883610
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_128
+  - first:
+      213: -5470296852586599951
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_129
+  - first:
+      213: -6877603655832673677
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_130
+  - first:
+      213: -1353431024378804732
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_131
+  - first:
+      213: -8464646923101695141
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_132
+  - first:
+      213: 2976265699715637765
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_133
+  - first:
+      213: -6489527901890985529
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_134
+  - first:
+      213: 1399367495223355075
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_135
+  - first:
+      213: 6421182838743878826
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_136
+  - first:
+      213: 2696076025366058806
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_137
+  - first:
+      213: -4834774610794585967
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_138
+  - first:
+      213: 1183512219783473364
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_139
+  - first:
+      213: -9202653079654525382
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_140
+  - first:
+      213: 2732686817205979260
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_141
+  - first:
+      213: 228223968695025391
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_142
+  - first:
+      213: -2564999972555681538
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_143
+  - first:
+      213: 7304681291343347193
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_144
+  - first:
+      213: 3990893662786904128
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_145
+  - first:
+      213: -6883850873924039511
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_146
+  - first:
+      213: 5049115614190760781
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_147
+  - first:
+      213: -38242691028305865
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_148
+  - first:
+      213: -6728117854285857633
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_149
+  - first:
+      213: -4835297046320889067
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_150
+  - first:
+      213: 1341836798564432197
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_151
+  - first:
+      213: -7925338039925947540
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_152
+  - first:
+      213: -3472791192615527759
+    second: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_153
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f2161260ee88770800000000000000
+      internalID: 8613395997443305226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_1
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87bd47bf71cd3b40800000000000000
+      internalID: 5421702280704276362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_2
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb56f4df4495a590800000000000000
+      internalID: -7663556120304788513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_3
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8885a6cfc42f3530800000000000000
+      internalID: 3836825882352519306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_4
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 2000
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d804fe7e9171c80800000000000000
+      internalID: -8352178499993170647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2399f0e3cf9e860800000000000000
+      internalID: 7559850792997958367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_6
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155c90aa6c8fa64d0800000000000000
+      internalID: -3140424257997519535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_7
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afdfff29cb8ea3420800000000000000
+      internalID: 2610654830632369658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_8
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ff6d8b24d0ad1c0800000000000000
+      internalID: -4478252299246436552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_9
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f08e9446918cc50800000000000000
+      internalID: 6685621565358870305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bf619022411dbbc49b916822d0a31241
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_0: 8613395997443305226
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_1: 5421702280704276362
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_2: -7663556120304788513
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_3: 3836825882352519306
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_4: -8352178499993170647
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_5: 7559850792997958367
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_6: -3140424257997519535
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_7: 2610654830632369658
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_8: -4478252299246436552
+      AnimacoSaber_Stag_Caindo_SPRITESHEET_2000X2000_9: 6685621565358870305
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

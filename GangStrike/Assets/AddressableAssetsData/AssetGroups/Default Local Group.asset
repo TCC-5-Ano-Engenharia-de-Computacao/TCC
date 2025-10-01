@@ -20,6 +20,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35680c8a68c09ed488ee222a7908879f
+    m_Address: Animations/EndStrongPunch
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 419d97f186bbdda438aaeed55ddd6c7c
+    m_Address: Animations/StandUp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ec044924fe5ee6459e1b9acbb6ec44a
     m_Address: Animations/CrouchEnd
     m_ReadOnly: 0
@@ -75,8 +85,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: db5de1407fd65cb4ca51866cd89b201e
-    m_Address: Animations/Knockback
+  - m_GUID: d7360f1a24fecb0488111053757ddd3d
+    m_Address: Animations/StaggerKnockback
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9044ef2acfb745439e8743c96f0a014
+    m_Address: Animations/StartStrongPunch
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -87,6 +102,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f2a5212516304d54da272d617351af8a
     m_Address: Animations/WalkingBackwards
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9c2ee5257af6824b8aa91671450e806
+    m_Address: Animations/Stagger
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
