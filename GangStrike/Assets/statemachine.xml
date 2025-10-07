@@ -11,6 +11,7 @@
 
         <OnStay>
             <UpdateSideAction/>
+            <RecoverStaminaAction recoverRate = "20" />
         </OnStay>
 
         <Transitions>
@@ -85,6 +86,15 @@
                     <ClearHitBufferAction/>
                 </SuccessActions>
             </Transition>
+            
+            <!-- Block -->
+            <Transition to="Block">
+                <Conditions>
+                    <BufferedInputCondition inputName="block"
+                                            isInstantaneous="false"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
         </Transitions>
     </State>
 
@@ -97,6 +107,7 @@
         <OnStay>
             <UpdateSideAction/>
             <MovePlayerAction speed="1" direction="forward"/>
+            <RecoverStaminaAction recoverRate = "10" />
         </OnStay>
 
         <Transitions>
@@ -150,6 +161,15 @@
                     <ClearHitBufferAction/>
                 </SuccessActions>
             </Transition>
+
+            <!-- Block -->
+            <Transition to="Block">
+                <Conditions>
+                    <BufferedInputCondition inputName="block"
+                                            isInstantaneous="false"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
         </Transitions>
     </State>
 
@@ -162,6 +182,7 @@
         <OnStay>
             <UpdateSideAction/>
             <MovePlayerAction speed="1" direction="backward"/>
+            <RecoverStaminaAction recoverRate = "10" />
         </OnStay>
 
         <Transitions>
@@ -215,6 +236,15 @@
                     <ClearHitBufferAction/>
                 </SuccessActions>
             </Transition>
+
+            <!-- Block -->
+            <Transition to="Block">
+                <Conditions>
+                    <BufferedInputCondition inputName="block"
+                                            isInstantaneous="false"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
         </Transitions>
     </State>
 
@@ -226,6 +256,7 @@
 
         <OnStay>
             <UpdateSideAction/>
+            <RecoverStaminaAction recoverRate = "10" />
         </OnStay>
 
         <Transitions>
@@ -255,6 +286,7 @@
 
         <OnStay>
             <UpdateSideAction/>
+            <RecoverStaminaAction recoverRate = "20" />
         </OnStay>
 
         <Transitions>
@@ -279,6 +311,15 @@
                 </Conditions>
             </Transition>
 
+            <!-- Block -->
+            <Transition to="CrouchBlock">
+                <Conditions>
+                    <BufferedInputCondition inputName="block"
+                                            isInstantaneous="false"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+
             <!-- Apply Knockback -->
             <Transition to="StaggerKnockback">
                 <Conditions>
@@ -299,6 +340,7 @@
 
         <OnStay>
             <UpdateSideAction/>
+            <RecoverStaminaAction recoverRate = "10" />
         </OnStay>
 
         <Transitions>
@@ -537,7 +579,7 @@
         </BeforeEnter>
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
-            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="weakPunch" sameAttackCooldown="1f" genericCooldown="0.5f" stunDuration="0.5f" knockBackForce="0f" />
+            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="weakPunch" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="0.5" knockBackForce="0" />
         </OnEnter>
 
         <OnStay>
@@ -574,7 +616,7 @@
 
     <State id="EndStrongPunch">
         <OnEnter>
-            <AddHitToEnemyBufferAction damage="10" effect="knockback" tag="strongPunch" sameAttackCooldown="1f" genericCooldown="0.5f" stunDuration="1f" knockBackForce="5f" />
+            <AddHitToEnemyBufferAction damage="10" effect="knockback" tag="strongPunch" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
             <PlayAnimationClipAction animationClipAddress="Animations/EndStrongPunch"/>
         </OnEnter>
 
@@ -706,6 +748,87 @@
             <Transition to="Idle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="StandUp"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <!-- ============== BLOCK ============== -->
+    <State id="Block">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/Block"/>
+        </OnEnter>
+
+        <OnStay>
+            <DrainStaminaAction drainRate = "20" />
+            <UpdateSideAction/>
+        </OnStay>
+
+        <Transitions>
+            <Transition to="Idle">
+                <Conditions>
+                    <BufferedInputCondition inputName="blockCanceled"
+                                            isInstantaneous="false"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            <Transition to="ExhaustedStamina">
+                <Conditions>
+                    <CheckStaminaExhaustedCondition/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <!-- ============== CROUCH BLOCK ============== -->
+    <State id="CrouchBlock">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/CrouchBlock"/>
+        </OnEnter>
+
+        <OnStay>
+            <DrainStaminaAction drainRate = "20" />
+            <UpdateSideAction/>
+        </OnStay>
+
+        <Transitions>
+            <Transition to="CrouchIdle">
+                <Conditions>
+                    <BufferedInputCondition inputName="blockCanceled"
+                                            isInstantaneous="false"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            <Transition to="CrouchEnd">
+                <Conditions>
+                    <AnalogHistoryRegexCondition regexString="[^123]$"/>
+                </Conditions>
+            </Transition>
+            <Transition to="ExhaustedStamina">
+                <Conditions>
+                    <CheckStaminaExhaustedCondition/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+    
+    <!-- ================== ExhaustedStamina ================== -->
+    <State id="ExhaustedStamina">
+        <OnEnter>
+            <!--TROCAR A ANIMAÇÃO !!!!-->
+            <PlayAnimationClipAction animationClipAddress="Animations/StaggerKnockback"/>
+        </OnEnter>
+
+        <Transitions>
+            <Transition to="StandUp">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="StaggerKnockback"/>
                 </Conditions>
             </Transition>
         </Transitions>

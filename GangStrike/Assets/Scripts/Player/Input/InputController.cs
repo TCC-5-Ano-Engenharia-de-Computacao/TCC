@@ -44,6 +44,10 @@ namespace Input
             // Jump
             playerInputActions.Default.Jump.performed   += HandleJumpPerformed;
             playerInputActions.Default.Jump.canceled    += HandleJumpCanceled;
+            
+            // Block
+            playerInputActions.Default.Block.performed   += HandleBlockPerformed;
+            playerInputActions.Default.Block.canceled    += HandleBlockCanceled;
         }
 
         private void OnDisable()
@@ -59,6 +63,10 @@ namespace Input
             // Jump
             playerInputActions.Default.Jump.performed   -= HandleJumpPerformed;
             playerInputActions.Default.Jump.canceled    -= HandleJumpCanceled;
+            
+            // Block
+            playerInputActions.Default.Block.performed   -= HandleBlockPerformed;
+            playerInputActions.Default.Block.canceled    -= HandleBlockCanceled;
 
             playerInputActions.Disable();
         }
@@ -95,6 +103,18 @@ namespace Input
         private void HandleJumpCanceled(InputAction.CallbackContext ctx)
         {
             //Debug.Log("Jump canceled");
+        }
+        
+        private void HandleBlockPerformed(InputAction.CallbackContext ctx)
+        {
+            //Debug.Log("[Space] - Block");
+            inputPerformedEvent?.Invoke("block");
+        }
+
+        private void HandleBlockCanceled(InputAction.CallbackContext ctx)
+        {
+            //Debug.Log("Block canceled");
+            inputPerformedEvent?.Invoke("blockCanceled");
         }
     }
 }
