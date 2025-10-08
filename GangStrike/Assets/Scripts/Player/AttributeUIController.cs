@@ -13,14 +13,14 @@ namespace Player
         [SerializeField] private TMPro.TextMeshProUGUI playerNameText;
         
         [Header("Bar Colors")]
-        [SerializeField] private Color healthColor = Color.red;
-        [SerializeField] private Color staminaColor = Color.blue;
-        [SerializeField] private Color ultimateColor = Color.yellow;
+        [SerializeField] private Color healthColor = Color.green;
+        [SerializeField] private Color staminaColor = Color.magenta;
+        [SerializeField] private Color ultimateColor = Color.cyan;
         
         [Header("Effects")]
         [SerializeField] private bool enableDamageFlash = true;
-        [SerializeField] private bool enableHealPulse = true;
-        [SerializeField] private bool enableUltimatePulse = true;
+        [SerializeField] private bool enableHealPulse = false;
+        [SerializeField] private bool enableUltimatePulse = false;
         [SerializeField] private Color damageFlashColor = Color.white;
         [SerializeField] private Color healPulseColor = Color.green;
         
@@ -189,9 +189,9 @@ namespace Player
             
             if (isInitialized)
             {
-                healthBar?.SetColors(health, health * 0.7f, Color.red, Color.gray);
-                staminaBar?.SetColors(stamina, stamina * 0.7f, Color.yellow, Color.gray);
-                ultimateBar?.SetColors(ultimate, ultimate * 0.7f, Color.blue, Color.gray);
+                healthBar?.SetColors(health, health * 0.7f, Color.green, Color.gray);
+                staminaBar?.SetColors(stamina, stamina * 0.7f, Color.magenta, Color.gray);
+                ultimateBar?.SetColors(ultimate, ultimate * 0.7f, Color.cyan, Color.gray);
             }
         }
         
