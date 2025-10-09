@@ -1,0 +1,350 @@
+fileFormatVersion: 2
+guid: fac0e965fe2fc6c40b7d87d98d835f0d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 26095989314260129
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_0
+  - first:
+      213: 5997572150133574506
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_1
+  - first:
+      213: -8778182330800378915
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_2
+  - first:
+      213: 2022001096971628840
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_3
+  - first:
+      213: 7667838512189030661
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_4
+  - first:
+      213: -6945939532040899005
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_5
+  - first:
+      213: 1273516324564564872
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_6
+  - first:
+      213: -2306075301137412267
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_7
+  - first:
+      213: -5364162288843266860
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_8
+  - first:
+      213: 9174051862926953807
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_9
+  - first:
+      213: -6537223146377001579
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_10
+  - first:
+      213: 8587531460489160877
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_11
+  - first:
+      213: -5683065381523222394
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_12
+  - first:
+      213: 4356182560251955742
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_13
+  - first:
+      213: -3816668706842569431
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_14
+  - first:
+      213: 543630629667899897
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_15
+  - first:
+      213: -4935848998785153653
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_16
+  - first:
+      213: 1838547232024742544
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_17
+  - first:
+      213: 5645175237759608606
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_18
+  - first:
+      213: 5322526521791378079
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_19
+  - first:
+      213: 4987114257416967035
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_20
+  - first:
+      213: -3393526805824897280
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_21
+  - first:
+      213: 6626665363545683221
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_22
+  - first:
+      213: 7119419528216586983
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_23
+  - first:
+      213: -6997860500358668303
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_24
+  - first:
+      213: 2275084526953093253
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_25
+  - first:
+      213: 3762723647510536162
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_26
+  - first:
+      213: -7886234654607667936
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_27
+  - first:
+      213: 9125095982639229308
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_28
+  - first:
+      213: -4705367979972604261
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_29
+  - first:
+      213: -8183490632345328484
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_30
+  - first:
+      213: -5393222821176542967
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_31
+  - first:
+      213: 3884265908497674701
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_32
+  - first:
+      213: -8924926795477080764
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_33
+  - first:
+      213: 1682503980661703436
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_34
+  - first:
+      213: -8098114719047687425
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_35
+  - first:
+      213: -2364868155630401826
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_36
+  - first:
+      213: 4545728725314712384
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_37
+  - first:
+      213: 3573745523209275117
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_38
+  - first:
+      213: -2679879911336926984
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_39
+  - first:
+      213: 3396872846254634034
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_40
+  - first:
+      213: 7824000512493243983
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_41
+  - first:
+      213: -993911135372939546
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_42
+  - first:
+      213: 7488726302443663123
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_43
+  - first:
+      213: -4178170368882087415
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_44
+  - first:
+      213: -8210966578687847346
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_45
+  - first:
+      213: 7252837056193392926
+    second: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 860
+        height: 1800
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac832df926bc5000800000000000000
+      internalID: 26095989314260129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_1
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 0
+        width: 860
+        height: 1800
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6bcc731818ab3350800000000000000
+      internalID: 5997572150133574506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_2
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 0
+        width: 860
+        height: 1800
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb680fcda1ad2680800000000000000
+      internalID: -8778182330800378915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_3
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 0
+        width: 860
+        height: 1800
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821b170e8479f0c10800000000000000
+      internalID: 2022001096971628840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5000dcbc8251c1d469a152aec24a388a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_0: 26095989314260129
+      AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_1: 5997572150133574506
+      AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_2: -8778182330800378915
+      AnimacaoSaber_Projetil_Energia_Explodindo_SPRITESHEET_1800x860_3: 2022001096971628840
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
