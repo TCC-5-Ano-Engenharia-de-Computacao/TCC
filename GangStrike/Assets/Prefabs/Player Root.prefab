@@ -630,7 +630,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -818,6 +818,7 @@ MonoBehaviour:
     currentValue: 0
     maxValue: 0
     minValue: 0
+  staminaExhausted: 0
 --- !u!114 &2640786784819686136
 MonoBehaviour:
   m_ObjectHideFlags: 0

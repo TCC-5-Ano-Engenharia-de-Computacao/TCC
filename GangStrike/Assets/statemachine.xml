@@ -370,7 +370,7 @@
 
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-            <JumpPlayerAction force="50"/>
+            <JumpPlayerAction force="65"/>
         </OnEnter>
 
         <OnStay>
@@ -409,7 +409,7 @@
 
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-            <JumpPlayerAction force="50"/>
+            <JumpPlayerAction force="65"/>
         </OnEnter>
 
         <OnStay>
@@ -448,7 +448,7 @@
 
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-            <JumpPlayerAction force="50"/>
+            <JumpPlayerAction force="65"/>
         </OnEnter>
 
         <OnStay>
