@@ -183,3 +183,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   attackerCharacterRoot: {fileID: 0}
+  anim: {fileID: 4161574682343568085}
