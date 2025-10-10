@@ -651,6 +651,10 @@
         <OnStay>
         </OnStay>
 
+        <OnLeave>
+            <SpawnEnergyBeamAction damage="5" effect="stagger" tag="energyBeam" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="0.5" knockBackForce="0"/>
+        </OnLeave>
+        
         <Transitions>
             <Transition to="Idle">
                 <Conditions>

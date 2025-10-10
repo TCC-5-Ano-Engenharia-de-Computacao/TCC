@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &127517164389724003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6910075089453610377}
+  m_Layer: 6
+  m_Name: ProjectileSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6910075089453610377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127517164389724003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.319, y: 0.471, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5531929547004180420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1140497376369407244
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +602,7 @@ Transform:
   - {fileID: 6416504919721070112}
   - {fileID: 9199282083668572327}
   - {fileID: 4245945307300825484}
+  - {fileID: 6910075089453610377}
   m_Father: {fileID: 5471993620949986263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1042181823519266613
@@ -593,6 +625,8 @@ MonoBehaviour:
   footGroundCollider: {fileID: 7395254102628424992}
   bodyCollider: {fileID: 903589712867889964}
   attackTriggers: {fileID: 4723542641586666640}
+  projectileSpawnPoint: {fileID: 6910075089453610377}
+  energyBeamPrefab: {fileID: 503880936534395178, guid: 4869f992a14d97344852a69ddda099fa, type: 3}
 --- !u!95 &2340634700699290823
 Animator:
   serializedVersion: 7

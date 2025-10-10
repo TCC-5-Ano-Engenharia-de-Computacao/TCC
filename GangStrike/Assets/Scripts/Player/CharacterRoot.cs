@@ -13,6 +13,7 @@ namespace StateMachine
         public Collider2D footGroundCollider;
         public Collider2D bodyCollider;
         public AttackTriggers attackTriggers;
-
+        public Transform projectileSpawnPoint;
+        public GameObject energyBeamPrefab;
     }
 }
