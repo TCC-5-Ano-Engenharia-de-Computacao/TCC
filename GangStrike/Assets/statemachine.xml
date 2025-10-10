@@ -15,6 +15,16 @@
         </OnStay>
 
         <Transitions>
+            <!-- Ataque de Energy Beam (PRECISA VIR ANTES DO WEAK ATTACK) -->
+            <Transition to="EnergyBeamAttack">
+                <Conditions>
+                    <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            
             <!-- Ataque leve: input “attack” -->
             <Transition to="WeakPunch">
                 <Conditions>
@@ -95,6 +105,7 @@
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
+            
         </Transitions>
     </State>
 
@@ -628,6 +639,27 @@
             </Transition>
         </Transitions>
     </State>
+
+    <State id="EnergyBeamAttack">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/EnergyBeamAttack"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <Transitions>
+            <Transition to="Idle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="EnergyBeamAttack"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
 
     <!-- ============== CROUCH ATTACKS ============== -->
     <State id="CrouchWeakPunch">

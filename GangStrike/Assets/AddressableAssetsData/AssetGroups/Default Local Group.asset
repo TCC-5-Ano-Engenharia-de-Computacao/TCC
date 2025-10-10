@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 150183af88f6b75469c7970038bfa127
+    m_Address: Animations/EnergyBeamAttack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 35680c8a68c09ed488ee222a7908879f
     m_Address: Animations/EndStrongPunch
     m_ReadOnly: 0
