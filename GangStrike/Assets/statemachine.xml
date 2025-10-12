@@ -15,6 +15,16 @@
         </OnStay>
 
         <Transitions>
+            <!-- Ataque de Energy Beam (PRECISA VIR ANTES DO WEAK ATTACK) -->
+            <Transition to="EnergyBeamAttackStart">
+                <Conditions>
+                    <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
+                    <BufferedInputCondition inputName="attack"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
+            
             <!-- Ataque leve: input “attack” -->
             <Transition to="WeakPunch">
                 <Conditions>
@@ -95,6 +105,7 @@
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
+            
             <!-- Death -->
             <Transition to="Loss">
                 <Conditions>
@@ -382,7 +393,7 @@
 
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-            <JumpPlayerAction force="50"/>
+            <JumpPlayerAction force="65"/>
         </OnEnter>
 
         <OnStay>
@@ -421,7 +432,7 @@
 
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-            <JumpPlayerAction force="50"/>
+            <JumpPlayerAction force="65"/>
         </OnEnter>
 
         <OnStay>
@@ -460,7 +471,7 @@
 
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-            <JumpPlayerAction force="50"/>
+            <JumpPlayerAction force="65"/>
         </OnEnter>
 
         <OnStay>
@@ -640,6 +651,51 @@
             </Transition>
         </Transitions>
     </State>
+
+    <State id="EnergyBeamAttackStart">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/EnergyBeamAttackStart"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <OnLeave>
+        </OnLeave>
+
+        <Transitions>
+            <Transition to="EnergyBeamAttackEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="EnergyBeamAttackStart"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+    
+    <State id="EnergyBeamAttackEnd">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/EnergyBeamAttackEnd"/>
+            <SpawnEnergyBeamAction speed="5" damage="5" effect="stagger" tag="energyBeam" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="0.5" knockBackForce="0"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <OnLeave>
+        </OnLeave>
+        
+        <Transitions>
+            <Transition to="Idle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="EnergyBeamAttackEnd"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
 
     <!-- ============== CROUCH ATTACKS ============== -->
     <State id="CrouchWeakPunch">
