@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ROUND VENCIDOS_0: 7276633885913503016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

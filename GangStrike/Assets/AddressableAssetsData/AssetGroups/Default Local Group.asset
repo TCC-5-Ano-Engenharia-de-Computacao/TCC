@@ -105,6 +105,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfedddafebb844342822b415e1d1044b
+    m_Address: Animations/Victory
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e9044ef2acfb745439e8743c96f0a014
     m_Address: Animations/StartStrongPunch
     m_ReadOnly: 0
