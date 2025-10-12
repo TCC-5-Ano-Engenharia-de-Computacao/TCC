@@ -43,7 +43,7 @@ namespace Player.NewStateMachine.Actions
             a.attackCollider = player.characterRoot.attackTriggers.GetAttackColliderByName(a.hit.tag);
 
             var enemyCharacterRoot = GameObject.FindFirstObjectByType<GameRoot>().GetEnemyPlayer(player).characterRoot;
-
+            
             a.enemyHitBuffer = enemyCharacterRoot.incomingHitBuffer;
             a.enemyBodyColliders = enemyCharacterRoot.bodyColliders;
             

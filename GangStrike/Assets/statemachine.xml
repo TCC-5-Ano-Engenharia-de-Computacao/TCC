@@ -918,7 +918,7 @@
     <State id="Victory">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Victory"/>
-            
+            <VictoryRoundEndAction/>
         </OnEnter>
     </State>
 </StateMachine>

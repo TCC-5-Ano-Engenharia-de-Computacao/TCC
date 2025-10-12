@@ -38,6 +38,8 @@ namespace Player.NewStateMachine.Conditions
             var cond = go.AddComponent<CheckLoseCondition>();
             cond.playerRoot = player;
             cond.gameRoot = Object.FindObjectOfType<GameRoot>();
+            if(cond.gameRoot == null)
+                Debug.LogError("CheckLoseCondition: GameRoot not found in scene.");
             return Task.FromResult<ConditionBase>(cond);
         }
 
