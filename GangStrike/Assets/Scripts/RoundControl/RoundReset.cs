@@ -1,16 +1,41 @@
+using System;
+using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class RoundReset : MonoBehaviour
+namespace RoundControl
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class RoundReset : MonoBehaviour
     {
-        
-    }
+        private RoundController roundController;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private void Awake()
+        {
+            roundController = GetComponent<RoundController>();
+        }
         
+        private void OnEnable()
+        {
+            if (roundController == null)
+            {
+                Debug.LogError("RoundReset: RoundController component not found.");
+                return;
+            }
+            roundController.roundResetEvent.AddListener(ReloadScene);
+        }
+        private void OnDisable()
+        {
+            if (roundController == null)
+            {
+                Debug.LogError("RoundReset: RoundController component not found.");
+                return;
+            }
+            roundController.roundResetEvent.RemoveListener(ReloadScene);
+        }
+
+        private void ReloadScene()
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 1);
+        }
     }
 }
