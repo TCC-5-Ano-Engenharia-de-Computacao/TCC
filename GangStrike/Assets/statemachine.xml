@@ -95,6 +95,18 @@
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
         </Transitions>
     </State>
 
@@ -834,4 +846,18 @@
         </Transitions>
     </State>
     
+    <!-- ================== Loss ================== -->
+    <State id="Loss">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/StaggerKnockback"/>
+            
+        </OnEnter>
+    </State>
+    
+    <State id="Victory">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/Victory"/>
+            
+        </OnEnter>
+    </State>
 </StateMachine>
