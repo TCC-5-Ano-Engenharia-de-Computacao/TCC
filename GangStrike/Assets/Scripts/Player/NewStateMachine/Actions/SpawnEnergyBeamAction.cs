@@ -12,11 +12,12 @@ namespace Player.NewStateMachine.Actions
         [SerializeField] private CharacterRoot attackerCharacterRoot;
         [SerializeField] private IncomingHitBuffer.Hit hit;
         [SerializeField] private GameObject energyBeamPrefab;
+        [SerializeField] private float speed = 5f;
 
         public override void Execute()
         {
             GameObject beam = Instantiate(energyBeamPrefab, spawnPoint.position, attackerCharacterRoot.transform.rotation);
-            beam.GetComponent<EnergyBeam>().InitializeEnergyBeam(attackerCharacterRoot, hit);
+            beam.GetComponent<EnergyBeam>().InitializeEnergyBeam(attackerCharacterRoot, hit, speed);
         }
 
         public static async Task<ActionBase> ConstructFromXmlAsync(XElement node, Transform parent, PlayerRoot player)
@@ -35,7 +36,9 @@ namespace Player.NewStateMachine.Actions
                 knockBackForce: ConvertStrToFloat((string)node.Attribute("knockBackForce")),
                 stunDuration: ConvertStrToFloat((string)node.Attribute("stunDuration"))
             );
-
+            
+            a.speed = ConvertStrToFloat((string)node.Attribute("speed"));
+            
             a.attackerCharacterRoot = player.characterRoot;
             a.spawnPoint = player.characterRoot.projectileSpawnPoint;
             a.energyBeamPrefab = player.characterRoot.energyBeamPrefab;

@@ -26,7 +26,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 150183af88f6b75469c7970038bfa127
-    m_Address: Animations/EnergyBeamAttack
+    m_Address: Animations/EnergyBeamAttackEnd
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -112,6 +112,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ec578ba1c5d5ca4469036da31958d19a
     m_Address: Animations/CrouchIdle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0f204ce9089bc0409790a22b4424b5a
+    m_Address: Animations/EnergyBeamAttackStart
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -13,10 +13,11 @@ public class EnergyBeam : MonoBehaviour
     private bool flagStopMoving;
     private float lifeTimer;
 
-    public void InitializeEnergyBeam(CharacterRoot pAttackerCharacterRoot, IncomingHitBuffer.Hit pHit)
+    public void InitializeEnergyBeam(CharacterRoot pAttackerCharacterRoot, IncomingHitBuffer.Hit pHit, float pSpeed)
     {
         this.attackerCharacterRoot = pAttackerCharacterRoot;
         this.hit = pHit;
+        this.speed = pSpeed;
     }
     
     private void Update()

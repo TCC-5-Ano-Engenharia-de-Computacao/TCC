@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using StateMachine;
@@ -14,10 +15,12 @@ namespace Player.NewStateMachine.Actions
         [SerializeField] private Animator animator;
         [SerializeField] private AnimatorOverrideController overrideController;
         [SerializeField] private AnimationClip animationClip;
-
+        [SerializeField] private float speed = 1f;
+        
         public override void Execute()
         {
             animator.runtimeAnimatorController = overrideController;
+            animator.speed = speed;
             animator.Play("CurrentState", 0, 0f);
             
         }
@@ -32,6 +35,13 @@ namespace Player.NewStateMachine.Actions
         
 
             a.animator = player.characterRoot.animator;
+            
+            a.speed =
+                float.TryParse((string)node.Attribute("speed"),
+                    NumberStyles.Float,
+                    CultureInfo.InvariantCulture,
+                    out var spd)
+                    ? spd : a.speed;
         
             var baseController = a.animator.runtimeAnimatorController;
         

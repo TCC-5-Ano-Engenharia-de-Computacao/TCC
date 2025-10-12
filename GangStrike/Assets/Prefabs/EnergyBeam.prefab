@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f03d9a145dab8149a9e14d6d937022a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   attackerCharacterRoot: {fileID: 0}
   anim: {fileID: 4161574682343568085}
+  lifetime: 5
