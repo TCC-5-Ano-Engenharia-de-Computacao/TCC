@@ -34,7 +34,7 @@ namespace UI
             remainingTime -= Time.deltaTime;
             timerUpdatedEvent?.Invoke(remainingTime);
 
-            if (remainingTime <= 0f)
+            if (remainingTime <= 0.1f)
             {
                 remainingTime = 0f;
                 isRunning = false;

@@ -849,14 +849,14 @@
     <!-- ================== Loss ================== -->
     <State id="Loss">
         <OnEnter>
-<!--            <PlayAnimationClipAction animationClipAddress="Animations/Death"/>-->
+            <PlayAnimationClipAction animationClipAddress="Animations/StaggerKnockback"/>
             
         </OnEnter>
     </State>
     
     <State id="Victory">
         <OnEnter>
-<!--            <PlayAnimationClipAction animationClipAddress="Animations/Victory"/>-->
+            <PlayAnimationClipAction animationClipAddress="Animations/Victory"/>
             
         </OnEnter>
     </State>
