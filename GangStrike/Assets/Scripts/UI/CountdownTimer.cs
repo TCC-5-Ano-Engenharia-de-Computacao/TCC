@@ -58,5 +58,15 @@ namespace UI
         {
             isRunning = false;
         }
+        
+        public void ResetTimer()
+        {
+            remainingTime = startTimeInSeconds;
+            timerUpdatedEvent?.Invoke(remainingTime);
+        }
+        public bool IsTimerRunning()
+        {
+            return isRunning;
+        }
     }
 }

@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private Transform player1SpawnPoint;
     [SerializeField] private Transform player2SpawnPoint;
 
-    void Start()
+    void Awake()
     {
         var player1 = PlayerInput.Instantiate(player1Prefab, controlScheme: "WASD", pairWithDevice: Keyboard.current);
         player1.transform.position = player1SpawnPoint.position;
