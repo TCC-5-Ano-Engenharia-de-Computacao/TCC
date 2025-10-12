@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using DefaultNamespace;
 using StateMachine;
 using UnityEngine;
 
@@ -9,13 +10,13 @@ namespace Player.NewStateMachine.Actions
     public class AddHitToEnemyBufferAction : ActionBase
     {
         [SerializeField] private Collider2D attackCollider;
-        [SerializeField] private Collider2D enemyCollider;
-        [SerializeField] private IncomingHitBuffer enemyHitBuffer;
+        [SerializeField] private BodyColliders enemyBodyColliders;
         [SerializeField] private IncomingHitBuffer.Hit hit;
+        [SerializeField] private IncomingHitBuffer enemyHitBuffer;
 
         public override void Execute()
         {
-            if (attackCollider.IsTouching(enemyCollider))
+            if (attackCollider.IsTouching(enemyBodyColliders.GetActiveCollider()))
             {
                 //Debug.Log("HIT!");
                 enemyHitBuffer.AddHitToBuffer(hit);
@@ -41,16 +42,10 @@ namespace Player.NewStateMachine.Actions
             
             a.attackCollider = player.characterRoot.attackTriggers.GetAttackColliderByName(a.hit.tag);
 
-            var allPlayers = GameObject.FindObjectsByType<PlayerRoot>(FindObjectsSortMode.None);
-            foreach (PlayerRoot e in allPlayers)
-            {
-                if (e != player)
-                {
-                    a.enemyCollider = e.characterRoot.bodyCollider;
-                    a.enemyHitBuffer = e.characterRoot.incomingHitBuffer;
-                    break;
-                }
-            }
+            var enemyCharacterRoot = GameObject.FindFirstObjectByType<GameRoot>().GetEnemyPlayer(player).characterRoot;
+
+            a.enemyHitBuffer = enemyCharacterRoot.incomingHitBuffer;
+            a.enemyBodyColliders = enemyCharacterRoot.bodyColliders;
             
             return a;
         }
