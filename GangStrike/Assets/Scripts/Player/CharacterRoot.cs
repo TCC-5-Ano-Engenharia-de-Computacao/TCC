@@ -11,7 +11,7 @@ namespace StateMachine
         public SideSwapper sideSwapper;
         public IncomingHitBuffer incomingHitBuffer;
         public Collider2D footGroundCollider;
-        public Collider2D bodyCollider;
+        public BodyColliders bodyColliders;
         public AttackTriggers attackTriggers;
         public Transform projectileSpawnPoint;
         public GameObject energyBeamPrefab;

@@ -3,6 +3,7 @@
     <!-- ================== IDLE ================== -->
     <State id="Idle">
         <BeforeEnter>
+            <SetColliderAction colliderName="stand"/>
             <PlayAnimationClipAction animationClipAddress="Animations/Idle"/>
         </BeforeEnter>
 
@@ -303,6 +304,10 @@
 
     <!-- ================== CROUCH IDLE ================== -->
     <State id="CrouchIdle">
+        <BeforeEnter>
+            <SetColliderAction colliderName="crouch"/>
+        </BeforeEnter>
+        
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/CrouchIdle"/>
         </OnEnter>
