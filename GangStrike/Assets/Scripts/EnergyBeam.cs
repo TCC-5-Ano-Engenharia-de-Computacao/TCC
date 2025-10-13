@@ -9,6 +9,7 @@ public class EnergyBeam : MonoBehaviour
     [SerializeField] private IncomingHitBuffer.Hit hit;
     [SerializeField] private Animator anim;
     [SerializeField] private float lifetime = 5f;
+    [SerializeField] private Collider2D beamCollider;
     
     private bool flagStopMoving;
     private float lifeTimer;
@@ -35,11 +36,12 @@ public class EnergyBeam : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var enemyCharacterRoot = other.GetComponent<CharacterRoot>();
+        var enemyCharacterRoot = other.GetComponentInParent<CharacterRoot>();
         if(enemyCharacterRoot != null)
         {
             if (enemyCharacterRoot != attackerCharacterRoot)
             {
+                beamCollider.enabled = false; // Desativa o collider para evitar múltiplas colisões
                 enemyCharacterRoot.incomingHitBuffer.AddHitToBuffer(hit);
                 anim.SetTrigger("Explode");
                 flagStopMoving = true;
