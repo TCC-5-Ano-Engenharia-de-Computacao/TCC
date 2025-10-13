@@ -34,9 +34,10 @@ namespace Player.NewStateMachine.Conditions
             c.contactFilter = new ContactFilter2D
             {
                 useTriggers = false
-                
             };
-            c.contactFilter.SetLayerMask(Physics2D.DefaultRaycastLayers);
+            
+            //c.contactFilter.SetLayerMask(Physics2D.DefaultRaycastLayers);
+            c.contactFilter.SetLayerMask(LayerMask.GetMask("Ground"));
 
             return Task.FromResult<ConditionBase>(c);
         }
