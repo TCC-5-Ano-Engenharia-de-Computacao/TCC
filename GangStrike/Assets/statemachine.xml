@@ -1,4 +1,4 @@
-<StateMachine initialState="Idle">
+<StateMachine initialState="Inactive">
 
     <!-- ================== IDLE ================== -->
     <State id="Idle">
@@ -920,5 +920,15 @@
             <PlayAnimationClipAction animationClipAddress="Animations/Victory"/>
             <VictoryRoundEndAction/>
         </OnEnter>
+    </State>
+    
+    <State id="Inactive">
+        <Transitions>
+            <Transition to="Idle">
+                <Conditions>
+                    <RoundStartCondition/>
+                </Conditions>
+            </Transition>
+        </Transitions>
     </State>
 </StateMachine>

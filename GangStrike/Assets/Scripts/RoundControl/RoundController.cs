@@ -7,16 +7,19 @@ namespace RoundControl
 {
     public class RoundController : MonoBehaviour
     {
-        private RoundStart roundStart;
-        private RoundEnd roundEnd;
-        private RoundReset roundReset;
+        public RoundStart roundStart;
+        public RoundEnd roundEnd;
+        public RoundReset roundReset;
         public UnityEvent roundResetEvent;
+        private GameRoot gameRoot;
         
         private void Awake()
         {
+            gameRoot = FindFirstObjectByType<GameRoot>();
             roundStart = GetComponent<RoundStart>();
             roundEnd = GetComponent<RoundEnd>();
             roundReset = GetComponent<RoundReset>();
+            gameRoot.RegisterRoundController(this);
         }
     }
 }

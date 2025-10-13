@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.SceneManagement;

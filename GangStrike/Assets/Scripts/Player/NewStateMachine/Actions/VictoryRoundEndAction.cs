@@ -1,5 +1,3 @@
-using DefaultNamespace;
-
 namespace Player.NewStateMachine.Actions
 {
     using System;

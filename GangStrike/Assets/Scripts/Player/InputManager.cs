@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using StateMachine;
 using UnityEngine;
 using UnityEngine.InputSystem;

@@ -1,5 +1,4 @@
 using System;
-using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -28,12 +27,6 @@ namespace UI
             gameRoot = FindFirstObjectByType<GameRoot>();
             gameRoot.RegisterCountdownTimer(this);
         }
-        
-        public void Start()
-        {
-            // Initialize and start the timer for testing, later can be controlled via methods from GameController
-            StartTimer();
-        }
 
         private void Update()
         {
@@ -55,7 +48,7 @@ namespace UI
         /// </summary>
         public void StartTimer()
         {
-            remainingTime = startTimeInSeconds;
+            remainingTime = startTimeInSeconds+1; // +1 to account for immediate decrement in Update
             isRunning = true;
         }
 

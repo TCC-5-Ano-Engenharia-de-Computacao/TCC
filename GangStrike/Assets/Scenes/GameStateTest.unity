@@ -1280,7 +1280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fcb7cdd7ec6c842a4b2f35208e4f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeInSeconds: 120
+  startTimeInSeconds: 5
   timerEndedEvent:
     m_PersistentCalls:
       m_Calls: []
