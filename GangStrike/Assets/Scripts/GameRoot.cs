@@ -91,6 +91,13 @@ public class GameRoot: MonoBehaviour
             Debug.Log($"Round End! Current Score: Player 1: {score.x} - Player 2: {score.y}");
         }
     }
+    
+    public void TieRoundEnd()
+    {
+        // In case of a tie, no player gets a point, just end the round
+        roundEndedEvent?.Invoke();
+        Debug.Log($"Round End in a Tie! Current Score: Player 1: {score.x} - Player 2: {score.y}");
+    }
         
     public int CurrentRound => currentRound;
     public Vector2 GetScore() => score;

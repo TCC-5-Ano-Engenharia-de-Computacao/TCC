@@ -7,51 +7,50 @@ namespace Player.NewStateMachine.Conditions
     using StateMachine;
     using UnityEngine;
     
-    public sealed class CheckLoseCondition: ConditionBase
+    public sealed class CheckTieCondition: ConditionBase
     {
         [SerializeField] private PlayerRoot playerRoot; 
         [SerializeField] private GameRoot gameRoot;
 
-        public bool CheckTimerEndLoseCondition()
+        public bool CheckTimerEndTieCondition()
         {
             bool isTimerEnded = !gameRoot.countdownTimer.IsTimerRunning();
-            bool hasLessHealth = playerRoot.attributeController.AttributeSystem
-                .HealthValue < gameRoot.GetEnemyPlayer(playerRoot)
-                .attributeController.AttributeSystem.HealthValue;
-            return isTimerEnded && hasLessHealth;
+            bool hasEqualHealth = Mathf.Approximately(playerRoot.attributeController.AttributeSystem
+                .HealthValue, gameRoot.GetEnemyPlayer(playerRoot)
+                .attributeController.AttributeSystem.HealthValue);
+            return isTimerEnded && hasEqualHealth;
         }
         
-        public bool CheckOtherPlayerAliveCondition()
+        public bool CheckBothPlayersDeadCondition()
         {
             bool isPlayerDead = !playerRoot.attributeController.AttributeSystem.IsAlive();
-            bool isEnemyAlive = gameRoot.GetEnemyPlayer(playerRoot)
+            bool isEnemyDead = !gameRoot.GetEnemyPlayer(playerRoot)
                 .attributeController.AttributeSystem.IsAlive();
-            return isPlayerDead && isEnemyAlive;
+            return isPlayerDead && isEnemyDead;
         }
         
         public override bool Evaluate()
         {
-            return CheckOtherPlayerAliveCondition() ||
-                   CheckTimerEndLoseCondition();
+            return CheckTimerEndTieCondition() || CheckBothPlayersDeadCondition();
         }
         
         public static Task<ConditionBase> ConstructFromXmlAsync(
             XElement node, Transform parent, PlayerRoot player)
         {
-            var go = new GameObject(nameof(CheckLoseCondition));
+            var go = new GameObject(nameof(CheckTieCondition));
             go.transform.SetParent(parent, false);
 
-            var cond = go.AddComponent<CheckLoseCondition>();
+            var cond = go.AddComponent<CheckTieCondition>();
             cond.playerRoot = player;
             cond.gameRoot = Object.FindObjectOfType<GameRoot>();
             if(cond.gameRoot == null)
-                Debug.LogError("CheckLoseCondition: GameRoot not found in scene.");
+                Debug.LogError("CheckTieCondition: GameRoot not found in scene.");
             return Task.FromResult<ConditionBase>(cond);
         }
 
         [RuntimeInitializeOnLoadMethod]
         private static void Register() =>
-            ConditionFactory.Register(nameof(CheckLoseCondition), ConstructFromXmlAsync);
+            ConditionFactory.Register(nameof(CheckTieCondition), ConstructFromXmlAsync);
     }
     
 }

@@ -107,6 +107,12 @@
                 </Conditions>
             </Transition>
             
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
             <!-- Death -->
             <Transition to="Loss">
                 <Conditions>
@@ -908,10 +914,16 @@
     </State>
     
     <!-- ================== Loss ================== -->
+    <State id="Tie">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/StaggerKnockback"/>
+            <TieRoundEndAction/>
+        </OnEnter>
+    </State>
+    
     <State id="Loss">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/StaggerKnockback"/>
-            
         </OnEnter>
     </State>
     
@@ -921,6 +933,8 @@
             <VictoryRoundEndAction/>
         </OnEnter>
     </State>
+    
+
     
     <State id="Inactive">
         <Transitions>
