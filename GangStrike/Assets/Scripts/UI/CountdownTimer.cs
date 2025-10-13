@@ -28,6 +28,11 @@ namespace UI
             gameRoot.RegisterCountdownTimer(this);
         }
 
+        private void Start()
+        {
+            timerUpdatedEvent?.Invoke(startTimeInSeconds);
+        }
+
         private void Update()
         {
             if (!isRunning) return;

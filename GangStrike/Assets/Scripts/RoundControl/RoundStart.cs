@@ -7,7 +7,9 @@ namespace RoundControl
     {
         private GameRoot gameRoot;
         private bool isRoundStarting;
-
+        [SerializeField] private TMPro.TextMeshProUGUI startText;
+        public float fadeDuration = 0.3f;          // Duration for fade in/out
+        [SerializeField]private string[] countdownMessages = new string[] { "3", "2", "1", "FIGHT!" }; // Countdown sequence
         private void Awake()
         {
             gameRoot = FindFirstObjectByType<GameRoot>();
@@ -16,6 +18,7 @@ namespace RoundControl
 
         private void Start()
         {
+            startText.enabled = false;
             StartRound();
         }
         
@@ -27,21 +30,61 @@ namespace RoundControl
 
         IEnumerator ShowRoundStartBanner()
         {
+            startText.enabled = true;
             gameRoot.countdownTimer.StopTimer();
-            // Get the center of the screen in world coordinates
-            Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane);
-
-            // Convert the screen center to world coordinates
-            Vector3 worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
-
-            // Instantiate the prefab at the world center position
-            // Uncomment the following line and replace 'prefab' with your actual prefab variable
-            // Instantiate(prefab, worldCenter, Quaternion.identity);
-
-            // Wait for 3 seconds, then return to menu
-            yield return new WaitForSeconds(3f);
+            yield return StartCoroutine(CountdownSequence());
             gameRoot.countdownTimer.StartTimer();
             isRoundStarting = true;
+            startText.enabled = false;
+        }
+        
+        private IEnumerator CountdownSequence()
+        {
+            foreach (var message in countdownMessages)
+            {
+                yield return StartCoroutine(FadeText(message));
+            }
+        }
+
+        private IEnumerator FadeText(string message)
+        {
+            // Fade in
+            startText.text = message;
+            float currentAlpha = startText.color.a;
+            float targetAlpha = 1f;
+            float startTime = Time.time;
+
+            // Fade in the text
+            while (Time.time - startTime < fadeDuration)
+            {
+                float lerpValue = (Time.time - startTime) / fadeDuration;
+                float alpha = Mathf.Lerp(currentAlpha, targetAlpha, lerpValue);
+                startText.color = new Color(startText.color.r, startText.color.g, startText.color.b, alpha);
+                yield return null;
+            }
+
+            // Ensure the text is fully visible after fade-in
+            startText.color = new Color(startText.color.r, startText.color.g, startText.color.b, targetAlpha);
+
+            // Wait for a moment before starting fade out
+            yield return new WaitForSeconds(0.5f);
+
+            // Fade out
+            currentAlpha = startText.color.a;
+            targetAlpha = 0f;
+            startTime = Time.time;
+
+            // Fade out the text
+            while (Time.time - startTime < fadeDuration)
+            {
+                float lerpValue = (Time.time - startTime) / fadeDuration;
+                float alpha = Mathf.Lerp(currentAlpha, targetAlpha, lerpValue);
+                startText.color = new Color(startText.color.r, startText.color.g, startText.color.b, alpha);
+                yield return null;
+            }
+
+            // Ensure the text is fully transparent after fade-out
+            startText.color = new Color(startText.color.r, startText.color.g, startText.color.b, targetAlpha);
         }
         
         public bool IsRoundStarting()
