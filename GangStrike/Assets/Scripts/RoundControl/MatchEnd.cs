@@ -36,7 +36,7 @@ namespace RoundControl
         {
             gameRoot.countdownTimer.StopTimer();
             matchEndText.enabled = true;
-            textToType = $"Player {winnerID}\n Wins!";
+            textToType = $"Player {winnerID}\nWins!";
             yield return StartCoroutine(TypeAndFadeText());
             yield return new WaitForSeconds(3f);
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneBuildIndex: 0);

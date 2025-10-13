@@ -9,12 +9,14 @@ public class GameRoot: MonoBehaviour
     [SerializeField] private int roundsToWin = 2;
     [SerializeField] private int currentRound = 1;
     public UnityEvent roundEndedEvent;
+    public UnityEvent tiedRoundEvent;
     public UnityEvent<int> gameEndedEvent;
     public UnityEvent<Vector2> scoreUpdatedEvent;
     [SerializeField] private Vector2 score = Vector2.zero; // x = player 1 score, y = player 2 score
     public UI.CountdownTimer countdownTimer;
     public RoundController roundController;
     [SerializeField][ReadOnly]private PlayerRoot[] players;
+    private bool tied = false;
 
         
     private void Awake()
@@ -75,6 +77,7 @@ public class GameRoot: MonoBehaviour
         
     public void RoundEnd(int winningPlayerId)
     {
+        currentRound++;
         // Updates score, checks for game end, if not game end, then round end
         score = winningPlayerId == 1 ? new Vector2(score.x + 1, score.y) : new Vector2(score.x, score.y + 1);
         scoreUpdatedEvent?.Invoke(score);
@@ -94,9 +97,18 @@ public class GameRoot: MonoBehaviour
     
     public void TieRoundEnd()
     {
-        // In case of a tie, no player gets a point, just end the round
-        roundEndedEvent?.Invoke();
-        Debug.Log($"Round End in a Tie! Current Score: Player 1: {score.x} - Player 2: {score.y}");
+        if (!tied)
+        {
+            tied=true;
+            // In case of a tie, no player gets a point, just end the round
+            currentRound++;
+            tiedRoundEvent?.Invoke();
+            Debug.Log($"Round End in a Tie! Current Score: Player 1: {score.x} - Player 2: {score.y}");
+        }
+        else
+        {
+            tied = false; // Reset tied status for next round
+        }
     }
         
     public int CurrentRound => currentRound;

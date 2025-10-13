@@ -9,7 +9,7 @@ namespace RoundControl
         private bool isRoundStarting;
         [SerializeField] private TMPro.TextMeshProUGUI startText;
         public float fadeDuration = 0.3f;          // Duration for fade in/out
-        [SerializeField]private string[] countdownMessages = new string[] { "3", "2", "1", "FIGHT!" }; // Countdown sequence
+        private string[] countdownMessages; // Countdown sequence
         private void Awake()
         {
             gameRoot = FindFirstObjectByType<GameRoot>();
@@ -40,6 +40,8 @@ namespace RoundControl
         
         private IEnumerator CountdownSequence()
         {
+            
+            countdownMessages = new[] { $"ROUND\n{gameRoot.CurrentRound}","3", "2", "1", "FIGHT!" };
             foreach (var message in countdownMessages)
             {
                 yield return StartCoroutine(FadeText(message));

@@ -668,9 +668,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 867413832343880603, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1850
+      objectReference: {fileID: 0}
+    - target: {fileID: 867413832343880603, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 867413832343880603, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_fontSize
+      value: 551.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_margin.y
+      value: 1.9958496
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_charWidthMaxAdj
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356136183813533750, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3240076108160654081, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
       propertyPath: m_Enabled
@@ -1063,11 +1111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startText: {fileID: 2038307541}
   fadeDuration: 0.3
-  countdownMessages:
-  - 3
-  - 2
-  - 1
-  - FIGHT!
 --- !u!114 &1257718469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,7 +1500,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 635178938}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 

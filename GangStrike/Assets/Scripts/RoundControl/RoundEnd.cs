@@ -9,7 +9,7 @@ namespace RoundControl
         private RoundController roundController;
         private GameRoot gameRoot;
         [SerializeField] private TextMeshProUGUI endRoundText;
-        public string textToType = "K.O";        // Text you want to type out (e.g., "K.O")
+        private string textToType;      // Text you want to type out (e.g., "K.O")
         public float typingSpeed = 0.4f;         // Time delay between each character being typed
         public float fadeDuration = 0.3f;          // Duration of the fade-out effect after typing is done
 
@@ -25,11 +25,19 @@ namespace RoundControl
             if (gameRoot != null)
             {
                 gameRoot.roundEndedEvent.AddListener(OnRoundEnd);
+                gameRoot.tiedRoundEvent.AddListener(OnTiedRound);
             }
         }
 
+        
         private void OnRoundEnd()
         {
+            textToType = "K.O";
+            StartCoroutine(ShowEndRoundBanner());
+        }
+        private void OnTiedRound()
+        {
+            textToType = "TIE";
             StartCoroutine(ShowEndRoundBanner());
         }
         
