@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using StateMachine;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player
 {
@@ -8,11 +9,17 @@ namespace Player
     {
         private readonly List<Hit> hitBufferList = new();
         [SerializeField] private PlayerRoot playerRoot;
+        
+        public bool isInvulnerable = false;
+        
 
         public void AddHitToBuffer(Hit hit)
         {
-            hitBufferList.Add(hit);
-            ApplyDamage(hit.damage);
+            if (!isInvulnerable)
+            {
+                hitBufferList.Add(hit);
+                ApplyDamage(hit.damage);
+            }
         }
         
         public bool HasHitEffect(string hitEffect)

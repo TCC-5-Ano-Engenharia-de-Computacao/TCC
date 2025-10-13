@@ -17,6 +17,9 @@ namespace Player.Input
         {
             public string inputName;
 
+            [Tooltip("True enquanto o botão estiver pressionado.")]
+            public bool isHolding;
+            
             [Tooltip("True apenas no frame em que o botão foi pressionado.")]
             public bool isFrameStart;
 
@@ -61,14 +64,22 @@ namespace Player.Input
         }
 
         // ====================================================== PUBLIC API
-        public void RegisterInput(string inputName)
+        public void RegisterInput(string inputName, bool performing = true)
         {
             var e = FindEntry(inputName) ?? AddEntry(inputName);
 
-            e.pendingStart  = true;  // aguardará ProcessFrame
-            e.isFrameStart  = false; // ainda não iniciou
-            e.timeRemaining = 0f;    // contagem começa depois
-            e.triedConsume  = false; // ainda não foi consultado
+            if (performing)
+            {
+                e.pendingStart = true; // aguardará ProcessFrame
+                e.isFrameStart = false; // ainda não iniciou
+                e.timeRemaining = 0f; // contagem começa depois
+                e.triedConsume = false; // ainda não foi consultado
+                e.isHolding = true;
+            }
+            else
+            {
+                e.isHolding = false;
+            }
         }
 
         /// <summary>Processa transição de estados e contagem-regressiva.  
@@ -123,6 +134,12 @@ namespace Player.Input
             return false;
         }
 
+        public bool IsHolding(string inputName)
+        {
+            var e = FindEntry(inputName);
+            return e?.isHolding ?? false;
+        }
+        
         public bool IsLingering(string inputName, bool dontConsume = false)
         {
             var e = FindEntry(inputName);

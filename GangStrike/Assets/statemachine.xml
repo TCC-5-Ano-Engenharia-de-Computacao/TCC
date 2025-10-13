@@ -101,9 +101,7 @@
             <!-- Block -->
             <Transition to="Block">
                 <Conditions>
-                    <BufferedInputCondition inputName="block"
-                                            isInstantaneous="false"
-                                            removeInputOnEndOfFrame="true"/>
+                    <HoldingInputCondition inputName="block"/>
                 </Conditions>
             </Transition>
             
@@ -189,9 +187,7 @@
             <!-- Block -->
             <Transition to="Block">
                 <Conditions>
-                    <BufferedInputCondition inputName="block"
-                                            isInstantaneous="false"
-                                            removeInputOnEndOfFrame="true"/>
+                    <HoldingInputCondition inputName="block"/>
                 </Conditions>
             </Transition>
         </Transitions>
@@ -264,9 +260,7 @@
             <!-- Block -->
             <Transition to="Block">
                 <Conditions>
-                    <BufferedInputCondition inputName="block"
-                                            isInstantaneous="false"
-                                            removeInputOnEndOfFrame="true"/>
+                    <HoldingInputCondition inputName="block"/>
                 </Conditions>
             </Transition>
         </Transitions>
@@ -342,9 +336,7 @@
             <!-- Block -->
             <Transition to="CrouchBlock">
                 <Conditions>
-                    <BufferedInputCondition inputName="block"
-                                            isInstantaneous="false"
-                                            removeInputOnEndOfFrame="true"/>
+                    <HoldingInputCondition inputName="block"/>
                 </Conditions>
             </Transition>
 
@@ -785,8 +777,13 @@
         <OnEnter>
             <KnockbackAction force="25"/>
             <PlayAnimationClipAction animationClipAddress="Animations/StaggerKnockback"/>
+            <SetInvulnerabilityAction invulnerability="true" />
         </OnEnter>
 
+        <OnLeave>
+            <SetInvulnerabilityAction invulnerability="false" />
+        </OnLeave>
+        
         <Transitions>
             <Transition to="StandUp">
                 <Conditions>
@@ -833,6 +830,7 @@
         </BeforeEnter>
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Block"/>
+            <SetInvulnerabilityAction invulnerability="true" />
         </OnEnter>
 
         <OnStay>
@@ -840,12 +838,14 @@
             <UpdateSideAction/>
         </OnStay>
 
+        <OnLeave>
+            <SetInvulnerabilityAction invulnerability="false" />
+        </OnLeave>
+        
         <Transitions>
             <Transition to="Idle">
                 <Conditions>
-                    <BufferedInputCondition inputName="blockCanceled"
-                                            isInstantaneous="false"
-                                            removeInputOnEndOfFrame="true"/>
+                    <HoldingInputCondition inputName="block" holding="false"/>
                 </Conditions>
             </Transition>
             <Transition to="ExhaustedStamina">
@@ -863,6 +863,7 @@
         </BeforeEnter>
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/CrouchBlock"/>
+            <SetInvulnerabilityAction invulnerability="true" />
         </OnEnter>
 
         <OnStay>
@@ -870,12 +871,14 @@
             <UpdateSideAction/>
         </OnStay>
 
+        <OnLeave>
+            <SetInvulnerabilityAction invulnerability="false" />
+        </OnLeave>
+        
         <Transitions>
             <Transition to="CrouchIdle">
                 <Conditions>
-                    <BufferedInputCondition inputName="blockCanceled"
-                                            isInstantaneous="false"
-                                            removeInputOnEndOfFrame="true"/>
+                    <HoldingInputCondition inputName="block" holding="false"/>
                 </Conditions>
             </Transition>
             <Transition to="CrouchEnd">

@@ -12,7 +12,7 @@ namespace Input
     public class InputController : MonoBehaviour
     {
         public PlayerInputActions playerInputActions;
-        public UnityEvent<string> inputPerformedEvent;
+        public UnityEvent<string, bool> inputPerformedEvent;
 
         [SerializeField] private PlayerInput playerInput;
 
@@ -75,7 +75,7 @@ namespace Input
         private void HandlePunchPerformed(InputAction.CallbackContext ctx)
         {
             //Debug.Log("[C] - Punch");
-            inputPerformedEvent?.Invoke("attack");
+            inputPerformedEvent?.Invoke("attack", true);
         }
 
         private void HandlePunchCanceled(InputAction.CallbackContext ctx)
@@ -86,7 +86,7 @@ namespace Input
         private void HandleKickPerformed(InputAction.CallbackContext ctx)
         {
             //Debug.Log("[V] - Kick");
-            inputPerformedEvent?.Invoke("kick");
+            inputPerformedEvent?.Invoke("kick", true);
         }
 
         private void HandleKickCanceled(InputAction.CallbackContext ctx)
@@ -97,7 +97,7 @@ namespace Input
         private void HandleJumpPerformed(InputAction.CallbackContext ctx)
         {
             //Debug.Log("[Space] - Jump");
-            inputPerformedEvent?.Invoke("jump");
+            inputPerformedEvent?.Invoke("jump", true);
         }
 
         private void HandleJumpCanceled(InputAction.CallbackContext ctx)
@@ -107,14 +107,14 @@ namespace Input
         
         private void HandleBlockPerformed(InputAction.CallbackContext ctx)
         {
-            //Debug.Log("[Space] - Block");
-            inputPerformedEvent?.Invoke("block");
+            //Debug.Log("Block");
+            inputPerformedEvent?.Invoke("block", true);
         }
 
         private void HandleBlockCanceled(InputAction.CallbackContext ctx)
         {
             //Debug.Log("Block canceled");
-            inputPerformedEvent?.Invoke("blockCanceled");
+            inputPerformedEvent?.Invoke("block", false);
         }
     }
 }
