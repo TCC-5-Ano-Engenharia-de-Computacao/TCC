@@ -1,4 +1,4 @@
-<StateMachine initialState="Idle">
+<StateMachine initialState="Inactive">
 
     <!-- ================== IDLE ================== -->
     <State id="Idle">
@@ -107,6 +107,12 @@
                 </Conditions>
             </Transition>
             
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
             <!-- Death -->
             <Transition to="Loss">
                 <Conditions>
@@ -908,17 +914,35 @@
     </State>
     
     <!-- ================== Loss ================== -->
+    <State id="Tie">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/StaggerKnockback"/>
+            <TieRoundEndAction/>
+        </OnEnter>
+    </State>
+    
     <State id="Loss">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/StaggerKnockback"/>
-            
         </OnEnter>
     </State>
     
     <State id="Victory">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Victory"/>
-            
+            <VictoryRoundEndAction/>
         </OnEnter>
+    </State>
+    
+
+    
+    <State id="Inactive">
+        <Transitions>
+            <Transition to="Idle">
+                <Conditions>
+                    <RoundStartCondition/>
+                </Conditions>
+            </Transition>
+        </Transitions>
     </State>
 </StateMachine>

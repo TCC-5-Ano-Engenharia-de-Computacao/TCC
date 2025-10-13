@@ -242,6 +242,7 @@ namespace Player
             UnsubscribeFromEvents();
         }
         
+        
         // Editor helper methods
         #if UNITY_EDITOR
         [ContextMenu("Test Damage Effect")]
@@ -277,6 +278,8 @@ namespace Player
             ForceUpdateAllBars();
         }
         #endif
+        
+        
     }
 }
 

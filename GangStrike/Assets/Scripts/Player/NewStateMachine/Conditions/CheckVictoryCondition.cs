@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using DefaultNamespace;
 using UnityEngine.Serialization;
 
 namespace Player.NewStateMachine.Conditions

@@ -14,17 +14,23 @@ namespace UI
         public UnityEvent timerEndedEvent; // Event to notify when the timer ends
         [FormerlySerializedAs("TimerUpdatedEvent")] [FormerlySerializedAs("onTimerUpdated")] 
         public UnityEvent<float> timerUpdatedEvent; // Optional: Event to notify time updates
-
+        private GameRoot gameRoot;
+        
         private float remainingTime;
         private bool isRunning = false;
 
         public float RemainingTime => remainingTime;
         public bool IsRunning => isRunning;
 
-        public void Start()
+        public void Awake()
         {
-            // Initialize and start the timer for testing, later can be controlled via methods from GameController
-            StartTimer();
+            gameRoot = FindFirstObjectByType<GameRoot>();
+            gameRoot.RegisterCountdownTimer(this);
+        }
+
+        private void Start()
+        {
+            timerUpdatedEvent?.Invoke(startTimeInSeconds);
         }
 
         private void Update()
@@ -47,7 +53,7 @@ namespace UI
         /// </summary>
         public void StartTimer()
         {
-            remainingTime = startTimeInSeconds;
+            remainingTime = startTimeInSeconds+1; // +1 to account for immediate decrement in Update
             isRunning = true;
         }
 

@@ -13,11 +13,11 @@ namespace Player
         [SerializeField] private Vector3 uiOffset = Vector3.zero; // Offset for UI positioning
         
         private AttributeSystem attributeSystem;
-        private AttributeUIController uiController;
+        private AttributeUIController attributeUIController;
         
         // Public properties for easy access
         public AttributeSystem AttributeSystem => attributeSystem;
-        public AttributeUIController UIController => uiController;
+        public AttributeUIController AttributeUIController => attributeUIController;
 
         private void Awake()
         {
@@ -49,7 +49,7 @@ namespace Player
 
         public void InstantiateUIController()
         {
-            if (uiController != null)
+            if (attributeUIController != null)
             {
                 Debug.LogWarning($"UI Controller already exists for player {playerId}");
                 return;
@@ -66,12 +66,12 @@ namespace Player
 
             // Instantiate the UI controller
             GameObject uiObject = Instantiate(uiControllerPrefab.gameObject, parent);
-            uiController = uiObject.GetComponent<AttributeUIController>();
+            attributeUIController = uiObject.GetComponent<AttributeUIController>();
             
-            if (uiController != null)
+            if (attributeUIController != null)
             {
                 // Initialize the UI controller with this player's data
-                uiController.Initialize(this);
+                attributeUIController.Initialize(this);
                 
                 // Position the UI based on player ID and offset
                 PositionUI();
@@ -93,9 +93,9 @@ namespace Player
 
         private void PositionUI()
         {
-            if (uiController == null) return;
+            if (attributeUIController == null) return;
 
-            RectTransform rectTransform = uiController.GetComponent<RectTransform>();
+            RectTransform rectTransform = attributeUIController.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
                 // Position based on player ID
@@ -143,7 +143,7 @@ namespace Player
         public void SetUIOffset(Vector3 offset)
         {
             uiOffset = offset;
-            if (uiController != null)
+            if (attributeUIController != null)
             {
                 PositionUI();
             }
@@ -191,9 +191,9 @@ namespace Player
         private void OnDestroy()
         {
             // Clean up UI when player is destroyed
-            if (uiController != null)
+            if (attributeUIController != null)
             {
-                Destroy(uiController.gameObject);
+                Destroy(attributeUIController.gameObject);
             }
         }
 
