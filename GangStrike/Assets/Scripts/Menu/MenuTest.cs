@@ -24,5 +24,11 @@ namespace Menu
         {
             SceneManager.LoadScene(sceneBuildIndex: 1);
         }
+        
+        public void OnQuitButtonPressed()
+        {
+            Application.Quit();
+            
+        }
     }
 }
