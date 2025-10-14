@@ -715,7 +715,7 @@
             <ClearBufferedInputsAction/>
         </BeforeEnter>
         <OnEnter>
-            <SpendUltimateAction amount="60"/>
+            <SpendUltimateAction amount="40"/>
             <PlayAnimationClipAction animationClipAddress="Animations/UltimateStart"/>
         </OnEnter>
 

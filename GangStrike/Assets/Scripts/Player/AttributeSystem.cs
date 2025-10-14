@@ -244,7 +244,7 @@ namespace Player
         // Status check methods
         public bool IsAlive() => !health.IsEmpty();
         public bool HasStamina() => !stamina.IsEmpty();
-        public bool CanUseUltimate() => ultimate.IsFull();
+        public bool CanUseUltimate() => ultimate.CurrentValue >= 40f; // Example threshold
     }
 }
 
