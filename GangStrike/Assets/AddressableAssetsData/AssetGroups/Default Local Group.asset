@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10ebbb102a32c7945ad920f55b064258
+    m_Address: Animations/UltimateEnd
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 150183af88f6b75469c7970038bfa127
     m_Address: Animations/EnergyBeamAttackEnd
     m_ReadOnly: 0
@@ -110,6 +115,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e092dae69c0208c4d90117d13ca55170
+    m_Address: Animations/UltimateStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e9044ef2acfb745439e8743c96f0a014
     m_Address: Animations/StartStrongPunch
     m_ReadOnly: 0
@@ -132,6 +142,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f9c2ee5257af6824b8aa91671450e806
     m_Address: Animations/Stagger
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbe757682b49ace49bfa3a511999b7a4
+    m_Address: Animations/UltimateExplosion
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -25,6 +25,17 @@
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
+
+            <!-- Ultimate (PRECISA VIR ANTES DO STRONG PUNCH) -->
+            <Transition to="UltimateStart">
+                <Conditions>
+                    <IsUltimateAvailableCondition/>
+                    <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
+                    <BufferedInputCondition inputName="kick"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
+            </Transition>
             
             <!-- Ataque leve: input “attack” -->
             <Transition to="WeakPunch">
@@ -694,6 +705,65 @@
             <Transition to="Idle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="EnergyBeamAttackEnd"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+    
+    <State id="UltimateStart">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <SpendUltimateAction amount="40"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/UltimateStart"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <OnLeave>
+        </OnLeave>
+
+        <Transitions>
+            <Transition to="UltimateExplosion">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="UltimateStart"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+    
+    <State id="UltimateExplosion">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/UltimateExplosion"/>
+            <AddHitToEnemyBufferAction damage="40" effect="knockback" tag="ultimate" sameAttackCooldown="5" genericCooldown="2" stunDuration="2" knockBackForce="15" />
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <OnLeave>
+        </OnLeave>
+        
+        <Transitions>
+            <Transition to="UltimateEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="UltimateExplosion"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+    
+    <State id="UltimateEnd">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/UltimateEnd"/>
+        </OnEnter>
+        
+        <Transitions>
+            <Transition to="Idle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="UltimateEnd"/>
                 </Conditions>
             </Transition>
         </Transitions>

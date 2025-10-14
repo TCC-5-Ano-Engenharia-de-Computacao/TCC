@@ -9,6 +9,7 @@ namespace Player
     {
         private readonly List<Hit> hitBufferList = new();
         [SerializeField] private PlayerRoot playerRoot;
+        [SerializeField] private float damageToUltConversionRate = 1.2f;
         
         public bool isInvulnerable = false;
         
@@ -35,6 +36,12 @@ namespace Player
         private void ApplyDamage(float damage)
         {
             playerRoot.attributeSystem.TakeDamage(damage);
+            GainUltimate(damage * damageToUltConversionRate);
+        }
+        
+        public void GainUltimate(float amount)
+        {
+            playerRoot.attributeSystem.GainUltimate(amount);
         }
         
         public class Hit // Trocar por struct?
