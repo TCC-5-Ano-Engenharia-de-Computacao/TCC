@@ -36,5 +36,9 @@ namespace RoundControl
         {
             SceneManager.LoadScene(sceneBuildIndex: 1);
         }
+        public void ForceReload()
+        {
+            ReloadScene();
+        }
     }
 }
