@@ -48,6 +48,14 @@ namespace Input
             // Block
             playerInputActions.Default.Block.performed   += HandleBlockPerformed;
             playerInputActions.Default.Block.canceled    += HandleBlockCanceled;
+            
+            // Pause
+            playerInputActions.Default.Pause.performed   += ctx => {
+                // Toggle pause menu
+                var pauseController = FindFirstObjectByType<RoundControl.PauseController>();
+                if (pauseController != null)
+                    pauseController.TogglePause();
+            };
         }
 
         private void OnDisable()

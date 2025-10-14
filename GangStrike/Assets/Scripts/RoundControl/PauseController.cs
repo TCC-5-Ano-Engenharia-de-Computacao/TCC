@@ -21,6 +21,14 @@ namespace RoundControl
             Time.timeScale = isPaused ? 0f : 1f;
         }
 
+        public void Pause()
+        {
+            isPaused = true;
+            if (pauseMenuUI != null)
+                pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
         private void OnDestroy()
         {
             Time.timeScale = 1f; // Ensure time scale is reset when the controller is destroyed
