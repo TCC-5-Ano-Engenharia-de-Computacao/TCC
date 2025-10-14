@@ -23,4 +23,5 @@ public class InputManager : MonoBehaviour
         var playerRoot2 = player2.transform.root.GetComponentInChildren<PlayerRoot>();
         gameRoot.RegisterPlayers(new[] { playerRoot, playerRoot2 });
     }
+    
 }
