@@ -73,5 +73,10 @@ namespace RoundControl
             // Ensure the text is fully transparent after fade-out
             matchEndText.color = new Color(matchEndText.color.r, matchEndText.color.g, matchEndText.color.b, endAlpha);
         }
+
+        public void ForceEnd()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneBuildIndex: 0);
+        }
     }
 }
