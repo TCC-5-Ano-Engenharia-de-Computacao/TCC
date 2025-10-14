@@ -9,6 +9,7 @@ namespace Player.NewStateMachine.Actions
     public class AddHitToEnemyBufferAction : ActionBase
     {
         [SerializeField] private Collider2D attackCollider;
+        [SerializeField] private AttributeSystem attackerAttributeSystem;
         [SerializeField] private BodyColliders enemyBodyColliders;
         [SerializeField] private IncomingHitBuffer.Hit hit;
         [SerializeField] private IncomingHitBuffer enemyHitBuffer;
@@ -18,6 +19,7 @@ namespace Player.NewStateMachine.Actions
             if (attackCollider.IsTouching(enemyBodyColliders.GetActiveCollider()))
             {
                 //Debug.Log("HIT!");
+                attackerAttributeSystem.GainUltimate(hit.damage * 0.4f);
                 enemyHitBuffer.AddHitToBuffer(hit);
             }
         }
@@ -40,7 +42,8 @@ namespace Player.NewStateMachine.Actions
             );
             
             a.attackCollider = player.characterRoot.attackTriggers.GetAttackColliderByName(a.hit.tag);
-
+            a.attackerAttributeSystem = player.attributeSystem;
+            
             var enemyCharacterRoot = GameObject.FindFirstObjectByType<GameRoot>().GetEnemyPlayer(player).characterRoot;
             
             a.enemyHitBuffer = enemyCharacterRoot.incomingHitBuffer;
