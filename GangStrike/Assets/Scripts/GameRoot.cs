@@ -74,6 +74,16 @@ public class GameRoot: MonoBehaviour
             : players[0];
         return otherPlayer;
     }
+    
+    public PlayerRoot[] GetPlayers()
+    {
+        if (players == null || players.Length != 2)
+        {
+            Debug.LogError("GetPlayers: Players not initialized or invalid number of players.");
+            return null;
+        }
+        return players;
+    }
         
     public void RoundEnd(int winningPlayerId)
     {

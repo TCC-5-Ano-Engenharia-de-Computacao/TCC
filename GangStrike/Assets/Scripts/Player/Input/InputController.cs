@@ -34,39 +34,48 @@ namespace Input
             playerInputActions.Enable();
 
             // Punch
-            playerInputActions.Default.Punch.performed  += HandlePunchPerformed;
-            playerInputActions.Default.Punch.canceled   += HandlePunchCanceled;
+            playerInputActions.Default.Punch.performed += HandlePunchPerformed;
+            playerInputActions.Default.Punch.canceled += HandlePunchCanceled;
 
             // Kick
-            playerInputActions.Default.Kick.performed   += HandleKickPerformed;
-            playerInputActions.Default.Kick.canceled    += HandleKickCanceled;
+            playerInputActions.Default.Kick.performed += HandleKickPerformed;
+            playerInputActions.Default.Kick.canceled += HandleKickCanceled;
 
             // Jump
-            playerInputActions.Default.Jump.performed   += HandleJumpPerformed;
-            playerInputActions.Default.Jump.canceled    += HandleJumpCanceled;
-            
+            playerInputActions.Default.Jump.performed += HandleJumpPerformed;
+            playerInputActions.Default.Jump.canceled += HandleJumpCanceled;
+
             // Block
-            playerInputActions.Default.Block.performed   += HandleBlockPerformed;
-            playerInputActions.Default.Block.canceled    += HandleBlockCanceled;
+            playerInputActions.Default.Block.performed += HandleBlockPerformed;
+            playerInputActions.Default.Block.canceled += HandleBlockCanceled;
+
+            // Pause
+            playerInputActions.Default.Pause.performed += ctx =>
+            {
+                // Toggle pause menu
+                var pauseController = FindFirstObjectByType<RoundControl.PauseController>();
+                if (pauseController != null)
+                    pauseController.TogglePause();
+            };
         }
 
         private void OnDisable()
         {
             // Punch
-            playerInputActions.Default.Punch.performed  -= HandlePunchPerformed;
-            playerInputActions.Default.Punch.canceled   -= HandlePunchCanceled;
+            playerInputActions.Default.Punch.performed -= HandlePunchPerformed;
+            playerInputActions.Default.Punch.canceled -= HandlePunchCanceled;
 
             // Kick
-            playerInputActions.Default.Kick.performed   -= HandleKickPerformed;
-            playerInputActions.Default.Kick.canceled    -= HandleKickCanceled;
+            playerInputActions.Default.Kick.performed -= HandleKickPerformed;
+            playerInputActions.Default.Kick.canceled -= HandleKickCanceled;
 
             // Jump
-            playerInputActions.Default.Jump.performed   -= HandleJumpPerformed;
-            playerInputActions.Default.Jump.canceled    -= HandleJumpCanceled;
-            
+            playerInputActions.Default.Jump.performed -= HandleJumpPerformed;
+            playerInputActions.Default.Jump.canceled -= HandleJumpCanceled;
+
             // Block
-            playerInputActions.Default.Block.performed   -= HandleBlockPerformed;
-            playerInputActions.Default.Block.canceled    -= HandleBlockCanceled;
+            playerInputActions.Default.Block.performed -= HandleBlockPerformed;
+            playerInputActions.Default.Block.canceled -= HandleBlockCanceled;
 
             playerInputActions.Disable();
         }
@@ -104,7 +113,7 @@ namespace Input
         {
             //Debug.Log("Jump canceled");
         }
-        
+
         private void HandleBlockPerformed(InputAction.CallbackContext ctx)
         {
             //Debug.Log("Block");
@@ -116,5 +125,15 @@ namespace Input
             //Debug.Log("Block canceled");
             inputPerformedEvent?.Invoke("block", false);
         }
-    }
+
+        public void ForceDisablePlayerInput()
+        {
+            playerInputActions.Default.Disable();
+        }
+
+        public void ForceEnablePlayerInput()
+        {
+            playerInputActions.Default.Enable();
+        }
+}
 }
