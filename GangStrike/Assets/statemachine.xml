@@ -1709,6 +1709,7 @@
     <State id="Stagger">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Stagger"/>
+            <KnockbackAction force="15"/>
         </OnEnter>
 
         <Transitions>
