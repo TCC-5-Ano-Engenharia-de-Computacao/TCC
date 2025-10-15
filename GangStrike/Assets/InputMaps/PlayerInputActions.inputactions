@@ -284,7 +284,7 @@
                 {
                     "name": "",
                     "id": "844a9497-0841-4d12-acb2-2bff7c898b6d",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": ";WASD",
@@ -295,7 +295,7 @@
                 {
                     "name": "",
                     "id": "c07075dd-ca69-42d8-b2a0-1388f61004b5",
-                    "path": "<Keyboard>/rightCtrl",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Arrows",

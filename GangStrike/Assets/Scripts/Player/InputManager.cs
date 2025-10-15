@@ -14,10 +14,10 @@ public class InputManager : MonoBehaviour
     {
         gameRoot = FindFirstObjectByType<GameRoot>();
         var player1 = PlayerInput.Instantiate(player1Prefab, controlScheme: "WASD", pairWithDevice: Keyboard.current);
-        player1.transform.position = player1SpawnPoint.position;
+        player1.transform.root.position = player1SpawnPoint.position;
 
-        var player2 = PlayerInput.Instantiate(player2Prefab, controlScheme: "Arrows", pairWithDevice: Keyboard.current);
-        player2.transform.position = player2SpawnPoint.position;
+        var player2 = PlayerInput.Instantiate(player2Prefab, controlScheme: "Gamepad", pairWithDevice: Gamepad.current);
+        player2.transform.root.position = player2SpawnPoint.position;
 
         var playerRoot = player1.transform.root.GetComponentInChildren<PlayerRoot>();
         var playerRoot2 = player2.transform.root.GetComponentInChildren<PlayerRoot>();
