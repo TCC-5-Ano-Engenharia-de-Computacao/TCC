@@ -13,12 +13,33 @@ public class InputManager : MonoBehaviour
     void Awake()
     {
         gameRoot = FindFirstObjectByType<GameRoot>();
-        var player1 = PlayerInput.Instantiate(player1Prefab, controlScheme: "WASD", pairWithDevice: Keyboard.current);
-        player1.transform.root.position = player1SpawnPoint.position;
+        
+        var inp = new InputDevice();
 
-        var player2 = PlayerInput.Instantiate(player2Prefab, controlScheme: "Gamepad", pairWithDevice: Gamepad.current);
-        player2.transform.root.position = player2SpawnPoint.position;
+        PlayerInput player1;
+        if (Gamepad.all.Count > 0 && Gamepad.all[0] != null)
+        {
 
+            player1 = PlayerInput.Instantiate(player1Prefab, controlScheme: "Gamepad", pairWithDevice: Gamepad.all[0]);
+            player1.transform.root.position = player1SpawnPoint.position;
+     
+        }
+        else
+        {
+            player1 = PlayerInput.Instantiate(player1Prefab, controlScheme: "WASD", pairWithDevice: Keyboard.current);
+            player1.transform.root.position = player1SpawnPoint.position;
+        }
+        PlayerInput player2;
+        if (Gamepad.all.Count > 1 && Gamepad.all[1] != null)
+        {
+            player2 = PlayerInput.Instantiate(player2Prefab, controlScheme: "Gamepad", pairWithDevice: Gamepad.all[1]);
+            player2.transform.root.position = player2SpawnPoint.position;
+        }
+        else
+        { 
+            player2 = PlayerInput.Instantiate(player2Prefab, controlScheme: "Arrows", pairWithDevice:  Keyboard.current);
+            player2.transform.root.position = player2SpawnPoint.position;
+        }
         var playerRoot = player1.transform.root.GetComponentInChildren<PlayerRoot>();
         var playerRoot2 = player2.transform.root.GetComponentInChildren<PlayerRoot>();
         gameRoot.RegisterPlayers(new[] { playerRoot, playerRoot2 });

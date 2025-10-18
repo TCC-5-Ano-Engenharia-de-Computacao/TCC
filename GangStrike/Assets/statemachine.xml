@@ -1774,6 +1774,12 @@
 
             <!-- take damage conditions -->
             <!-- Apply Stagger -->
+            <Transition to="Block">
+                <Conditions>
+                    <HoldingInputCondition inputName="block"/>
+                </Conditions>
+            </Transition>
+            
             <Transition to="Stagger">
                 <Conditions>
                     <CheckHitCondition hitEffect="stagger"/>
