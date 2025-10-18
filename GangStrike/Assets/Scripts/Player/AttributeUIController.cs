@@ -60,7 +60,7 @@ namespace Player
             
             isInitialized = true;
             
-            Debug.Log($"AttributeUIController initialized for Player {controller.GetPlayerId()}");
+            //Debug.Log($"AttributeUIController initialized for Player {controller.GetPlayerId()}");
         }
         
         private void SetupBars()

@@ -76,7 +76,7 @@ namespace Player
                 // Position the UI based on player ID and offset
                 PositionUI();
                 
-                Debug.Log($"UI Controller instantiated for player {playerId}");
+                //Debug.Log($"UI Controller instantiated for player {playerId}");
             }
             else
             {
