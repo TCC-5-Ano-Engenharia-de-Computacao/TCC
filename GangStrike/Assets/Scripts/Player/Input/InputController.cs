@@ -33,14 +33,22 @@ namespace Input
         {
             playerInputActions.Enable();
 
-            // Punch
+            // Weak Punch
             playerInputActions.Default.WeakPunch.performed += HandleWeakPunchPerformed;
             playerInputActions.Default.WeakPunch.canceled += HandleWeakPunchCanceled;
+            
+            // Strong Punch
+            playerInputActions.Default.StrongPunch.performed += HandleStrongPunchPerformed;
+            playerInputActions.Default.StrongPunch.canceled += HandleStrongPunchCanceled;
 
             // Kick
             playerInputActions.Default.Kick.performed += HandleKickPerformed;
             playerInputActions.Default.Kick.canceled += HandleKickCanceled;
 
+            // Special
+            playerInputActions.Default.Special.performed += HandleSpecialPerformed;
+            playerInputActions.Default.Special.canceled += HandleSpecialCanceled;
+            
             // Jump
             playerInputActions.Default.Jump.performed += HandleJumpPerformed;
             playerInputActions.Default.Jump.canceled += HandleJumpCanceled;
@@ -73,7 +81,7 @@ namespace Input
             playerInputActions.Default.Kick.performed -= HandleKickPerformed;
             playerInputActions.Default.Kick.canceled -= HandleKickCanceled;
             
-            // Kick
+            // Special
             playerInputActions.Default.Special.performed -= HandleSpecialPerformed;
             playerInputActions.Default.Special.canceled -= HandleSpecialCanceled;
 
