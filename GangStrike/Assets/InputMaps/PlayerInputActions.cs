@@ -46,7 +46,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Punch"",
+                    ""name"": ""WeakPunch"",
                     ""type"": ""Button"",
                     ""id"": ""c848b3d6-3295-4fcc-9821-cb74cb56a8b7"",
                     ""expectedControlType"": """",
@@ -91,7 +91,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SpecialAttack"",
+                    ""name"": ""Special"",
                     ""type"": ""Button"",
                     ""id"": ""c5a359b4-52c4-475e-a227-b8e3dbede253"",
                     ""expectedControlType"": """",
@@ -152,7 +152,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";WASD"",
-                    ""action"": ""Punch"",
+                    ""action"": ""WeakPunch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -163,7 +163,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Arrows"",
-                    ""action"": ""Punch"",
+                    ""action"": ""WeakPunch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -174,14 +174,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Punch"",
+                    ""action"": ""WeakPunch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""51b23c69-8c3e-482b-942b-54fd3199cdac"",
-                    ""path"": ""<Keyboard>/v"",
+                    ""path"": ""<Keyboard>/b"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";WASD"",
@@ -192,7 +192,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b9e62b91-51ce-4067-a8a6-e7d46af77dac"",
-                    ""path"": ""<Keyboard>/o"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Arrows"",
@@ -379,10 +379,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""87ec60f0-00f5-4d62-a3a7-adb50a95e7de"",
-                    ""path"": ""<Gamepad>/select"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Gamepad"",
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -438,29 +438,29 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""SpecialAttack"",
+                    ""action"": ""Special"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""4603ee25-da46-4e1c-9e6d-04d1d5c740d7"",
-                    ""path"": ""<Keyboard>/b"",
+                    ""path"": ""<Keyboard>/n"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";WASD"",
-                    ""action"": ""SpecialAttack"",
+                    ""action"": ""Special"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""15951738-c07e-4347-b48c-4759e9a212de"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Keyboard>/u"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Arrows"",
-                    ""action"": ""SpecialAttack"",
+                    ""action"": ""Special"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -507,12 +507,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Default = asset.FindActionMap("Default", throwIfNotFound: true);
         m_Default_AnalogStick = m_Default.FindAction("AnalogStick", throwIfNotFound: true);
         m_Default_Jump = m_Default.FindAction("Jump", throwIfNotFound: true);
-        m_Default_Punch = m_Default.FindAction("Punch", throwIfNotFound: true);
+        m_Default_WeakPunch = m_Default.FindAction("WeakPunch", throwIfNotFound: true);
         m_Default_Kick = m_Default.FindAction("Kick", throwIfNotFound: true);
         m_Default_Block = m_Default.FindAction("Block", throwIfNotFound: true);
         m_Default_Pause = m_Default.FindAction("Pause", throwIfNotFound: true);
         m_Default_StrongPunch = m_Default.FindAction("StrongPunch", throwIfNotFound: true);
-        m_Default_SpecialAttack = m_Default.FindAction("SpecialAttack", throwIfNotFound: true);
+        m_Default_Special = m_Default.FindAction("Special", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -581,24 +581,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IDefaultActions> m_DefaultActionsCallbackInterfaces = new List<IDefaultActions>();
     private readonly InputAction m_Default_AnalogStick;
     private readonly InputAction m_Default_Jump;
-    private readonly InputAction m_Default_Punch;
+    private readonly InputAction m_Default_WeakPunch;
     private readonly InputAction m_Default_Kick;
     private readonly InputAction m_Default_Block;
     private readonly InputAction m_Default_Pause;
     private readonly InputAction m_Default_StrongPunch;
-    private readonly InputAction m_Default_SpecialAttack;
+    private readonly InputAction m_Default_Special;
     public struct DefaultActions
     {
         private @PlayerInputActions m_Wrapper;
         public DefaultActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @AnalogStick => m_Wrapper.m_Default_AnalogStick;
         public InputAction @Jump => m_Wrapper.m_Default_Jump;
-        public InputAction @Punch => m_Wrapper.m_Default_Punch;
+        public InputAction @WeakPunch => m_Wrapper.m_Default_WeakPunch;
         public InputAction @Kick => m_Wrapper.m_Default_Kick;
         public InputAction @Block => m_Wrapper.m_Default_Block;
         public InputAction @Pause => m_Wrapper.m_Default_Pause;
         public InputAction @StrongPunch => m_Wrapper.m_Default_StrongPunch;
-        public InputAction @SpecialAttack => m_Wrapper.m_Default_SpecialAttack;
+        public InputAction @Special => m_Wrapper.m_Default_Special;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -614,9 +614,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @Punch.started += instance.OnPunch;
-            @Punch.performed += instance.OnPunch;
-            @Punch.canceled += instance.OnPunch;
+            @WeakPunch.started += instance.OnWeakPunch;
+            @WeakPunch.performed += instance.OnWeakPunch;
+            @WeakPunch.canceled += instance.OnWeakPunch;
             @Kick.started += instance.OnKick;
             @Kick.performed += instance.OnKick;
             @Kick.canceled += instance.OnKick;
@@ -629,9 +629,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @StrongPunch.started += instance.OnStrongPunch;
             @StrongPunch.performed += instance.OnStrongPunch;
             @StrongPunch.canceled += instance.OnStrongPunch;
-            @SpecialAttack.started += instance.OnSpecialAttack;
-            @SpecialAttack.performed += instance.OnSpecialAttack;
-            @SpecialAttack.canceled += instance.OnSpecialAttack;
+            @Special.started += instance.OnSpecial;
+            @Special.performed += instance.OnSpecial;
+            @Special.canceled += instance.OnSpecial;
         }
 
         private void UnregisterCallbacks(IDefaultActions instance)
@@ -642,9 +642,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @Punch.started -= instance.OnPunch;
-            @Punch.performed -= instance.OnPunch;
-            @Punch.canceled -= instance.OnPunch;
+            @WeakPunch.started -= instance.OnWeakPunch;
+            @WeakPunch.performed -= instance.OnWeakPunch;
+            @WeakPunch.canceled -= instance.OnWeakPunch;
             @Kick.started -= instance.OnKick;
             @Kick.performed -= instance.OnKick;
             @Kick.canceled -= instance.OnKick;
@@ -657,9 +657,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @StrongPunch.started -= instance.OnStrongPunch;
             @StrongPunch.performed -= instance.OnStrongPunch;
             @StrongPunch.canceled -= instance.OnStrongPunch;
-            @SpecialAttack.started -= instance.OnSpecialAttack;
-            @SpecialAttack.performed -= instance.OnSpecialAttack;
-            @SpecialAttack.canceled -= instance.OnSpecialAttack;
+            @Special.started -= instance.OnSpecial;
+            @Special.performed -= instance.OnSpecial;
+            @Special.canceled -= instance.OnSpecial;
         }
 
         public void RemoveCallbacks(IDefaultActions instance)
@@ -708,11 +708,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnAnalogStick(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnPunch(InputAction.CallbackContext context);
+        void OnWeakPunch(InputAction.CallbackContext context);
         void OnKick(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnStrongPunch(InputAction.CallbackContext context);
-        void OnSpecialAttack(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
     }
 }
