@@ -66,22 +66,20 @@
             </Transition>
             
             <!-- ataques -->
-                <!-- Ataque de Energy Beam (PRECISA VIR ANTES DO WEAK ATTACK) -->
-                <Transition to="EnergyBeamAttackStart">
+                <!-- Ultimate (PRECISA VIR ANTES DO Energy Beam) -->
+                <Transition to="UltimateStart">
                     <Conditions>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="weakPunch"
+                        <IsUltimateAvailableCondition/>
+                        <AnalogHistoryRegexCondition regexString="2{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
-    
-                <!-- Ultimate (PRECISA VIR ANTES DO STRONG PUNCH) -->
-                <Transition to="UltimateStart">
+            
+                <Transition to="EnergyBeamAttackStart">
                     <Conditions>
-                        <IsUltimateAvailableCondition/>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="strongPunch"
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
@@ -207,22 +205,20 @@
             </Transition>
 
             <!-- ataques -->
-                <!-- Ataque de Energy Beam (PRECISA VIR ANTES DO WEAK ATTACK) -->
-                <Transition to="EnergyBeamAttackStart">
+                <!-- Ultimate (PRECISA VIR ANTES DO Energy Beam) -->
+                <Transition to="UltimateStart">
                     <Conditions>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="weakPunch"
+                        <IsUltimateAvailableCondition/>
+                        <AnalogHistoryRegexCondition regexString="2{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
     
-                <!-- Ultimate (PRECISA VIR ANTES DO STRONG PUNCH) -->
-                <Transition to="UltimateStart">
+                <Transition to="EnergyBeamAttackStart">
                     <Conditions>
-                        <IsUltimateAvailableCondition/>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="strongPunch"
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
@@ -328,22 +324,20 @@
             </Transition>
 
             <!-- ataques -->
-                <!-- Ataque de Energy Beam (PRECISA VIR ANTES DO WEAK ATTACK) -->
-                <Transition to="EnergyBeamAttackStart">
+                <!-- Ultimate (PRECISA VIR ANTES DO Energy Beam) -->
+                <Transition to="UltimateStart">
                     <Conditions>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="weakPunch"
+                        <IsUltimateAvailableCondition/>
+                        <AnalogHistoryRegexCondition regexString="2{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
     
-                <!-- Ultimate (PRECISA VIR ANTES DO STRONG PUNCH) -->
-                <Transition to="UltimateStart">
+                <Transition to="EnergyBeamAttackStart">
                     <Conditions>
-                        <IsUltimateAvailableCondition/>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="strongPunch"
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
@@ -438,6 +432,17 @@
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
+            </Transition>
+            
+            <!-- ataques -->
+            <Transition to="UltimateStart">
+                <Conditions>
+                    <IsUltimateAvailableCondition/>
+                    <AnalogHistoryRegexCondition regexString="2{1,6}$"/>
+                    <BufferedInputCondition inputName="special"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
             </Transition>
             
             <!-- movimentações -->
