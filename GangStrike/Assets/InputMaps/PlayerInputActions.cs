@@ -80,13 +80,31 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StrongPunch"",
+                    ""type"": ""Button"",
+                    ""id"": ""47721190-76f7-46d9-b257-29ff25bafd68"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpecialAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""c5a359b4-52c4-475e-a227-b8e3dbede253"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""aa9a2a67-fd85-492f-9f41-3c703efa9773"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";WASD"",
@@ -97,7 +115,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""177bc150-2328-4db3-aa69-5d64240871f6"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Arrows"",
@@ -108,7 +126,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a0551684-37a4-4660-ad58-1a9ca1c58db8"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""342ff445-6bc5-4919-aca2-a91ee41b6adb"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
@@ -141,7 +170,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9d1886ba-898b-49e5-9cff-c1dd9ec04122"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
@@ -174,7 +203,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0fabfda1-14a9-4330-bcb6-c48b01a0f108"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
@@ -187,7 +216,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""0338f483-cdce-476f-8986-0b0a7bb7e413"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""groups"": """",
                     ""action"": ""AnalogStick"",
                     ""isComposite"": true,
@@ -242,7 +271,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""81f38a36-dcd5-4d53-9338-06e7d826c326"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""groups"": """",
                     ""action"": ""AnalogStick"",
                     ""isComposite"": true,
@@ -305,6 +334,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""5cc1fcf6-d0a8-43c3-8e96-bfccf218ba06"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""AnalogStick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""844a9497-0841-4d12-acb2-2bff7c898b6d"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
@@ -357,6 +397,72 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b34ea823-0834-4d6f-833e-b9e66402df1c"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";WASD"",
+                    ""action"": ""StrongPunch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e0ee0269-15e5-45ea-a68c-7be1dcd2dd8f"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Arrows"",
+                    ""action"": ""StrongPunch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2aef5b0-eb07-4160-be60-9698110ec1bf"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""StrongPunch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbef2a3f-96e7-402b-85dc-d5c5a0b985bd"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""SpecialAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4603ee25-da46-4e1c-9e6d-04d1d5c740d7"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";WASD"",
+                    ""action"": ""SpecialAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15951738-c07e-4347-b48c-4759e9a212de"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Arrows"",
+                    ""action"": ""SpecialAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -405,6 +511,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Default_Kick = m_Default.FindAction("Kick", throwIfNotFound: true);
         m_Default_Block = m_Default.FindAction("Block", throwIfNotFound: true);
         m_Default_Pause = m_Default.FindAction("Pause", throwIfNotFound: true);
+        m_Default_StrongPunch = m_Default.FindAction("StrongPunch", throwIfNotFound: true);
+        m_Default_SpecialAttack = m_Default.FindAction("SpecialAttack", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -477,6 +585,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_Kick;
     private readonly InputAction m_Default_Block;
     private readonly InputAction m_Default_Pause;
+    private readonly InputAction m_Default_StrongPunch;
+    private readonly InputAction m_Default_SpecialAttack;
     public struct DefaultActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -487,6 +597,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Kick => m_Wrapper.m_Default_Kick;
         public InputAction @Block => m_Wrapper.m_Default_Block;
         public InputAction @Pause => m_Wrapper.m_Default_Pause;
+        public InputAction @StrongPunch => m_Wrapper.m_Default_StrongPunch;
+        public InputAction @SpecialAttack => m_Wrapper.m_Default_SpecialAttack;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -514,6 +626,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @StrongPunch.started += instance.OnStrongPunch;
+            @StrongPunch.performed += instance.OnStrongPunch;
+            @StrongPunch.canceled += instance.OnStrongPunch;
+            @SpecialAttack.started += instance.OnSpecialAttack;
+            @SpecialAttack.performed += instance.OnSpecialAttack;
+            @SpecialAttack.canceled += instance.OnSpecialAttack;
         }
 
         private void UnregisterCallbacks(IDefaultActions instance)
@@ -536,6 +654,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @StrongPunch.started -= instance.OnStrongPunch;
+            @StrongPunch.performed -= instance.OnStrongPunch;
+            @StrongPunch.canceled -= instance.OnStrongPunch;
+            @SpecialAttack.started -= instance.OnSpecialAttack;
+            @SpecialAttack.performed -= instance.OnSpecialAttack;
+            @SpecialAttack.canceled -= instance.OnSpecialAttack;
         }
 
         public void RemoveCallbacks(IDefaultActions instance)
@@ -588,5 +712,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnKick(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnStrongPunch(InputAction.CallbackContext context);
+        void OnSpecialAttack(InputAction.CallbackContext context);
     }
 }
