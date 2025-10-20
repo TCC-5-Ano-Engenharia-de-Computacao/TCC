@@ -33,14 +33,22 @@ namespace Input
         {
             playerInputActions.Enable();
 
-            // Punch
-            playerInputActions.Default.Punch.performed += HandlePunchPerformed;
-            playerInputActions.Default.Punch.canceled += HandlePunchCanceled;
+            // Weak Punch
+            playerInputActions.Default.WeakPunch.performed += HandleWeakPunchPerformed;
+            playerInputActions.Default.WeakPunch.canceled += HandleWeakPunchCanceled;
+            
+            // Strong Punch
+            playerInputActions.Default.StrongPunch.performed += HandleStrongPunchPerformed;
+            playerInputActions.Default.StrongPunch.canceled += HandleStrongPunchCanceled;
 
             // Kick
             playerInputActions.Default.Kick.performed += HandleKickPerformed;
             playerInputActions.Default.Kick.canceled += HandleKickCanceled;
 
+            // Special
+            playerInputActions.Default.Special.performed += HandleSpecialPerformed;
+            playerInputActions.Default.Special.canceled += HandleSpecialCanceled;
+            
             // Jump
             playerInputActions.Default.Jump.performed += HandleJumpPerformed;
             playerInputActions.Default.Jump.canceled += HandleJumpCanceled;
@@ -61,13 +69,21 @@ namespace Input
 
         private void OnDisable()
         {
-            // Punch
-            playerInputActions.Default.Punch.performed -= HandlePunchPerformed;
-            playerInputActions.Default.Punch.canceled -= HandlePunchCanceled;
+            // Weak Punch
+            playerInputActions.Default.WeakPunch.performed -= HandleWeakPunchPerformed;
+            playerInputActions.Default.WeakPunch.canceled -= HandleWeakPunchCanceled;
 
+            // Strong Punch
+            playerInputActions.Default.StrongPunch.performed -= HandleStrongPunchPerformed;
+            playerInputActions.Default.StrongPunch.canceled -= HandleStrongPunchCanceled;
+            
             // Kick
             playerInputActions.Default.Kick.performed -= HandleKickPerformed;
             playerInputActions.Default.Kick.canceled -= HandleKickCanceled;
+            
+            // Special
+            playerInputActions.Default.Special.performed -= HandleSpecialPerformed;
+            playerInputActions.Default.Special.canceled -= HandleSpecialCanceled;
 
             // Jump
             playerInputActions.Default.Jump.performed -= HandleJumpPerformed;
@@ -81,26 +97,48 @@ namespace Input
         }
 
         // ------------------------------------------------------- HANDLERS
-        private void HandlePunchPerformed(InputAction.CallbackContext ctx)
+        private void HandleWeakPunchPerformed(InputAction.CallbackContext ctx)
         {
-            //Debug.Log("[C] - Punch");
-            inputPerformedEvent?.Invoke("attack", true);
+            //Debug.Log("[C] - Weak Punch");
+            inputPerformedEvent?.Invoke("weakPunch", true);
         }
-
-        private void HandlePunchCanceled(InputAction.CallbackContext ctx)
+        
+        private void HandleWeakPunchCanceled(InputAction.CallbackContext ctx)
         {
-            //Debug.Log("Punch canceled");
+            //Debug.Log("Strong Punch canceled");
+        }
+        
+        private void HandleStrongPunchPerformed(InputAction.CallbackContext ctx)
+        {
+            //Debug.Log("[V] - Strong Punch");
+            inputPerformedEvent?.Invoke("strongPunch", true);
+        }
+        
+        private void HandleStrongPunchCanceled(InputAction.CallbackContext ctx)
+        {
+            //Debug.Log("Weak Punch canceled");
         }
 
         private void HandleKickPerformed(InputAction.CallbackContext ctx)
         {
-            //Debug.Log("[V] - Kick");
+            //Debug.Log("[B] - Kick");
             inputPerformedEvent?.Invoke("kick", true);
         }
 
         private void HandleKickCanceled(InputAction.CallbackContext ctx)
         {
             //Debug.Log("Kick canceled");
+        }
+        
+        private void HandleSpecialPerformed(InputAction.CallbackContext ctx)
+        {
+            //Debug.Log("[N] - Special");
+            inputPerformedEvent?.Invoke("special", true);
+        }
+
+        private void HandleSpecialCanceled(InputAction.CallbackContext ctx)
+        {
+            //Debug.Log("Special canceled");
         }
 
         private void HandleJumpPerformed(InputAction.CallbackContext ctx)

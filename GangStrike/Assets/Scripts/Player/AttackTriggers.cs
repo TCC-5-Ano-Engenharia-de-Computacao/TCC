@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackTriggers : MonoBehaviour
 {
     private Dictionary<string, Collider2D> attackCollidersDict = new();
+    public bool alreadyHit; // Para evitar múltiplos hits de um mesmo ataque que ocorre no OnStay (ex: KickHorizontalJump)
 
     public Collider2D GetAttackColliderByName(string hitTag)
     {

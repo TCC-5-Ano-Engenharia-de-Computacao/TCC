@@ -66,46 +66,78 @@
             </Transition>
             
             <!-- ataques -->
-                <!-- Ataque de Energy Beam (PRECISA VIR ANTES DO WEAK ATTACK) -->
-                <Transition to="EnergyBeamAttackStart">
+                <!-- Ultimate (PRECISA VIR ANTES DO Energy Beam) -->
+                <Transition to="UltimateStart">
                     <Conditions>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="attack"
+                        <IsUltimateAvailableCondition/>
+                        <AnalogHistoryRegexCondition regexString="2{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
-    
-                <!-- Ultimate (PRECISA VIR ANTES DO STRONG PUNCH) -->
-                <Transition to="UltimateStart">
+            
+                <Transition to="EnergyBeamAttackStart">
                     <Conditions>
-                        <IsUltimateAvailableCondition/>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="kick"
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
                 
-                <!-- Ataque leve: input “attack” -->
+                <!-- Ataque leve: input "weakPunch" -->
                 <Transition to="WeakPunch">
                     <Conditions>
-                        <BufferedInputCondition inputName="attack"
+                        <BufferedInputCondition inputName="weakPunch"
                                                 isInstantaneous="false"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
     
-                <!-- Ataque pesado: input “kick” -->
+                <!-- Ataque pesado: input "strongPunch" -->
                 <Transition to="StartStrongPunch">
                 <Conditions>
-                    <BufferedInputCondition inputName="kick"
+                    <BufferedInputCondition inputName="strongPunch"
                                             isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
 
+                <!-- Chute: input "kick" -->
+                <Transition to="KickStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+            
             <!--movimentações-->
+                <!-- Pra ir de idle para pulo lateral direto. Nao funcionou bem pq usava o analogHistory, que nao tem o mesmo tempo de buffer que o inputCondition-->
+                <!-- 
+                &lt;!&ndash; Pulo pra frente &ndash;&gt;
+                <Transition to="JumpForward">
+                    <Conditions>
+                        <BufferedInputCondition inputName="jump"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                        <AnalogHistoryRegexCondition regexString="9+$"/>
+                        <PlayerIsGroundedCondition/>
+                    </Conditions>
+                </Transition>
+
+                &lt;!&ndash; Pulo pra trás &ndash;&gt;
+                <Transition to="JumpBackward">
+                    <Conditions>
+                        <BufferedInputCondition inputName="jump"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                        <AnalogHistoryRegexCondition regexString="7+$"/>
+                        <PlayerIsGroundedCondition/>
+                    </Conditions>
+                </Transition>
+-->
+            
                 <!-- Pulo vertical -->
                 <Transition to="Jump">
                     <Conditions>
@@ -114,8 +146,8 @@
                                                 removeInputOnEndOfFrame="true"/>
                         <PlayerIsGroundedCondition/>
                     </Conditions>
-                </Transition>
-    
+                </Transition>   
+            
                 <!-- Andar pra frente -->
                 <Transition to="WalkingFoward">
                     <Conditions>
@@ -207,44 +239,51 @@
             </Transition>
 
             <!-- ataques -->
-                <!-- Ataque de Energy Beam (PRECISA VIR ANTES DO WEAK ATTACK) -->
-                <Transition to="EnergyBeamAttackStart">
-                    <Conditions>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="attack"
-                                                isInstantaneous="true"
-                                                removeInputOnEndOfFrame="true"/>
-                    </Conditions>
-                </Transition>
-    
-                <!-- Ultimate (PRECISA VIR ANTES DO STRONG PUNCH) -->
+                <!-- Ultimate (PRECISA VIR ANTES DO Energy Beam) -->
                 <Transition to="UltimateStart">
                     <Conditions>
                         <IsUltimateAvailableCondition/>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="kick"
+                        <AnalogHistoryRegexCondition regexString="2{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
     
-                <!-- Ataque leve: input “attack” -->
+                <Transition to="EnergyBeamAttackStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="special"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+    
+                <!-- Ataque leve: input "weakPunch" -->
                 <Transition to="WeakPunch">
                     <Conditions>
-                        <BufferedInputCondition inputName="attack"
+                        <BufferedInputCondition inputName="weakPunch"
                                                 isInstantaneous="false"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
     
-                <!-- Ataque pesado: input “kick” -->
+                <!-- Ataque pesado: input "strongPunch" -->
                 <Transition to="StartStrongPunch">
                 <Conditions>
-                    <BufferedInputCondition inputName="kick"
+                    <BufferedInputCondition inputName="strongPunch"
                                             isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
+
+                <!-- Chute: input "kick" -->
+                <Transition to="KickStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
             
             <!-- movimentações-->
             
@@ -328,45 +367,52 @@
             </Transition>
 
             <!-- ataques -->
-                <!-- Ataque de Energy Beam (PRECISA VIR ANTES DO WEAK ATTACK) -->
-                <Transition to="EnergyBeamAttackStart">
-                    <Conditions>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="attack"
-                                                isInstantaneous="true"
-                                                removeInputOnEndOfFrame="true"/>
-                    </Conditions>
-                </Transition>
-    
-                <!-- Ultimate (PRECISA VIR ANTES DO STRONG PUNCH) -->
+                <!-- Ultimate (PRECISA VIR ANTES DO Energy Beam) -->
                 <Transition to="UltimateStart">
                     <Conditions>
                         <IsUltimateAvailableCondition/>
-                        <AnalogHistoryRegexCondition regexString="2{1,9}3{1,9}6{1,9}9{1,9}8{1,9}5{0,16}$"/>
-                        <BufferedInputCondition inputName="kick"
+                        <AnalogHistoryRegexCondition regexString="2{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
                                                 isInstantaneous="true"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
     
-                <!-- Ataque leve: input “attack” -->
+                <Transition to="EnergyBeamAttackStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="special"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+    
+                <!-- Ataque leve: input "weakPunch" -->
                 <Transition to="WeakPunch">
                     <Conditions>
-                        <BufferedInputCondition inputName="attack"
+                        <BufferedInputCondition inputName="weakPunch"
                                                 isInstantaneous="false"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
     
-                <!-- Ataque pesado: input “kick” -->
+                <!-- Ataque pesado: input "strongPunch" -->
                 <Transition to="StartStrongPunch">
                 <Conditions>
-                    <BufferedInputCondition inputName="kick"
+                    <BufferedInputCondition inputName="strongPunch"
                                             isInstantaneous="false"
                                             removeInputOnEndOfFrame="true"/>
                 </Conditions>
             </Transition>
-            
+
+                <!-- Chute: input "kick" -->
+                <Transition to="KickStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+                
             <!-- movimentações -->
                 <Transition to="JumpBackward">
                     <Conditions>
@@ -438,6 +484,17 @@
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
+            </Transition>
+            
+            <!-- ataques -->
+            <Transition to="UltimateStart">
+                <Conditions>
+                    <IsUltimateAvailableCondition/>
+                    <AnalogHistoryRegexCondition regexString="2{1,6}$"/>
+                    <BufferedInputCondition inputName="special"
+                                            isInstantaneous="true"
+                                            removeInputOnEndOfFrame="true"/>
+                </Conditions>
             </Transition>
             
             <!-- movimentações -->
@@ -513,7 +570,17 @@
                         <ClearHitBufferAction/>
                     </SuccessActions>
                 </Transition>
-                
+            
+            <!-- ataques -->
+                <!-- Chute: input "kick" -->
+                <Transition to="KickCrouchedStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+            
             <!-- movimentações -->
                 <Transition to="CrouchEnd">
                     <Conditions>
@@ -599,7 +666,7 @@
     
             <OnEnter>
                 <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-                <JumpPlayerAction force="85"/>
+                <JumpPlayerAction force="65"/>
             </OnEnter>
     
             <OnStay>
@@ -649,6 +716,16 @@
                     </SuccessActions>
                 </Transition>
                 
+                <!-- ataques -->
+                    <!-- KickVerticalJump: input "kick" -->
+                    <Transition to="KickVerticalJumpStart">
+                        <Conditions>
+                            <BufferedInputCondition inputName="kick"
+                                                    isInstantaneous="true"
+                                                    removeInputOnEndOfFrame="true"/>
+                            <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="true"/>
+                        </Conditions>
+                    </Transition>
                 
                 <!-- movimentação -->
                     <Transition to="Rise">
@@ -667,7 +744,7 @@
     
             <OnEnter>
                 <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-                <JumpPlayerAction force="85"/>
+                <JumpPlayerAction force="65"/>
             </OnEnter>
     
             <OnStay>
@@ -715,7 +792,26 @@
                         <ClearHitBufferAction/>
                     </SuccessActions>
                 </Transition>
-                
+
+                <!-- ataques -->
+                    <!-- KickVerticalJump: input "kick" -->
+                    <Transition to="KickVerticalJumpStart">
+                        <Conditions>
+                            <BufferedInputCondition inputName="kick"
+                                                    isInstantaneous="true"
+                                                    removeInputOnEndOfFrame="true"/>
+                            <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="true"/>
+                        </Conditions>
+                    </Transition>
+    
+                    <Transition to="KickHorizontalJump">
+                        <Conditions>
+                            <BufferedInputCondition inputName="kick"
+                                                    isInstantaneous="true"
+                                                    removeInputOnEndOfFrame="true"/>
+                            <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="false"/>
+                        </Conditions>
+                    </Transition>
                 
                 <!-- movimentação -->
                     <Transition to="Rise">
@@ -734,7 +830,7 @@
 
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-            <JumpPlayerAction force="85"/>
+            <JumpPlayerAction force="65"/>
         </OnEnter>
 
         <OnStay>
@@ -783,6 +879,25 @@
                 </SuccessActions>
             </Transition>
 
+            <!-- ataques -->
+                <!-- KickVerticalJump: input "kick" -->
+                <Transition to="KickVerticalJumpStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                        <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="true"/>
+                    </Conditions>
+                </Transition>
+    
+                <Transition to="KickHorizontalJump">
+                    <Conditions>
+                        <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                        <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="false"/>
+                    </Conditions>
+                </Transition>
 
             <!-- movimentação -->
                 <Transition to="Rise">
@@ -806,38 +921,38 @@
             <Transitions>
 
                 <!-- game end conditions -->
-                <!-- Tie -->
-                <Transition to="Tie">
-                    <Conditions>
-                        <CheckTieCondition/>
-                    </Conditions>
-                </Transition>
-                <!-- Death -->
-                <Transition to="Loss">
-                    <Conditions>
-                        <CheckLoseCondition/>
-                    </Conditions>
-                </Transition>
-                <!-- Victory -->
-                <Transition to="Victory">
+                    <!-- Tie -->
+                    <Transition to="Tie">
+                        <Conditions>
+                            <CheckTieCondition/>
+                        </Conditions>
+                    </Transition>
+                    <!-- Death -->
+                    <Transition to="Loss">
+                        <Conditions>
+                            <CheckLoseCondition/>
+                        </Conditions>
+                    </Transition>
+                    <!-- Victory -->
+                    <Transition to="Victory">
                     <Conditions>
                         <CheckVictoryCondition/>
                     </Conditions>
                 </Transition>
 
                 <!-- take damage conditions -->
-                <!-- Apply Stagger -->
-                <Transition to="Stagger">
-                    <Conditions>
-                        <CheckHitCondition hitEffect="stagger"/>
-                    </Conditions>
-                    <SuccessActions>
-                        <ClearHitBufferAction/>
-                    </SuccessActions>
-                </Transition>
-
-                <!-- Apply Knockback -->
-                <Transition to="StaggerKnockback">
+                    <!-- Apply Stagger -->
+                    <Transition to="Stagger">
+                        <Conditions>
+                            <CheckHitCondition hitEffect="stagger"/>
+                        </Conditions>
+                        <SuccessActions>
+                            <ClearHitBufferAction/>
+                        </SuccessActions>
+                    </Transition>
+    
+                    <!-- Apply Knockback -->
+                    <Transition to="StaggerKnockback">
                     <Conditions>
                         <CheckHitCondition hitEffect="knockback"/>
                     </Conditions>
@@ -846,7 +961,26 @@
                     </SuccessActions>
                 </Transition>
 
-
+                <!-- ataques -->
+                    <!-- KickVerticalJump: input "kick" -->
+                    <Transition to="KickVerticalJumpStart">
+                        <Conditions>
+                            <BufferedInputCondition inputName="kick"
+                                                    isInstantaneous="true"
+                                                    removeInputOnEndOfFrame="true"/>
+                            <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="true"/>
+                        </Conditions>
+                    </Transition>
+    
+                    <Transition to="KickHorizontalJump">
+                        <Conditions>
+                            <BufferedInputCondition inputName="kick"
+                                                    isInstantaneous="true"
+                                                    removeInputOnEndOfFrame="true"/>
+                            <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="false"/>
+                        </Conditions>
+                    </Transition>
+                
                 <!-- movimentação -->
                     <!-- Se tocar o chão antes de cair, vai para Landing -->
                     <Transition to="Landing">
@@ -918,6 +1052,25 @@
                     </SuccessActions>
                 </Transition>
 
+                <!-- ataques -->
+                    <!-- KickVerticalJump: input "kick" -->
+                    <Transition to="KickVerticalJumpStart">
+                        <Conditions>
+                            <BufferedInputCondition inputName="kick"
+                                                    isInstantaneous="true"
+                                                    removeInputOnEndOfFrame="true"/>
+                            <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="true"/>
+                        </Conditions>
+                    </Transition>
+    
+                    <Transition to="KickHorizontalJump">
+                        <Conditions>
+                            <BufferedInputCondition inputName="kick"
+                                                    isInstantaneous="true"
+                                                    removeInputOnEndOfFrame="true"/>
+                            <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="false"/>
+                        </Conditions>
+                    </Transition>
 
                 <!-- movimentação -->
                     <!-- Se tocar o chão direto do Apex -->
@@ -943,12 +1096,11 @@
     
             <OnStay>
                 <UpdateSideAction/>
-                <MovePlayerAction speed="0.1" direction="backward"/>
             </OnStay>
     
             <Transitions>
 
-                <!-- game end conditions -->
+            <!-- game end conditions -->
                 <!-- Tie -->
                 <Transition to="Tie">
                     <Conditions>
@@ -968,7 +1120,7 @@
                     </Conditions>
                 </Transition>
 
-                <!-- take damage conditions -->
+            <!-- take damage conditions -->
                 <!-- Apply Stagger -->
                 <Transition to="Stagger">
                     <Conditions>
@@ -989,9 +1141,27 @@
                     </SuccessActions>
                 </Transition>
 
+            <!-- ataques -->
+                <!-- KickVerticalJump: input "kick" -->
+                <Transition to="KickVerticalJumpStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                        <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="true"/>
+                    </Conditions>
+                </Transition>
 
-                <!-- movimentação -->
-                
+                <Transition to="KickHorizontalJump">
+                    <Conditions>
+                        <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                        <HasHorizontalVelocityCondition speedThreshold="0.2" invertCondition="false"/>
+                    </Conditions>
+                </Transition>
+
+            <!-- movimentação -->
                 <Transition to="Landing">
                     <Conditions>
                         <PlayerIsGroundedCondition/>
@@ -1065,6 +1235,200 @@
         </Transitions>
     </State>
 
+        <!-- ============== AERIAL ATTACKS ============== -->
+    <State id="KickVerticalJumpStart">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/KickVerticalJumpStart"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+            <!-- Apply Knockback -->
+            <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+
+            <!-- movimentação -->
+
+            <Transition to="KickVerticalJumpEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="KickVerticalJumpStart"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="KickVerticalJumpEnd">
+        <OnEnter>
+            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="kickVerticalJump" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
+            <PlayAnimationClipAction animationClipAddress="Animations/KickVerticalJumpEnd"/>
+        </OnEnter>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!-- <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+            <!-- Apply Knockback -->
+            <!-- <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+
+            <!-- movimentação -->
+            <Transition to="Landing">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="KickVerticalJumpEnd"/>
+                    <PlayerIsGroundedCondition/>
+                    <PlayerIsNotFallingCondition/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="KickHorizontalJump">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/KickHorizontalJump"/>
+        </OnEnter>
+
+        <OnStay>
+            <AddOneTimeHitToEnemyBufferAction damage="5" effect="stagger" tag="kickHorizontalJump" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
+        </OnStay>
+
+        <OnLeave>
+            <ResetAlreadyHitFlagAction />
+        </OnLeave>
+
+        <Transitions>
+            <!-- game end conditions -->
+                <!-- Tie -->
+                <Transition to="Tie">
+                    <Conditions>
+                        <CheckTieCondition/>
+                    </Conditions>
+                </Transition>
+                <!-- Death -->
+                <Transition to="Loss">
+                    <Conditions>
+                        <CheckLoseCondition/>
+                    </Conditions>
+                </Transition>
+                <!-- Victory -->
+                <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+                <!-- Apply Stagger -->
+                <Transition to="Stagger">
+                    <Conditions>
+                        <CheckHitCondition hitEffect="stagger"/>
+                    </Conditions>
+                    <SuccessActions>
+                        <ClearHitBufferAction/>
+                    </SuccessActions>
+                </Transition>
+    
+                <!-- Apply Knockback -->
+                <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+            
+            <!-- movimentação -->
+                <Transition to="Landing">
+                    <Conditions>
+                        <AnimationReachedEndCondition clipName="KickHorizontalJump"/>
+                        <PlayerIsGroundedCondition/>
+                        <PlayerIsNotFallingCondition/>
+                    </Conditions>
+                </Transition>
+        </Transitions>
+    </State>
+    
     <!-- ============== STANDING ATTACKS ============== -->
     <State id="WeakPunch">
         <BeforeEnter>
@@ -1197,7 +1561,7 @@
 
     <State id="EndStrongPunch">
         <OnEnter>
-            <AddHitToEnemyBufferAction damage="50" effect="knockback" tag="strongPunch" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
+            <AddHitToEnemyBufferAction damage="20" effect="knockback" tag="strongPunch" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
             <PlayAnimationClipAction animationClipAddress="Animations/EndStrongPunch"/>
         </OnEnter>
 
@@ -1249,6 +1613,252 @@
             <Transition to="Idle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="EndStrongPunch"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="KickStart">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/KickStart"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+            <!-- Apply Knockback -->
+            <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+
+            <!-- movimentação -->
+
+            <Transition to="KickEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="KickStart"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="KickEnd">
+        <OnEnter>
+            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="kick" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
+            <PlayAnimationClipAction animationClipAddress="Animations/KickEnd"/>
+        </OnEnter>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!-- <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+            <!-- Apply Knockback -->
+            <!-- <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="Idle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="KickEnd"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="KickCrouchedStart">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/KickCrouchedStart"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+            <!-- Apply Knockback -->
+            <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+
+            <!-- movimentação -->
+
+            <Transition to="KickCrouchedEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="KickCrouchedStart"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="KickCrouchedEnd">
+        <OnEnter>
+            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="kickCrouched" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
+            <PlayAnimationClipAction animationClipAddress="Animations/KickCrouchedEnd"/>
+        </OnEnter>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!-- <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+            <!-- Apply Knockback -->
+            <!-- <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="CrouchIdle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="KickCrouchedEnd"/>
                 </Conditions>
             </Transition>
         </Transitions>

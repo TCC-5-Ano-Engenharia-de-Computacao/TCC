@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d8ad5748b67b8049bd19a9615387285
+    m_Address: Animations/KickStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 35680c8a68c09ed488ee222a7908879f
     m_Address: Animations/EndStrongPunch
     m_ReadOnly: 0
@@ -42,6 +47,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 419d97f186bbdda438aaeed55ddd6c7c
     m_Address: Animations/StandUp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c999fde26ef3ac4585413ea9c78776b
+    m_Address: Animations/KickEnd
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -60,13 +70,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a978f8bec649ab4d952da0cca97d3b2
+    m_Address: Animations/KickCrouchedStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 602ceda4d4aae024aaab86d60f4f6631
     m_Address: SFX/AudioExample2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 641e327521b81f7489d0bc27abbcb78c
+    m_Address: Animations/KickHorizontalJump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6658be852c261fb44ac9f60a67664a08
     m_Address: Animations/Apex
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f00d950231a6ab4783689ff6672dd61
+    m_Address: Animations/KickVerticalJumpEnd
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -125,8 +150,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e99920f94ea46bc4cb11500cf46a6613
+    m_Address: Animations/KickVerticalJumpStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ec578ba1c5d5ca4469036da31958d19a
     m_Address: Animations/CrouchIdle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed08109351ee1364caf4a71c5dc070aa
+    m_Address: Animations/KickCrouchedEnd
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

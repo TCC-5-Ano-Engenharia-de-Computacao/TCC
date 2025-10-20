@@ -21,13 +21,14 @@ public sealed class AnimationReachedEndCondition : ConditionBase
         bool correctClip =
             string.IsNullOrEmpty(clipName) ||
             currentClip.name == clipName;   // compara pelo nome do clip real
+        
 
         // 2) tempo transcorrido do state em segundos
         float elapsedSec = stateInfo.normalizedTime * currentClip.length;
 
         // chegou no final do clip?
         bool ended = elapsedSec >= currentClip.length;
-
+        
         // debug opcional
         //Debug.Log($"clip:{currentClip.name} t={elapsedSec:F3}/{currentClip.length:F3}");
 
