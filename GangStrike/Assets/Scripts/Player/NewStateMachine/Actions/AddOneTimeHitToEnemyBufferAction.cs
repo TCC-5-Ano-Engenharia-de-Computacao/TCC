@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using StateMachine;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Player.NewStateMachine.Actions
 {
-    public class AddHitToEnemyBufferAction : ActionBase
+    public class AddOneTimeHitToEnemyBufferAction : ActionBase
     {
+        [SerializeField] private AttackTriggers attackTriggers;
         [SerializeField] private Collider2D thisAttackTrigger;
         [SerializeField] private AttributeSystem attackerAttributeSystem;
         [SerializeField] private BodyColliders enemyBodyColliders;
@@ -17,20 +17,24 @@ namespace Player.NewStateMachine.Actions
 
         public override void Execute()
         {
-            if (thisAttackTrigger.IsTouching(enemyBodyColliders.GetActiveCollider()))
+            if (!attackTriggers.alreadyHit)
             {
-                //Debug.Log("HIT!");
-                attackerAttributeSystem.GainUltimate(hit.damage * 0.4f);
-                enemyHitBuffer.AddHitToBuffer(hit);
+                if (thisAttackTrigger.IsTouching(enemyBodyColliders.GetActiveCollider()))
+                {
+                    //Debug.Log("HIT!");
+                    attackerAttributeSystem.GainUltimate(hit.damage * 0.4f);
+                    enemyHitBuffer.AddHitToBuffer(hit);
+                    attackTriggers.alreadyHit = true;
+                }
             }
         }
 
         public static async Task<ActionBase> ConstructFromXmlAsync(XElement node, Transform parent, PlayerRoot player)
         {
-            var go = new GameObject(nameof(AddHitToEnemyBufferAction));
+            var go = new GameObject(nameof(AddOneTimeHitToEnemyBufferAction));
             go.transform.SetParent(parent, false);
 
-            var a = go.AddComponent<AddHitToEnemyBufferAction>();
+            var a = go.AddComponent<AddOneTimeHitToEnemyBufferAction>();
             
             a.hit = new IncomingHitBuffer.Hit(
                 damage: ConvertStrToFloat((string)node.Attribute("damage")),
@@ -41,8 +45,9 @@ namespace Player.NewStateMachine.Actions
                 knockBackForce: ConvertStrToFloat((string)node.Attribute("knockBackForce")),
                 stunDuration: ConvertStrToFloat((string)node.Attribute("stunDuration"))
             );
-            
-            a.thisAttackTrigger = player.characterRoot.attackTriggers.GetAttackColliderByName(a.hit.tag);
+
+            a.attackTriggers = player.characterRoot.attackTriggers;
+            a.thisAttackTrigger = a.attackTriggers.GetAttackColliderByName(a.hit.tag);
             a.attackerAttributeSystem = player.attributeSystem;
             
             var enemyCharacterRoot = GameObject.FindFirstObjectByType<GameRoot>().GetEnemyPlayer(player).characterRoot;
@@ -65,6 +70,6 @@ namespace Player.NewStateMachine.Actions
 
         [RuntimeInitializeOnLoadMethod]
         private static void Register() =>
-            ActionFactory.Register(nameof(AddHitToEnemyBufferAction), ConstructFromXmlAsync);
+            ActionFactory.Register(nameof(AddOneTimeHitToEnemyBufferAction), ConstructFromXmlAsync);
     }
 }

@@ -113,6 +113,31 @@
                 </Transition>
             
             <!--movimentações-->
+                <!-- Pra ir de idle para pulo lateral direto. Nao funcionou bem pq usava o analogHistory, que nao tem o mesmo tempo de buffer que o inputCondition-->
+                <!-- 
+                &lt;!&ndash; Pulo pra frente &ndash;&gt;
+                <Transition to="JumpForward">
+                    <Conditions>
+                        <BufferedInputCondition inputName="jump"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                        <AnalogHistoryRegexCondition regexString="9+$"/>
+                        <PlayerIsGroundedCondition/>
+                    </Conditions>
+                </Transition>
+
+                &lt;!&ndash; Pulo pra trás &ndash;&gt;
+                <Transition to="JumpBackward">
+                    <Conditions>
+                        <BufferedInputCondition inputName="jump"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                        <AnalogHistoryRegexCondition regexString="7+$"/>
+                        <PlayerIsGroundedCondition/>
+                    </Conditions>
+                </Transition>
+-->
+            
                 <!-- Pulo vertical -->
                 <Transition to="Jump">
                     <Conditions>
@@ -121,8 +146,8 @@
                                                 removeInputOnEndOfFrame="true"/>
                         <PlayerIsGroundedCondition/>
                     </Conditions>
-                </Transition>
-    
+                </Transition>   
+            
                 <!-- Andar pra frente -->
                 <Transition to="WalkingFoward">
                     <Conditions>
@@ -1327,6 +1352,7 @@
             <!-- movimentação -->
             <Transition to="Landing">
                 <Conditions>
+                    <AnimationReachedEndCondition clipName="KickVerticalJumpEnd"/>
                     <PlayerIsGroundedCondition/>
                     <PlayerIsNotFallingCondition/>
                 </Conditions>
@@ -1339,47 +1365,51 @@
             <ClearBufferedInputsAction/>
         </BeforeEnter>
         <OnEnter>
-            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="kickHorizontalJump" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
             <PlayAnimationClipAction animationClipAddress="Animations/KickHorizontalJump"/>
         </OnEnter>
 
         <OnStay>
+            <AddOneTimeHitToEnemyBufferAction damage="5" effect="stagger" tag="kickHorizontalJump" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
         </OnStay>
+
+        <OnLeave>
+            <ResetAlreadyHitFlagAction />
+        </OnLeave>
 
         <Transitions>
             <!-- game end conditions -->
-            <!-- Tie -->
-            <Transition to="Tie">
-                <Conditions>
-                    <CheckTieCondition/>
-                </Conditions>
-            </Transition>
-            <!-- Death -->
-            <Transition to="Loss">
-                <Conditions>
-                    <CheckLoseCondition/>
-                </Conditions>
-            </Transition>
-            <!-- Victory -->
-            <Transition to="Victory">
+                <!-- Tie -->
+                <Transition to="Tie">
+                    <Conditions>
+                        <CheckTieCondition/>
+                    </Conditions>
+                </Transition>
+                <!-- Death -->
+                <Transition to="Loss">
+                    <Conditions>
+                        <CheckLoseCondition/>
+                    </Conditions>
+                </Transition>
+                <!-- Victory -->
+                <Transition to="Victory">
                 <Conditions>
                     <CheckVictoryCondition/>
                 </Conditions>
             </Transition>
 
             <!-- take damage conditions -->
-            <!-- Apply Stagger -->
-            <Transition to="Stagger">
-                <Conditions>
-                    <CheckHitCondition hitEffect="stagger"/>
-                </Conditions>
-                <SuccessActions>
-                    <ClearHitBufferAction/>
-                </SuccessActions>
-            </Transition>
-
-            <!-- Apply Knockback -->
-            <Transition to="StaggerKnockback">
+                <!-- Apply Stagger -->
+                <Transition to="Stagger">
+                    <Conditions>
+                        <CheckHitCondition hitEffect="stagger"/>
+                    </Conditions>
+                    <SuccessActions>
+                        <ClearHitBufferAction/>
+                    </SuccessActions>
+                </Transition>
+    
+                <!-- Apply Knockback -->
+                <Transition to="StaggerKnockback">
                 <Conditions>
                     <CheckHitCondition hitEffect="knockback"/>
                 </Conditions>
@@ -1387,15 +1417,15 @@
                     <ClearHitBufferAction/>
                 </SuccessActions>
             </Transition>
-
-
+            
             <!-- movimentação -->
-
-            <Transition to="Landing">
-                <Conditions>
-                    <PlayerIsGroundedCondition/>
-                </Conditions>
-            </Transition>
+                <Transition to="Landing">
+                    <Conditions>
+                        <AnimationReachedEndCondition clipName="KickHorizontalJump"/>
+                        <PlayerIsGroundedCondition/>
+                        <PlayerIsNotFallingCondition/>
+                    </Conditions>
+                </Transition>
         </Transitions>
     </State>
     
