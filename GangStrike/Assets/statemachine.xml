@@ -76,6 +76,15 @@
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
+
+                <Transition to="AntiAirStart">
+                    <Conditions>
+                        <AnalogHistoryRegexCondition regexString="4{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
             
                 <Transition to="EnergyBeamAttackStart">
                     <Conditions>
@@ -249,7 +258,16 @@
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
-    
+
+                <Transition to="AntiAirStart">
+                    <Conditions>
+                        <AnalogHistoryRegexCondition regexString="4{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+                
                 <Transition to="EnergyBeamAttackStart">
                     <Conditions>
                         <BufferedInputCondition inputName="special"
@@ -377,7 +395,16 @@
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
-    
+
+                <Transition to="AntiAirStart">
+                    <Conditions>
+                        <AnalogHistoryRegexCondition regexString="4{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+            
                 <Transition to="EnergyBeamAttackStart">
                     <Conditions>
                         <BufferedInputCondition inputName="special"
@@ -1992,6 +2019,202 @@
             <Transition to="Idle">
                 <Conditions>
                     <AnimationReachedEndCondition clipName="EnergyBeamAttackEnd"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="AntiAirStart">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirStart"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <OnLeave>
+        </OnLeave>
+
+        <Transitions>
+
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!--<Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition> -->
+
+            <!-- Apply Knockback -->
+            <!--<Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>v-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="AntiAirHit">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="AntiAirStart"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="AntiAirHit">
+        <OnEnter>
+            <JumpPlayerAction force="35" />
+            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirHit"/>
+            <AddHitToEnemyBufferAction damage="15" effect="knockback" tag="antiAir" sameAttackCooldown="5" genericCooldown="2" stunDuration="2" knockBackForce="15" />
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <OnLeave>
+            <ResetAlreadyHitFlagAction/>
+        </OnLeave>
+
+        <Transitions>
+
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!--<Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition> -->
+
+            <!-- Apply Knockback -->
+            <!--<Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>v-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="AntiAirEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="AntiAirHit"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="AntiAirEnd">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirEnd"/>
+        </OnEnter>
+
+        <Transitions>
+
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!--<Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition> -->
+
+            <!-- Apply Knockback -->
+            <!--<Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>v-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="Idle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="AntiAirEnd"/>
+                    <PlayerIsGroundedCondition/>
                 </Conditions>
             </Transition>
         </Transitions>
