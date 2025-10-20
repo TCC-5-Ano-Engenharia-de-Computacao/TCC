@@ -267,6 +267,15 @@
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
                 </Transition>
+
+                <Transition to="DashAttackStart">
+                    <Conditions>
+                        <AnalogHistoryRegexCondition regexString="6{1,6}$"/>
+                        <BufferedInputCondition inputName="special"
+                                                isInstantaneous="true"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
                 
                 <Transition to="EnergyBeamAttackStart">
                     <Conditions>
@@ -2215,6 +2224,201 @@
                 <Conditions>
                     <AnimationReachedEndCondition clipName="AntiAirEnd"/>
                     <PlayerIsGroundedCondition/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="DashAttackStart">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/DashAttackStart"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <OnLeave>
+        </OnLeave>
+
+        <Transitions>
+
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!--<Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition> -->
+
+            <!-- Apply Knockback -->
+            <!--<Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>v-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="DashAttackHit">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="DashAttackStart"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="DashAttackHit">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/DashAttackHit"/>
+        </OnEnter>
+
+        <OnStay>
+            <AddOneTimeHitToEnemyBufferAction damage="10" effect="knockback" tag="dashAttack" sameAttackCooldown="5" genericCooldown="2" stunDuration="2" knockBackForce="15" />
+            <MovePlayerAction speed="3" direction="forward"/>
+        </OnStay>
+
+        <OnLeave>
+            <ResetAlreadyHitFlagAction/>
+        </OnLeave>
+
+        <Transitions>
+
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!--<Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition> -->
+
+            <!-- Apply Knockback -->
+            <!--<Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>v-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="DashAttackEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="DashAttackHit"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="DashAttackEnd">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/DashAttackEnd"/>
+        </OnEnter>
+
+        <Transitions>
+
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!--<Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition> -->
+
+            <!-- Apply Knockback -->
+            <!--<Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>v-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="Idle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="DashAttackEnd"/>
                 </Conditions>
             </Transition>
         </Transitions>
