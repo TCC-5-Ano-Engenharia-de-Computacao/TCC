@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: 7fd276ab53964064589b00a5c78a3ab1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8978509560676655050
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_0
+  - first:
+      213: -9087706666711712330
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_1
+  - first:
+      213: 4053448186448949327
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_2
+  - first:
+      213: -7856655309470115535
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_3
+  - first:
+      213: 8335858378418769690
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_4
+  - first:
+      213: -1095107787383337510
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_5
+  - first:
+      213: -3433337309053082521
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_6
+  - first:
+      213: 3326494945060063740
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_7
+  - first:
+      213: -1323868510318559068
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_8
+  - first:
+      213: 5433374071045255704
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_9
+  - first:
+      213: 7749076331696853064
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_10
+  - first:
+      213: 5155043985642045342
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_11
+  - first:
+      213: 55111244306685331
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_12
+  - first:
+      213: -356689391166723510
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_13
+  - first:
+      213: 8853129035214640176
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_14
+  - first:
+      213: -8889578665535312338
+    second: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2360
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf949010e21a9c70800000000000000
+      internalID: 8978509560676655050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_1
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 0
+        width: 2360
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdf2b37feaf1e180800000000000000
+      internalID: -9087706666711712330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_2
+      rect:
+        serializedVersion: 2
+        x: 4720
+        y: 0
+        width: 2360
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40bdb446adb04830800000000000000
+      internalID: 4053448186448949327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_3
+      rect:
+        serializedVersion: 2
+        x: 7080
+        y: 0
+        width: 2360
+        height: 2000
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139d8545f9d87f290800000000000000
+      internalID: -7856655309470115535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bc22d69fcb4f67448814b0ac91c279b0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_0: 8978509560676655050
+      AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_1: -9087706666711712330
+      AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_2: 4053448186448949327
+      AnimacaoSaberChute_emPe_SPRITESHEET_2000x2360.psd_3: -7856655309470115535
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
