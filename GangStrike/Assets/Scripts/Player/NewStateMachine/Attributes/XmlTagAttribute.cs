@@ -3,11 +3,6 @@
 // ==============================================
 
 using System;
-using StateMachine;
-using ActionBase = Player.NewStateMachine.Actions.ActionBase;
-using ConditionBase = Player.NewStateMachine.Conditions.ConditionBase;
-using RuleTile = UnityEngine.RuleTile;
-using Task = UnityEditor.VersionControl.Task;
 
 namespace Player.NewStateMachine.Attributes
 {
