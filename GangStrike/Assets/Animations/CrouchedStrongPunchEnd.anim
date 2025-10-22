@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DashAttackEnd
+  m_Name: CrouchedStrongPunchEnd
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 474222127163530088, guid: dc51d922ad511104886c6dcf817e844b, type: 3}
+      value: {fileID: 2598981214903546911, guid: 8640cb41d137ed949ab67f4ccb3af25d, type: 3}
     - time: 0.083333336
-      value: {fileID: -1248074244095785086, guid: dc51d922ad511104886c6dcf817e844b, type: 3}
+      value: {fileID: -3741920258407242438, guid: 8640cb41d137ed949ab67f4ccb3af25d, type: 3}
     attribute: m_Sprite
     path: CharacterSpriteRenderer
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 474222127163530088, guid: dc51d922ad511104886c6dcf817e844b, type: 3}
-    - {fileID: -1248074244095785086, guid: dc51d922ad511104886c6dcf817e844b, type: 3}
+    - {fileID: 2598981214903546911, guid: 8640cb41d137ed949ab67f4ccb3af25d, type: 3}
+    - {fileID: -3741920258407242438, guid: 8640cb41d137ed949ab67f4ccb3af25d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

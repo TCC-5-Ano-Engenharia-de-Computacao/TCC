@@ -45,6 +45,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a478207f3a219e4fa9619a0cdd3fdd6
+    m_Address: Animations/CrouchedStagger
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2cd37ecdfcc3aeb408c3e1c4ca2687bd
     m_Address: Animations/AntiAirStart
     m_ReadOnly: 0
@@ -60,8 +65,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38c5a91828ccc5340b7df44de587528c
+    m_Address: Animations/CrouchedWeakPunchStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 419d97f186bbdda438aaeed55ddd6c7c
     m_Address: Animations/StandUp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42e0027d2aef4094a8932da384a0f61e
+    m_Address: Animations/JumpingStrongPunchEnd
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -85,6 +100,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5720995bf6bc6de49a90ebdc3a264b6d
+    m_Address: Animations/CrouchedWeakPunchEnd
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5808daeae13eeec4dac37a095226ff57
+    m_Address: Animations/JumpingStrongPunchStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5a978f8bec649ab4d952da0cca97d3b2
     m_Address: Animations/KickCrouchedStart
     m_ReadOnly: 0
@@ -102,6 +127,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6658be852c261fb44ac9f60a67664a08
     m_Address: Animations/Apex
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a1894a1ed5489348be76071080ab623
+    m_Address: Animations/CrouchedStrongPunchEnd
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d7448c27639d1e469ab3a0e5852c1d6
+    m_Address: Animations/JumpingWeakPunchEnd
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -150,8 +185,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c508554d8a166c845927647df7447d98
+    m_Address: Animations/JumpingWeakPunchStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cee7a82c6a60d1c4dac09b3e2a2bacf5
     m_Address: Animations/WalkingFoward
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0049d6adc3c44644b8e2cd654029e32
+    m_Address: Animations/CrouchedStrongPunchStart
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -212,11 +257,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fbe757682b49ace49bfa3a511999b7a4
     m_Address: Animations/UltimateExplosion
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fcef6e9c46b1e7343b1af5e0b60b781e
-    m_Address: Animations/StrongPunch
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
