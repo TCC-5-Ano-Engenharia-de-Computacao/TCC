@@ -504,7 +504,7 @@
 
             <!-- take damage conditions -->
                 <!-- Apply Stagger -->
-                <Transition to="Stagger">
+                <Transition to="CrouchedStagger">
                     <Conditions>
                         <CheckHitCondition hitEffect="stagger"/>
                     </Conditions>
@@ -588,7 +588,7 @@
             </Transition>
             
                 <!-- Apply Stagger -->
-                <Transition to="Stagger">
+                <Transition to="CrouchedStagger">
                     <Conditions>
                         <CheckHitCondition hitEffect="stagger"/>
                     </Conditions>
@@ -612,6 +612,24 @@
                 <Transition to="KickCrouchedStart">
                     <Conditions>
                         <BufferedInputCondition inputName="kick"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+
+                <!-- Chute: input "weakPunch" -->
+                <Transition to="CrouchedWeakPunchStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="weakPunch"
+                                                isInstantaneous="false"
+                                                removeInputOnEndOfFrame="true"/>
+                    </Conditions>
+                </Transition>
+
+                <!-- Chute: input "strongPunch" -->
+                <Transition to="CrouchedStrongPunchStart">
+                    <Conditions>
+                        <BufferedInputCondition inputName="strongPunch"
                                                 isInstantaneous="false"
                                                 removeInputOnEndOfFrame="true"/>
                     </Conditions>
@@ -663,7 +681,7 @@
             <!-- take damage conditions -->
 
                 <!-- Apply Stagger -->
-                <Transition to="Stagger">
+                <Transition to="CrouchedStagger">
                     <Conditions>
                         <CheckHitCondition hitEffect="stagger"/>
                     </Conditions>
@@ -1777,129 +1795,6 @@
         </Transitions>
     </State>
 
-    <State id="KickCrouchedStart">
-        <BeforeEnter>
-            <ClearBufferedInputsAction/>
-        </BeforeEnter>
-        <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/KickCrouchedStart"/>
-        </OnEnter>
-
-        <OnStay>
-        </OnStay>
-
-        <Transitions>
-            <!-- game end conditions -->
-            <!-- Tie -->
-            <Transition to="Tie">
-                <Conditions>
-                    <CheckTieCondition/>
-                </Conditions>
-            </Transition>
-            <!-- Death -->
-            <Transition to="Loss">
-                <Conditions>
-                    <CheckLoseCondition/>
-                </Conditions>
-            </Transition>
-            <!-- Victory -->
-            <Transition to="Victory">
-                <Conditions>
-                    <CheckVictoryCondition/>
-                </Conditions>
-            </Transition>
-
-            <!-- take damage conditions -->
-            <!-- Apply Stagger -->
-            <Transition to="Stagger">
-                <Conditions>
-                    <CheckHitCondition hitEffect="stagger"/>
-                </Conditions>
-                <SuccessActions>
-                    <ClearHitBufferAction/>
-                </SuccessActions>
-            </Transition>
-
-            <!-- Apply Knockback -->
-            <Transition to="StaggerKnockback">
-                <Conditions>
-                    <CheckHitCondition hitEffect="knockback"/>
-                </Conditions>
-                <SuccessActions>
-                    <ClearHitBufferAction/>
-                </SuccessActions>
-            </Transition>
-
-
-            <!-- movimentação -->
-
-            <Transition to="KickCrouchedEnd">
-                <Conditions>
-                    <AnimationReachedEndCondition clipName="KickCrouchedStart"/>
-                </Conditions>
-            </Transition>
-        </Transitions>
-    </State>
-
-    <State id="KickCrouchedEnd">
-        <OnEnter>
-            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="kickCrouched" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
-            <PlayAnimationClipAction animationClipAddress="Animations/KickCrouchedEnd"/>
-        </OnEnter>
-
-        <Transitions>
-            <!-- game end conditions -->
-            <!-- Tie -->
-            <Transition to="Tie">
-                <Conditions>
-                    <CheckTieCondition/>
-                </Conditions>
-            </Transition>
-            <!-- Death -->
-            <Transition to="Loss">
-                <Conditions>
-                    <CheckLoseCondition/>
-                </Conditions>
-            </Transition>
-            <!-- Victory -->
-            <Transition to="Victory">
-                <Conditions>
-                    <CheckVictoryCondition/>
-                </Conditions>
-            </Transition>
-
-            <!-- take damage conditions -->
-            <!-- Apply Stagger -->
-            <!-- <Transition to="Stagger">
-                <Conditions>
-                    <CheckHitCondition hitEffect="stagger"/>
-                </Conditions>
-                <SuccessActions>
-                    <ClearHitBufferAction/>
-                </SuccessActions>
-            </Transition>-->
-
-            <!-- Apply Knockback -->
-            <!-- <Transition to="StaggerKnockback">
-                <Conditions>
-                    <CheckHitCondition hitEffect="knockback"/>
-                </Conditions>
-                <SuccessActions>
-                    <ClearHitBufferAction/>
-                </SuccessActions>
-            </Transition>-->
-
-
-            <!-- movimentação -->
-
-            <Transition to="CrouchIdle">
-                <Conditions>
-                    <AnimationReachedEndCondition clipName="KickCrouchedEnd"/>
-                </Conditions>
-            </Transition>
-        </Transitions>
-    </State>
-
     <State id="EnergyBeamAttackStart">
         <BeforeEnter>
             <ClearBufferedInputsAction/>
@@ -2618,86 +2513,378 @@
         </Transitions>
     </State>
 
-    
-    <!-- ataques agachados e no ar, implementar depois com as animações corretas e adicionas as transições dos estados que levam a eles
-    <State id="CrouchWeakPunch">
-        <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
-        </OnEnter>
 
-        <OnStay>
-        </OnStay>
-
-        <Transitions>
-            <Transition to="CrouchIdle">
-                <Conditions>
-                    <AnimationReachedEndCondition clipName="WeakPunch"/>
-                </Conditions>
-            </Transition>
-        </Transitions>
-    </State>
-
-    <State id="CrouchStrongPunch">
-        <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
-        </OnEnter>
-
-        <OnStay>
-        </OnStay>
-
-        <Transitions>
-            <Transition to="CrouchIdle">
-                <Conditions>
-                    <AnimationReachedEndCondition clipName="StrongPunch"/>
-                </Conditions>
-            </Transition>
-        </Transitions>
-    </State>
-
-    <State id="JumpWeakPunch">
+    <!-- ============== CROUCHED ATTACKS ============== -->
+    <State id="CrouchedWeakPunchStart">
         <BeforeEnter>
             <ClearBufferedInputsAction/>
         </BeforeEnter>
-
         <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/WeakPunch"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/CrouchedWeakPunchStart"/>
         </OnEnter>
 
         <OnStay>
         </OnStay>
 
         <Transitions>
-            <Transition to="Rise">
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
                 <Conditions>
-                    <AnimationReachedEndCondition clipName="WeakPunch"/>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <Transition to="CrouchedStagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+            <!-- Apply Knockback -->
+            <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+
+            <!-- movimentação -->
+
+            <Transition to="CrouchedWeakPunchEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="CrouchedWeakPunchStart"/>
                 </Conditions>
             </Transition>
         </Transitions>
     </State>
 
-    <State id="JumpStrongPunch">
+    <State id="CrouchedWeakPunchEnd">
+        <OnEnter>
+            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="crouchedWeakPunch" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="0.5" knockBackForce="0" />
+            <PlayAnimationClipAction animationClipAddress="Animations/CrouchedWeakPunchEnd"/>
+        </OnEnter>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!-- <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+            <!-- Apply Knockback -->
+            <!-- <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="CrouchIdle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="CrouchedWeakPunchEnd"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="CrouchedStrongPunchStart">
         <BeforeEnter>
             <ClearBufferedInputsAction/>
         </BeforeEnter>
-
         <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/StrongPunch"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/CrouchedStrongPunchStart" speed="0.7"/>
         </OnEnter>
 
         <OnStay>
         </OnStay>
 
         <Transitions>
-            <Transition to="Rise">
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
                 <Conditions>
-                    <AnimationReachedEndCondition clipName="StrongPunch"/>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <Transition to="CrouchedStagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+            <!-- Apply Knockback -->
+            <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+
+            <!-- movimentação -->
+
+            <Transition to="CrouchedStrongPunchEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="CrouchedStrongPunchStart"/>
                 </Conditions>
             </Transition>
         </Transitions>
     </State>
-    -->
-    
-    
+
+    <State id="CrouchedStrongPunchEnd">
+        <OnEnter>
+            <AddHitToEnemyBufferAction damage="10" effect="stagger" tag="crouchedStrongPunch" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
+            <PlayAnimationClipAction animationClipAddress="Animations/CrouchedStrongPunchEnd"/>
+        </OnEnter>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!-- <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+            <!-- Apply Knockback -->
+            <!-- <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="CrouchIdle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="CrouchedStrongPunchEnd"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="KickCrouchedStart">
+        <BeforeEnter>
+            <ClearBufferedInputsAction/>
+        </BeforeEnter>
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/KickCrouchedStart"/>
+        </OnEnter>
+
+        <OnStay>
+        </OnStay>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+            <!-- Apply Knockback -->
+            <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>
+
+
+            <!-- movimentação -->
+
+            <Transition to="KickCrouchedEnd">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="KickCrouchedStart"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+    <State id="KickCrouchedEnd">
+        <OnEnter>
+            <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="kickCrouched" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
+            <PlayAnimationClipAction animationClipAddress="Animations/KickCrouchedEnd"/>
+        </OnEnter>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <!-- <Transition to="Stagger">
+                <Conditions>
+                    <CheckHitCondition hitEffect="stagger"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+            <!-- Apply Knockback -->
+            <!-- <Transition to="StaggerKnockback">
+                <Conditions>
+                    <CheckHitCondition hitEffect="knockback"/>
+                </Conditions>
+                <SuccessActions>
+                    <ClearHitBufferAction/>
+                </SuccessActions>
+            </Transition>-->
+
+
+            <!-- movimentação -->
+
+            <Transition to="CrouchIdle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="KickCrouchedEnd"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+
+
     <!-- ================== KNOCKBACK ================== -->
     <State id="StaggerKnockback">
         <OnEnter>
@@ -2782,6 +2969,46 @@
         </Transitions>
     </State>
 
+    <!-- ================== CROUCHED STAGGER ================== -->
+    <State id="CrouchedStagger">
+        <OnEnter>
+            <PlayAnimationClipAction animationClipAddress="Animations/CrouchedStagger"/>
+            <KnockbackAction force="5"/>
+        </OnEnter>
+
+        <Transitions>
+            <!-- game end conditions -->
+            <!-- Tie -->
+            <Transition to="Tie">
+                <Conditions>
+                    <CheckTieCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Death -->
+            <Transition to="Loss">
+                <Conditions>
+                    <CheckLoseCondition/>
+                </Conditions>
+            </Transition>
+            <!-- Victory -->
+            <Transition to="Victory">
+                <Conditions>
+                    <CheckVictoryCondition/>
+                </Conditions>
+            </Transition>
+
+            <!-- take damage conditions não existem pois esta invulneravel-->
+
+            <!-- movimentação -->
+
+            <Transition to="CrouchIdle">
+                <Conditions>
+                    <AnimationReachedEndCondition clipName="CrouchedStagger"/>
+                </Conditions>
+            </Transition>
+        </Transitions>
+    </State>
+    
     <!-- ================== STAND UP ================== -->
     <State id="StandUp">
         <OnEnter>
