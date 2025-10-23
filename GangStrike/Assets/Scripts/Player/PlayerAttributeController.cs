@@ -87,7 +87,7 @@ namespace Player
 
         private Transform FindUICanvas()
         {
-            Canvas canvas = FindFirstObjectByType<Canvas>();
+            Canvas canvas = GameObject.FindGameObjectWithTag("UIOverlay")?.GetComponent<Canvas>();
             return canvas != null ? canvas.transform : null;
         }
 
