@@ -910,6 +910,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4995460985975992979, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 542040170}
+    - target: {fileID: 4995460985975992979, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4995460985975992979, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4995460985975992979, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -995890977
+      objectReference: {fileID: 0}
     - target: {fileID: 6324097541405843504, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
       propertyPath: m_IsActive
       value: 1

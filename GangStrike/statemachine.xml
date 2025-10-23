@@ -122,9 +122,10 @@
                 </Transition>
             
             <!--movimentações-->
-                <!-- Pra ir de idle para pulo lateral direto. Nao funcionou bem pq usava o analogHistory, que nao tem o mesmo tempo de buffer que o inputCondition-->
-                <!-- 
-                &lt;!&ndash; Pulo pra frente &ndash;&gt;
+<!--
+                 Pra ir de idle para pulo lateral direto. Nao funcionou bem pq usava o analogHistory, que nao tem o mesmo tempo de buffer que o inputCondition
+-->
+                <!-- Pulo pra frente -->
                 <Transition to="JumpForward">
                     <Conditions>
                         <BufferedInputCondition inputName="jump"
@@ -135,7 +136,7 @@
                     </Conditions>
                 </Transition>
 
-                &lt;!&ndash; Pulo pra trás &ndash;&gt;
+                <!-- Pulo pra trás--> 
                 <Transition to="JumpBackward">
                     <Conditions>
                         <BufferedInputCondition inputName="jump"
@@ -145,7 +146,6 @@
                         <PlayerIsGroundedCondition/>
                     </Conditions>
                 </Transition>
--->
             
                 <!-- Pulo vertical -->
                 <Transition to="Jump">
@@ -720,7 +720,7 @@
     
             <OnEnter>
                 <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-                <JumpPlayerAction force="65"/>
+                <JumpPlayerAction force="80"/>
             </OnEnter>
     
             <OnStay>
@@ -816,7 +816,7 @@
     
             <OnEnter>
                 <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-                <JumpPlayerAction force="65"/>
+                <JumpPlayerAction force="80"/>
             </OnEnter>
     
             <OnStay>
@@ -920,7 +920,7 @@
 
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/Jump"/>
-            <JumpPlayerAction force="65"/>
+            <JumpPlayerAction force="80"/>
         </OnEnter>
 
         <OnStay>
@@ -1240,6 +1240,7 @@
     
             <OnStay>
                 <UpdateSideAction/>
+                <MovePlayerAction direction="backward" speed="0.1"/>
             </OnStay>
     
             <Transitions>
@@ -2194,6 +2195,7 @@
             <ClearBufferedInputsAction/>
         </BeforeEnter>
         <OnEnter>
+            <SpendUltimateAction amount="10"/>
             <PlayAnimationClipAction animationClipAddress="Animations/EnergyBeamAttackStart"/>
         </OnEnter>
 
@@ -2259,7 +2261,7 @@
     
     <State id="EnergyBeamAttackEnd">
         <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/EnergyBeamAttackEnd"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/EnergyBeamAttackEnd" speed="0.8"/>
             <SpawnEnergyBeamAction speed="5" damage="5" effect="stagger" tag="energyBeam" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="0.5" knockBackForce="0"/>
         </OnEnter>
 
@@ -2327,7 +2329,7 @@
             <ClearBufferedInputsAction/>
         </BeforeEnter>
         <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirStart"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirStart" speed="1.5"/>
         </OnEnter>
 
         <OnStay>
@@ -2360,24 +2362,24 @@
 
             <!-- take damage conditions -->
             <!-- Apply Stagger -->
-            <!--<Transition to="Stagger">
+            <Transition to="Stagger">
                 <Conditions>
                     <CheckHitCondition hitEffect="stagger"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition> -->
+            </Transition>
 
             <!-- Apply Knockback -->
-            <!--<Transition to="StaggerKnockback">
+            <Transition to="StaggerKnockback">
                 <Conditions>
                     <CheckHitCondition hitEffect="knockback"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition>v-->
+            </Transition>
 
 
             <!-- movimentação -->
@@ -2392,12 +2394,12 @@
 
     <State id="AntiAirHit">
         <OnEnter>
-            <JumpPlayerAction force="35" />
-            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirHit"/>
-            <AddHitToEnemyBufferAction damage="15" effect="knockback" tag="antiAir" sameAttackCooldown="5" genericCooldown="2" stunDuration="2" knockBackForce="15" />
+            <JumpPlayerAction force="50" />
+            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirHit" speed="1.5"/>
         </OnEnter>
 
         <OnStay>
+            <AddOneTimeHitToEnemyBufferAction damage="15" effect="knockback" tag="antiAir" sameAttackCooldown="5" genericCooldown="2" stunDuration="2" knockBackForce="15" />
         </OnStay>
 
         <OnLeave>
@@ -2428,24 +2430,24 @@
 
             <!-- take damage conditions -->
             <!-- Apply Stagger -->
-            <!--<Transition to="Stagger">
+            <Transition to="Stagger">
                 <Conditions>
                     <CheckHitCondition hitEffect="stagger"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition> -->
+            </Transition>
 
             <!-- Apply Knockback -->
-            <!--<Transition to="StaggerKnockback">
+            <Transition to="StaggerKnockback">
                 <Conditions>
                     <CheckHitCondition hitEffect="knockback"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition>v-->
+            </Transition>
 
 
             <!-- movimentação -->
@@ -2460,7 +2462,7 @@
 
     <State id="AntiAirEnd">
         <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirEnd"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/AntiAirEnd" speed="0.3"/>
         </OnEnter>
 
         <Transitions>
@@ -2515,6 +2517,12 @@
                     <PlayerIsGroundedCondition/>
                 </Conditions>
             </Transition>
+
+            <Transition to="Idle">
+                <Conditions>
+                    <PlayerIsGroundedCondition/>
+                </Conditions>
+            </Transition>
         </Transitions>
     </State>
 
@@ -2523,6 +2531,7 @@
             <ClearBufferedInputsAction/>
         </BeforeEnter>
         <OnEnter>
+            <SetInvulnerabilityAction invulnerability="true" />
             <PlayAnimationClipAction animationClipAddress="Animations/DashAttackStart"/>
         </OnEnter>
 
@@ -2530,6 +2539,7 @@
         </OnStay>
 
         <OnLeave>
+            <SetInvulnerabilityAction invulnerability="false" />
         </OnLeave>
 
         <Transitions>
@@ -2556,24 +2566,24 @@
 
             <!-- take damage conditions -->
             <!-- Apply Stagger -->
-            <!--<Transition to="Stagger">
+            <Transition to="Stagger">
                 <Conditions>
                     <CheckHitCondition hitEffect="stagger"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition> -->
+            </Transition>
 
             <!-- Apply Knockback -->
-            <!--<Transition to="StaggerKnockback">
+            <Transition to="StaggerKnockback">
                 <Conditions>
                     <CheckHitCondition hitEffect="knockback"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition>v-->
+            </Transition>
 
 
             <!-- movimentação -->
@@ -2588,12 +2598,12 @@
 
     <State id="DashAttackHit">
         <OnEnter>
-            <PlayAnimationClipAction animationClipAddress="Animations/DashAttackHit"/>
+            <PlayAnimationClipAction animationClipAddress="Animations/DashAttackHit" speed="0.75"/>
         </OnEnter>
 
         <OnStay>
             <AddOneTimeHitToEnemyBufferAction damage="10" effect="knockback" tag="dashAttack" sameAttackCooldown="5" genericCooldown="2" stunDuration="2" knockBackForce="15" />
-            <MovePlayerAction speed="3" direction="forward"/>
+            <MovePlayerAction speed="4" direction="forward"/>
         </OnStay>
 
         <OnLeave>
@@ -2624,24 +2634,24 @@
 
             <!-- take damage conditions -->
             <!-- Apply Stagger -->
-            <!--<Transition to="Stagger">
+            <Transition to="Stagger">
                 <Conditions>
                     <CheckHitCondition hitEffect="stagger"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition> -->
+            </Transition>
 
             <!-- Apply Knockback -->
-            <!--<Transition to="StaggerKnockback">
+            <Transition to="StaggerKnockback">
                 <Conditions>
                     <CheckHitCondition hitEffect="knockback"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition>v-->
+            </Transition>
 
 
             <!-- movimentação -->
@@ -2683,24 +2693,24 @@
 
             <!-- take damage conditions -->
             <!-- Apply Stagger -->
-            <!--<Transition to="Stagger">
+            <Transition to="Stagger">
                 <Conditions>
                     <CheckHitCondition hitEffect="stagger"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition> -->
+            </Transition>
 
             <!-- Apply Knockback -->
-            <!--<Transition to="StaggerKnockback">
+            <Transition to="StaggerKnockback">
                 <Conditions>
                     <CheckHitCondition hitEffect="knockback"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition>v-->
+            </Transition>
 
 
             <!-- movimentação -->
@@ -2718,6 +2728,9 @@
             <ClearBufferedInputsAction/>
         </BeforeEnter>
         <OnEnter>
+            <SetInvulnerabilityAction invulnerability="true" />
+
+
             <SpendUltimateAction amount="40"/>
             <PlayAnimationClipAction animationClipAddress="Animations/UltimateStart"/>
         </OnEnter>
@@ -2726,6 +2739,7 @@
         </OnStay>
 
         <OnLeave>
+             
         </OnLeave>
 
         <Transitions>
@@ -2785,36 +2799,38 @@
     <State id="UltimateExplosion">
         <OnEnter>
             <PlayAnimationClipAction animationClipAddress="Animations/UltimateExplosion"/>
-            <AddHitToEnemyBufferAction damage="40" effect="knockback" tag="ultimate" sameAttackCooldown="5" genericCooldown="2" stunDuration="2" knockBackForce="15" />
         </OnEnter>
 
         <OnStay>
+            <AddOneTimeHitToEnemyBufferAction damage="40" effect="knockback" tag="ultimate" sameAttackCooldown="5" genericCooldown="2" stunDuration="2" knockBackForce="15" />
         </OnStay>
 
         <OnLeave>
+            <SetInvulnerabilityAction invulnerability="false" />
+            <ResetAlreadyHitFlagAction/>
         </OnLeave>
         
         <Transitions>
 
             <!-- game end conditions -->
             <!-- Tie -->
-            <Transition to="Tie">
+            <!--<Transition to="Tie">
                 <Conditions>
                     <CheckTieCondition/>
                 </Conditions>
             </Transition>
-            <!-- Death -->
+            &lt;!&ndash; Death &ndash;&gt;
             <Transition to="Loss">
                 <Conditions>
                     <CheckLoseCondition/>
                 </Conditions>
             </Transition>
-            <!-- Victory -->
+            &lt;!&ndash; Victory &ndash;&gt;
             <Transition to="Victory">
                 <Conditions>
                     <CheckVictoryCondition/>
                 </Conditions>
-            </Transition>
+            </Transition>-->
 
             <!-- take damage conditions -->
             <!-- Apply Stagger -->
@@ -2877,24 +2893,26 @@
 
             <!-- take damage conditions -->
             <!-- Apply Stagger -->
-            <!--<Transition to="Stagger">
+            <!-- take damage conditions -->
+            <!-- Apply Stagger -->
+            <Transition to="Stagger">
                 <Conditions>
                     <CheckHitCondition hitEffect="stagger"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition> -->
+            </Transition>
 
             <!-- Apply Knockback -->
-            <!--<Transition to="StaggerKnockback">
+            <Transition to="StaggerKnockback">
                 <Conditions>
                     <CheckHitCondition hitEffect="knockback"/>
                 </Conditions>
                 <SuccessActions>
                     <ClearHitBufferAction/>
                 </SuccessActions>
-            </Transition>v-->
+            </Transition>
 
 
             <!-- movimentação -->

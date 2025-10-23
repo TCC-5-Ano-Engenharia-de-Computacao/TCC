@@ -23,8 +23,8 @@ namespace Player.NewStateMachine.Actions
                 {
                     //Debug.Log("HIT!");
                     attackerAttributeSystem.GainUltimate(hit.damage * 0.4f);
-                    enemyHitBuffer.AddHitToBuffer(hit);
-                    attackTriggers.alreadyHit = true;
+                    bool successHitToBuffer= enemyHitBuffer.AddHitToBuffer(hit);
+                    attackTriggers.alreadyHit = successHitToBuffer;
                 }
             }
         }

@@ -14,13 +14,16 @@ namespace Player
         public bool isInvulnerable = false;
         
 
-        public void AddHitToBuffer(Hit hit)
+        public bool AddHitToBuffer(Hit hit)
         {
             if (!isInvulnerable)
             {
                 hitBufferList.Add(hit);
                 ApplyDamage(hit.damage);
+                return true;
             }
+
+            return false;
         }
         
         public bool HasHitEffect(string hitEffect)
