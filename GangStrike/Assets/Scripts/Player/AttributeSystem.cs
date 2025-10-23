@@ -105,6 +105,7 @@ namespace Player
         [SerializeField] private PlayerAttribute ultimate;
 
         [SerializeField] public bool staminaExhausted;
+        public bool canUseStamina;
 
         // Events for each attribute
         public event Action<float, float> HealthChangeEvent;
@@ -200,12 +201,18 @@ namespace Player
             if (stamina.IsEmpty())
             {
                 staminaExhausted = true;
+                canUseStamina = false;
             }
         }
 
         public void RestoreStamina(float amount)
         {
             ModifyStamina(amount);
+            if (stamina.IsFull())
+            {
+                staminaExhausted = false;
+                canUseStamina = true;
+            }
         }
 
         public void GainUltimate(float amount)

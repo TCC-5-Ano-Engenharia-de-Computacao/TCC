@@ -41,6 +41,7 @@
                 <!-- Block -->
                 <Transition to="Block">
                     <Conditions>
+                        <CanUseStaminaCondition />
                         <HoldingInputCondition inputName="block"/>
                     </Conditions>
                 </Transition>
@@ -223,6 +224,7 @@
                 <!-- Block -->
                 <Transition to="Block">
                     <Conditions>
+                        <CanUseStaminaCondition />
                         <HoldingInputCondition inputName="block"/>
                     </Conditions>
                 </Transition>
@@ -369,6 +371,7 @@
                 <!-- Block -->
                 <Transition to="Block">
                     <Conditions>
+                        <CanUseStaminaCondition />
                         <HoldingInputCondition inputName="block"/>
                     </Conditions>
                 </Transition>
@@ -583,6 +586,7 @@
                 <!-- Block -->
                 <Transition to="CrouchBlock">
                 <Conditions>
+                    <CanUseStaminaCondition />
                     <HoldingInputCondition inputName="block"/>
                 </Conditions>
             </Transition>
@@ -3452,6 +3456,7 @@
             <!-- Apply Stagger -->
             <Transition to="Block">
                 <Conditions>
+                    <CanUseStaminaCondition />
                     <HoldingInputCondition inputName="block"/>
                 </Conditions>
             </Transition>
