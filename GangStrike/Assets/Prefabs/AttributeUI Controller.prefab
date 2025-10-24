@@ -159,8 +159,10 @@ MonoBehaviour:
   halfColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   lowColor: {r: 1, g: 0, b: 0, a: 1}
   emptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  cantUseColor: {r: 1, g: 0, b: 0, a: 1}
   lowThreshold: 0.25
   halfThreshold: 0.5
+  canUseStamina: 1
 --- !u!1 &2940188079638026577
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,8 +472,10 @@ MonoBehaviour:
   halfColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   lowColor: {r: 1, g: 0, b: 0, a: 1}
   emptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  cantUseColor: {r: 1, g: 0, b: 0, a: 1}
   lowThreshold: 0.25
   halfThreshold: 0.5
+  canUseStamina: 1
 --- !u!1 &5355893272031702153
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,8 +560,10 @@ MonoBehaviour:
   halfColor: {r: 1, g: 0.9203187, b: 0, a: 1}
   lowColor: {r: 1, g: 0, b: 0, a: 1}
   emptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  cantUseColor: {r: 1, g: 0, b: 0, a: 1}
   lowThreshold: 0.25
   halfThreshold: 0.5
+  canUseStamina: 1
 --- !u!1 &5814955567309305534
 GameObject:
   m_ObjectHideFlags: 0

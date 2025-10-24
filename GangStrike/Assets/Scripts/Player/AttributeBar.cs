@@ -22,6 +22,8 @@ namespace Player
         [SerializeField] private Color halfColor = Color.yellow;
         [SerializeField] private Color lowColor = Color.red;
         [SerializeField] private Color emptyColor = Color.gray;
+        [SerializeField] private Color cantUseColor = Color.red;
+        
         [SerializeField] private float lowThreshold = 0.25f;
         [SerializeField] private float halfThreshold = 0.5f;
         
@@ -30,7 +32,8 @@ namespace Player
         private float targetFillAmount;
         private float currentFillAmount;
         private bool isAnimating;
-        
+        [SerializeField] public bool canUseStamina = true;
+
         public string AttributeName { get; private set; }
         
         private void Update()
@@ -124,24 +127,32 @@ namespace Player
             if (fillImage == null) return;
             
             Color targetColor;
-            
-            if (targetFillAmount <= 0f)
+            if (!canUseStamina)
             {
-                targetColor = emptyColor;
-            }
-            else if (targetFillAmount <= lowThreshold)
-            {
-                targetColor = lowColor;
-            }
-            else if (targetFillAmount <= halfThreshold)
-            {
-                targetColor = Color.Lerp(lowColor, halfColor, (targetFillAmount - lowThreshold) / (halfThreshold - lowThreshold));
+                targetColor = cantUseColor;
             }
             else
             {
-                targetColor = Color.Lerp(halfColor, fullColor, (targetFillAmount - halfThreshold) / (1f - halfThreshold));
+                if (targetFillAmount <= 0f)
+                {
+                    targetColor = emptyColor;
+                }
+                else if (targetFillAmount <= lowThreshold)
+                {
+                    targetColor = lowColor;
+                }
+                else if (targetFillAmount <= halfThreshold)
+                {
+                    targetColor = Color.Lerp(lowColor, halfColor,
+                        (targetFillAmount - lowThreshold) / (halfThreshold - lowThreshold));
+                }
+                else
+                {
+                    targetColor = Color.Lerp(halfColor, fullColor,
+                        (targetFillAmount - halfThreshold) / (1f - halfThreshold));
+                }
             }
-            
+
             fillImage.color = targetColor;
         }
         

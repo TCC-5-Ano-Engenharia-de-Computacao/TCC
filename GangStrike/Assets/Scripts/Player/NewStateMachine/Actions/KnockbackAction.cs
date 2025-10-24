@@ -15,7 +15,7 @@ namespace Player.NewStateMachine.Actions
         public override void Execute()
         {
             // zera a velocidade vertical antes do pulo (mantém o X)
-            rigidbody2D.linearVelocity = Vector2.zero;
+            //rigidbody2D.linearVelocity = Vector2.zero;
 
             rigidbody2D.AddForce(- rigidbody2D.transform.right * force, ForceMode2D.Impulse);
         }

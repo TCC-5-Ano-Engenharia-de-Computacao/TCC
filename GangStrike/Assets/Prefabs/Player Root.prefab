@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6910075089453610377}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7692025208745778165}
   - component: {fileID: 5441524549907471062}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NewInputBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4264058074353423824}
   - component: {fileID: 6666221146029789093}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CharacterSpriteRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1884049035042410491}
   - component: {fileID: 7557747522896758796}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: crouch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.040000003, y: 0.26624966}
-  m_Size: {x: 0.20000002, y: 0.50750095}
+  m_Size: {x: 0.12, y: 0.50750095}
   m_Direction: 0
 --- !u!1 &1926820229770184043
 GameObject:
@@ -569,7 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2637925044492450452}
   - component: {fileID: 698114262836227300}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Input Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4245945307300825484}
   - component: {fileID: 4845133753833057703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IncomingHitBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5229426366895662647}
   - component: {fileID: 754120274282801575}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.3912809}
-  m_Size: {x: 0.20000002, y: 0.7574382}
+  m_Size: {x: 0.12, y: 0.7574382}
   m_Direction: 0
 --- !u!1 &3177370308563021893
 GameObject:
@@ -820,7 +820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5471993620949986263}
   - component: {fileID: 4274157823088853842}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6416504919721070112}
   - component: {fileID: 4413631703263350532}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SideSwapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 143590361948351598}
   - component: {fileID: 2634916352485126679}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: State Machine Builder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1289,7 @@ GameObject:
   - component: {fileID: 2340634700699290823}
   - component: {fileID: 6267009337946522524}
   - component: {fileID: 1660988420642155268}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Character Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,7 +1455,7 @@ GameObject:
   - component: {fileID: 9119475316398029506}
   - component: {fileID: 4209722315018630619}
   - component: {fileID: 4336073832203171712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Input Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1534,7 +1534,7 @@ GameObject:
   - component: {fileID: 6083303662717628191}
   - component: {fileID: 5633331171259353376}
   - component: {fileID: 2640786784819686136}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Attribute Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1584,6 +1584,7 @@ MonoBehaviour:
     maxValue: 0
     minValue: 0
   staminaExhausted: 0
+  canUseStamina: 0
 --- !u!114 &2640786784819686136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,7 +1824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4961495662811733083}
   - component: {fileID: 7299475947544447845}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BodyColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2033,7 +2034,7 @@ GameObject:
   - component: {fileID: 8348423595372582526}
   - component: {fileID: 2430729432372946409}
   - component: {fileID: 7395254102628424992}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FootGroundCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2156,7 +2157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7461316714573319866}
   - component: {fileID: 6341461716748006755}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Analog History
   m_TagString: Untagged
   m_Icon: {fileID: 0}

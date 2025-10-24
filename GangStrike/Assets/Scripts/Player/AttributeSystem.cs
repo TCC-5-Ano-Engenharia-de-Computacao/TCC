@@ -10,7 +10,7 @@ namespace Player
         [SerializeField] private float maxValue;
         [SerializeField] private float minValue;
 
-        public event Action<float, float> OnValueChanged; // (currentValue, maxValue)
+        public Action<float, float> OnValueChanged; // (currentValue, maxValue)
 
         public float CurrentValue
         {
@@ -109,7 +109,7 @@ namespace Player
 
         // Events for each attribute
         public event Action<float, float> HealthChangeEvent;
-        public event Action<float, float> StaminaChangeEvent;
+        public event Action<float, float, bool> StaminaChangeEvent;
         public event Action<float, float> UltimateChangeEvent;
 
         // Properties with getters and setters
@@ -164,7 +164,7 @@ namespace Player
 
             // Subscribe to attribute change events and forward them
             health.OnValueChanged += (current, max) => HealthChangeEvent?.Invoke(current, max);
-            stamina.OnValueChanged += (current, max) => StaminaChangeEvent?.Invoke(current, max);
+            stamina.OnValueChanged += (current, max) => StaminaChangeEvent?.Invoke(current, max, canUseStamina);
             ultimate.OnValueChanged += (current, max) => UltimateChangeEvent?.Invoke(current, max);
         }
 
@@ -202,6 +202,7 @@ namespace Player
             {
                 staminaExhausted = true;
                 canUseStamina = false;
+                stamina.OnValueChanged?.Invoke(stamina.CurrentValue, stamina.MaxValue);
             }
         }
 
@@ -212,6 +213,7 @@ namespace Player
             {
                 staminaExhausted = false;
                 canUseStamina = true;
+                stamina.OnValueChanged?.Invoke(stamina.CurrentValue, stamina.MaxValue);
             }
         }
 

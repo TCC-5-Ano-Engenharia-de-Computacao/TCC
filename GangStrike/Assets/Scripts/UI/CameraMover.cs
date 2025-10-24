@@ -11,12 +11,19 @@ namespace UI
         [Header("X Movement Limits")]
         public float minX = -100f;
         public float maxX = 100f;
+        
+        [Header("Y Movement Limits")]
+        private float minY;
+        public float maxY = 100f;
+        private float cameraStartingY;
 
         public Transform player1;
         public Transform player2;
 
         void Start()
         {
+            cameraStartingY = transform.position.y + 0.6f;
+            minY = transform.position.y;
             InvokeRepeating(nameof(FindPlayers), 0f, 0.5f); // Look for players every 0.5 seconds
         }
 
@@ -40,8 +47,13 @@ namespace UI
 
                 // Clamp the target X within the limits
                 float clampedX = Mathf.Clamp(meanX, minX, maxX);
+                
+                float meanY = cameraStartingY + (player1.position.y + player2.position.y) / 2f;
 
-                Vector3 targetPos = new Vector3(clampedX, transform.position.y, transform.position.z);
+                // Clamp the target Y within the limits
+                float clampedY = Mathf.Clamp(meanY, minY, maxY);
+
+                Vector3 targetPos = new Vector3(clampedX, clampedY, transform.position.z);
 
                 transform.position = Vector3.Lerp(transform.position, targetPos, followSpeed * Time.deltaTime);
             }

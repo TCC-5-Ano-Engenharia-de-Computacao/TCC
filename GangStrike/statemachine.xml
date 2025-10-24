@@ -824,7 +824,7 @@
             </OnEnter>
     
             <OnStay>
-                <MovePlayerAction speed="1.5" direction="forward"/>
+                <MovePlayerAction speed="1.8" direction="forward"/>
             </OnStay>
     
             <Transitions>
@@ -928,7 +928,7 @@
         </OnEnter>
 
         <OnStay>
-            <MovePlayerAction speed="1.5" direction="backward"/>
+            <MovePlayerAction speed="1.8" direction="backward"/>
         </OnStay>
 
         <Transitions>
@@ -1244,7 +1244,7 @@
     
             <OnStay>
                 <UpdateSideAction/>
-                <MovePlayerAction direction="backward" speed="0.1"/>
+                <AvoidHeadAction force="2"/>
             </OnStay>
     
             <Transitions>
@@ -1483,6 +1483,7 @@
 
         <OnStay>
             <AddOneTimeHitToEnemyBufferAction damage="5" effect="stagger" tag="jumpingWeakPunch" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="0" />
+            <AvoidHeadAction force="2"/>
         </OnStay>
 
         <OnLeave>
@@ -1623,6 +1624,7 @@
 
         <OnStay>
             <AddOneTimeHitToEnemyBufferAction damage="10" effect="stagger" tag="jumpingStrongPunch" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="0" />
+            <AvoidHeadAction force="2"/>
         </OnStay>
 
         <OnLeave>
@@ -1758,6 +1760,10 @@
             <AddHitToEnemyBufferAction damage="5" effect="stagger" tag="kickVerticalJump" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
             <PlayAnimationClipAction animationClipAddress="Animations/KickVerticalJumpEnd"/>
         </OnEnter>
+        
+        <OnStay>
+            <AvoidHeadAction force="2"/>
+        </OnStay>
 
         <Transitions>
             <!-- game end conditions -->
@@ -1823,6 +1829,7 @@
 
         <OnStay>
             <AddOneTimeHitToEnemyBufferAction damage="5" effect="stagger" tag="kickHorizontalJump" sameAttackCooldown="1" genericCooldown="0.5" stunDuration="1" knockBackForce="5" />
+            <AvoidHeadAction force="2"/>
         </OnStay>
 
         <OnLeave>

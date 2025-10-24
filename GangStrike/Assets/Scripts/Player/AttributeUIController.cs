@@ -117,7 +117,7 @@ namespace Player
                 previousUltimate = attributeSystem.UltimateValue;
                 
                 HealthChanged(attributeSystem.HealthValue, attributeSystem.Health.MaxValue);
-                StaminaChanged(attributeSystem.StaminaValue, attributeSystem.Stamina.MaxValue);
+                StaminaChanged(attributeSystem.StaminaValue, attributeSystem.Stamina.MaxValue, true);
                 UltimateChanged(attributeSystem.UltimateValue, attributeSystem.Ultimate.MaxValue);
             }
         }
@@ -147,11 +147,12 @@ namespace Player
             }
         }
         
-        private void StaminaChanged(float currentValue, float maxValue)
+        private void StaminaChanged(float currentValue, float maxValue, bool canUseStamina)
         {
             if (staminaBar != null)
             {
                 staminaBar.SetValue(currentValue, maxValue);
+                staminaBar.canUseStamina = canUseStamina;
                 previousStamina = currentValue;
             }
         }
@@ -216,7 +217,7 @@ namespace Player
             if (!isInitialized || attributeSystem == null) return;
             
             HealthChanged(attributeSystem.HealthValue, attributeSystem.Health.MaxValue);
-            StaminaChanged(attributeSystem.StaminaValue, attributeSystem.Stamina.MaxValue);
+            StaminaChanged(attributeSystem.StaminaValue, attributeSystem.Stamina.MaxValue, true);
             UltimateChanged(attributeSystem.UltimateValue, attributeSystem.Ultimate.MaxValue);
         }
         

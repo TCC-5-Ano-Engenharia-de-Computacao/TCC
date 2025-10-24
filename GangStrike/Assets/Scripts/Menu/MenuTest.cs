@@ -7,6 +7,7 @@ namespace Menu
 {
     public class MenuTest : MonoBehaviour
     {
+        public GameObject panelToToggle;
         [SerializeField]private Button startButton;
         private GameRoot gameRoot;
         private void Start()
@@ -29,6 +30,14 @@ namespace Menu
         {
             Application.Quit();
             
+        }
+        
+        public void OnTogglePanelButtonPressed()
+        {
+            if (panelToToggle != null)
+            {
+                panelToToggle.SetActive(!panelToToggle.activeSelf);
+            }
         }
     }
 }

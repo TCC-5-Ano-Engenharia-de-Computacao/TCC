@@ -27,9 +27,6 @@ public class CameraEdgeColliders : MonoBehaviour
 
         // Right
         CreateEdge("Right Edge", new Vector2(camPos.x + width / 2f + thickness / 2f, camPos.y), new Vector2(thickness, height*2f));
-
-        // Bottom
-        CreateEdge("Bottom Edge", new Vector2(camPos.x, camPos.y - height / 2f - thickness / 2f), new Vector2(width, thickness));
     }
 
     void CreateEdge(string name, Vector2 position, Vector2 size)
