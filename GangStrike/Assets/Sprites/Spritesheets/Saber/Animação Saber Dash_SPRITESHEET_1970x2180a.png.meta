@@ -114,6 +114,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -284,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Anima\xE7\xE3o Saber Dash_SPRITESHEET_1970x2180a_0": 2175996065383806841
+      "Anima\xE7\xE3o Saber Dash_SPRITESHEET_1970x2180a_1": -2019150004428183416
+      "Anima\xE7\xE3o Saber Dash_SPRITESHEET_1970x2180a_2": -3495844976681375300
+      "Anima\xE7\xE3o Saber Dash_SPRITESHEET_1970x2180a_3": -5486682795418333991
+      "Anima\xE7\xE3o Saber Dash_SPRITESHEET_1970x2180a_4": 9201943304052539476
+      "Anima\xE7\xE3o Saber Dash_SPRITESHEET_1970x2180a_5": 128922435277770135
+      "Anima\xE7\xE3o Saber Dash_SPRITESHEET_1970x2180a_6": 1156135751164734292
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

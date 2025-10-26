@@ -48,11 +48,11 @@ Material:
     - _AlphaClip: 0
     - _AlphaCutoffForOps: 0.001
     - _EnableExternalAlpha: 0
-    - _HueShiftDegrees0: 180
-    - _HueShiftDegrees1: 116
+    - _HueShiftDegrees0: 29
+    - _HueShiftDegrees1: 139
     - _HueShiftDegrees2: 0
     - _MatchRadius0: 0.441
-    - _MatchRadius1: 1
+    - _MatchRadius1: 0.824
     - _MatchRadius2: 0.2
     - _PremultiplyOutput: 0
     - _WhiteBypassEps: 0.002

@@ -392,7 +392,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 1
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 3840, y: 2160}
+  m_ReferenceResolution: {x: 3440, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -471,7 +471,7 @@ RectTransform:
   m_GameObject: {fileID: 480481571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 730768231}
@@ -701,8 +701,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 5
-  minX: -2.84
-  maxX: 2.84
+  minX: -2.2
+  maxX: 2.2
+  maxY: 100
   player1: {fileID: 0}
   player2: {fileID: 0}
 --- !u!1 &619100755
@@ -1023,11 +1024,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975592493872421706, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 3840
+      value: 3440
       objectReference: {fileID: 0}
     - target: {fileID: 8975592493872421706, guid: 0e4a375c7c5c7224db4c19fc16b60211, type: 3}
       propertyPath: m_ReferenceResolution.y
-      value: 2160
+      value: 1440
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1205,7 +1206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.2, y: 994.9}
+  m_AnchoredPosition: {x: -1.2, y: 642.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &682722007
@@ -1972,7 +1973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 976}
+  m_AnchoredPosition: {x: 0, y: 624}
   m_SizeDelta: {x: 150, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1573376905
