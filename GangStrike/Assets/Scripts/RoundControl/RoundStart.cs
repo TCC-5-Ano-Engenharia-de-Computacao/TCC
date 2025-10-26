@@ -8,7 +8,7 @@ namespace RoundControl
         private GameRoot gameRoot;
         private bool isRoundStarting;
         [SerializeField] private TMPro.TextMeshProUGUI startText;
-        public float fadeDuration = 0.3f;          // Duration for fade in/out
+        public float fadeDuration = 0.2f;          // Duration for fade in/out
         private string[] countdownMessages; // Countdown sequence
         private void Awake()
         {
@@ -69,7 +69,7 @@ namespace RoundControl
             startText.color = new Color(startText.color.r, startText.color.g, startText.color.b, targetAlpha);
 
             // Wait for a moment before starting fade out
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
 
             // Fade out
             currentAlpha = startText.color.a;
